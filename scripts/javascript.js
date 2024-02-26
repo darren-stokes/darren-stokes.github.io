@@ -29,3 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggle_dark_mode(){
     document.body.classList.toggle('dark-mode')
 }
+
+// Hide cookie notice
+function hide_cookie_notice(){
+    document.getElementById('cookie-notice').style.display = 'none';
+}
