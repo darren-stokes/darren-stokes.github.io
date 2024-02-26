@@ -24,3 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     init_page();
 });
+
+// Toggle dark mode
+function toggle_dark_mode(){
+    document.body.classList.toggle('dark-mode')
+}
