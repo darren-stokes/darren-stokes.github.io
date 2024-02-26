@@ -136,3 +136,31 @@ input:checked + .slider:before {
     font-size: 17px;
     font-family: 'Roboto Condensed', cursive, monospace;
 }
+
+/* Cookie notice*/
+.cookie-notice {
+    position: fixed;
+    bottom: 2%;
+    left: 30%;
+    padding: 5px 15px;
+    width: 40%; /*550px;*/
+    color: #ffffff;
+    background-color: #885613;
+    border-radius: 20px;
+    font-size: 17px;
+    font-family: 'Roboto Condensed', cursive, monospace;
+}
+
+.cookie-notice a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.cookie-button {
+    position: relative;
+    left: 35%;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-family: 'Roboto Condensed', cursive, monospace;
+}
