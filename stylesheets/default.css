@@ -1,0 +1,49 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar*/
+.navbar {
+    z-index: 999;
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a:hover {
+    background: #222121;
+    color: white;
+    border-radius: 15px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: justify;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.navbar-left {
+    display: flex;
+    font-size: 25px;
+    font-family: "Roboto Condensed", cursive, monospace;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Roboto Condensed', cursive, monospace;;
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 20px;
+}
