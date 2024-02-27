@@ -3,6 +3,19 @@ body {
     color: #000000;
     margin: 0;
     padding: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Navigation bar*/
@@ -46,6 +59,7 @@ body {
     font-weight: bold;
     font-size: 20px;
     padding-right: 20px;
+    margin-right: 10px;
 }
 
 #language-select {
@@ -70,11 +84,11 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 80px;
     height: 34px;
-  }
+}
   
-  .switch input { 
+.switch input { 
     opacity: 0;
     width: 0;
     height: 0;
@@ -84,7 +98,7 @@ body {
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 0;
+    left: 10px;
     right: 0;
     bottom: 0;
     background-color: #ccc;
@@ -113,9 +127,9 @@ input:focus + .slider {
 }
   
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
 }
 
 .slider.round {
