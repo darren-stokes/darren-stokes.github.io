@@ -22,7 +22,7 @@ body {
 .navbar {
     z-index: 999;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #175a93;
     position: fixed;
     top: 0;
     width: 100%;
@@ -32,8 +32,8 @@ body {
 }
 
 .navbar a:hover {
-    background: #222121;
-    color: white;
+    background: #ffffff;
+    color: #000000;
     border-radius: 15px;
 }
 
@@ -70,9 +70,14 @@ body {
     font-size: 20px;
     font-weight: bold;
     position: relative;
-    background-color: #000000;
+    background-color: #175a93;
     color: #ffffff;
     cursor: pointer;
+}
+
+#language-select option:hover {
+    background-color: #ffffff;
+    color: #175a93;
 }
 
 /* Dark mode + toggle*/
