@@ -56,8 +56,8 @@
         </div>
         <!-- Cookie Notice -->
         <div id="cookie-notice" class="cookie-notice">
-            <p class="lang lang-en">This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
-            <p class="lang lang-es">But in Spanish.This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+            <p class="lang lang-en">This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy.php">Privacy Policy</a>.</p>
+            <p class="lang lang-es">But in Spanish.This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy.php">Privacy Policy</a>.</p>
             <button onclick="hide_cookie_notice()" class="cookie-button">Got it!</button>
         </div>
     </body>
