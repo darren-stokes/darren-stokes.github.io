@@ -2,8 +2,8 @@ body {
     background-color: #ffffff;
     color: #000000;
     margin: 0;
-    padding: 0;
-    animation: fadeInAnimation ease 3s;
+    padding: 20;
+    animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -33,7 +33,7 @@ body {
 
 .navbar a:hover {
     background: #ffffff;
-    color: #000000;
+    color: #175a93;
     border-radius: 15px;
 }
 
@@ -48,8 +48,9 @@ body {
 
 .navbar-left {
     display: flex;
-    font-size: 25px;
+    font-size: 3rem;
     font-family: "Roboto Condensed", cursive, monospace;
+    padding-left: 15%;
 }
 
 .navbar-right {
@@ -57,8 +58,8 @@ body {
     justify-content: flex-end;
     font-family: 'Roboto Condensed', cursive, monospace;;
     font-weight: bold;
-    font-size: 20px;
-    padding-right: 20px;
+    font-size: 2rem;
+    padding-right: 12%;
     margin-right: 10px;
 }
 
@@ -67,12 +68,13 @@ body {
     /* safari */
     -webkit-appearance: none;
     font-family: 'Roboto Condensed', cursive, monospace;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
     position: relative;
     background-color: #175a93;
     color: #ffffff;
     cursor: pointer;
+    bottom: 10px;
 }
 
 #language-select option:hover {
@@ -89,8 +91,8 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 34px;
+    width: 100px;
+    height: 50px;
 }
   
 .switch input { 
@@ -102,7 +104,7 @@ body {
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
+    top: 10px;
     left: 10px;
     right: 0;
     bottom: 0;
@@ -114,10 +116,10 @@ body {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 40px;
+    width: 40px;
+    left: 0px;
+    bottom: 0px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -132,9 +134,9 @@ input:focus + .slider {
 }
   
 input:checked + .slider:before {
-    -webkit-transform: translateX(36px);
-    -ms-transform: translateX(36px);
-    transform: translateX(36px);
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
 }
 
 .slider.round {
@@ -152,8 +154,10 @@ input:checked + .slider:before {
     left: 50px;
     width: 1000px;
     height: 5000px;
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Roboto Condensed', cursive, monospace;
+    padding-left: 20%;
+    padding-top: 20px;
 }
 
 /* Cookie notice*/
@@ -164,9 +168,9 @@ input:checked + .slider:before {
     padding: 5px 15px;
     width: 40%; /*550px;*/
     color: #ffffff;
-    background-color: #885613;
+    background-color: #175a93;
     border-radius: 20px;
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Roboto Condensed', cursive, monospace;
 }
 
@@ -180,6 +184,6 @@ input:checked + .slider:before {
     left: 35%;
     width: 100px;
     border-radius: 20px;
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Roboto Condensed', cursive, monospace;
 }
