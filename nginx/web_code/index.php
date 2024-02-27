@@ -13,7 +13,7 @@
     </head>
     <body>
         <?php
-        include("banner.html");
+        include('banner.html');
         ?>
         <!-- Content -->
         <div class="content">
