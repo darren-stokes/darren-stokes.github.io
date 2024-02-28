@@ -16,5 +16,8 @@
             include('banner.html');
         ?>
 
+        <?php
+            include('cookie_notice.html')
+        ?>
     </body>
 </html>
