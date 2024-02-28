@@ -54,11 +54,8 @@
                 <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
         </div>
-        <!-- Cookie Notice -->
-        <div id="cookie-notice" class="cookie-notice">
-            <p class="lang lang-en">This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy.php">Privacy Policy</a>.</p>
-            <p class="lang lang-es">But in Spanish.This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy.php">Privacy Policy</a>.</p>
-            <button onclick="hide_cookie_notice()" class="cookie-button">Got it!</button>
-        </div>
+            <?php
+                include('cookie_notice.html')
+            ?>
     </body>
 </html>
