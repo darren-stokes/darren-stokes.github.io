@@ -56,11 +56,15 @@ body {
 .navbar-right {
     display: flex;
     justify-content: flex-end;
-    font-family: 'Roboto Condensed', cursive, monospace;;
+    font-family: 'Roboto Condensed', cursive, monospace;
     font-weight: bold;
     font-size: 2rem;
     padding-right: 12%;
     margin-right: 10px;
+}
+
+select {
+    overflow-y: auto;
 }
 
 #language-select {
@@ -143,6 +147,7 @@ input:checked + .slider:before {
     transform: translateX(30px);
     background-color: #1a1a1a;
     content: '☾';
+    color: #ffffffca;
     display: flex;
     justify-content: center;
     align-items: center;
