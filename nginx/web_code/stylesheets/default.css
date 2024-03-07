@@ -18,17 +18,26 @@ body {
     }
 }
 
-/* Navigation bar*/
-.navbar {
+.banner {
     z-index: 999;
     overflow: hidden;
     background-color: #175a93;
     position: fixed;
-    top: 0;
     width: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    color: #f2f2f2;
+    font-family: "Roboto Condensed", cursive, monospace;
+}
+
+/*.footer.banner {
+    bottom: 0;
+}*/
+
+/* Navigation bar*/
+.navbar.banner {
+    top: 0;
 }
 
 .navbar a:hover {
@@ -49,19 +58,20 @@ body {
 .navbar-left {
     display: flex;
     font-size: 3rem;
-    font-family: "Roboto Condensed", cursive, monospace;
+    
     padding-left: 15%;
 }
 
 .navbar-right {
     display: flex;
     justify-content: flex-end;
-    font-family: 'Roboto Condensed', cursive, monospace;
     font-weight: bold;
     font-size: 2rem;
     padding-right: 12%;
     margin-right: 10px;
 }
+
+
 
 select {
     overflow-y: auto;
@@ -128,6 +138,7 @@ select {
     -webkit-transition: .4s;
     transition: .4s;
     content: '✹';
+    color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
