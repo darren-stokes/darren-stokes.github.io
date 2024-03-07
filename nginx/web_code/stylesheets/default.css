@@ -162,16 +162,20 @@ input:checked + .slider:before {
 }
 
 /* Content */
-.content{
+.content {
     position: relative;
     top: 100px;
     left: 50px;
     width: 1000px;
     height: 5000px;
-    font-size: 20px;
+    font-size: 1rem;
     font-family: 'Roboto Condensed', cursive, monospace;
     padding-left: 20%;
     padding-top: 20px;
+}
+
+.section-heading{
+    font-size: 2rem;
 }
 
 /* Cookie notice*/
@@ -180,11 +184,11 @@ input:checked + .slider:before {
     bottom: 2%;
     left: 30%;
     padding: 5px 15px;
-    width: 40%; /*550px;*/
+    width: 40%;
     color: #ffffff;
     background-color: #175a93;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-family: 'Roboto Condensed', cursive, monospace;
 }
 
@@ -198,6 +202,6 @@ input:checked + .slider:before {
     left: 35%;
     width: 100px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-family: 'Roboto Condensed', cursive, monospace;
 }
