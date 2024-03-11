@@ -46,7 +46,9 @@ body {
 .footer.banner {
     bottom: 0;
     position: relative;
-    padding-left: 40%;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
 }
 
 /* For the hamburger transform into an X */
@@ -111,13 +113,11 @@ path:nth-child(6) {
 .navbar a:hover {
     background: #ffffff;
     color: #175a93;
-    border-radius: 15px;
 }
 
 .navbar a {
     display: block;
     color: #f2f2f2;
-    text-align: justify;
     padding: 10px 15px;
     text-decoration: none;
 }
@@ -128,7 +128,6 @@ path:nth-child(6) {
 
 .navbar-right {
     display: none;
-    justify-content: flex-end;
     font-weight: bold;
     font-size: 1.5rem;
     margin-top: 50px;
@@ -147,6 +146,10 @@ select {
     margin: 0 auto;
 }
 
+.lang-navbar {
+    width: 100%;
+}
+
 #language-select {
     appearance: none;
     -webkit-appearance: none;
@@ -157,7 +160,6 @@ select {
     background-color: #0d3050;
     color: #ffffff;
     cursor: pointer;
-    bottom: 10px;
 }
 
 #language-select option:hover {
@@ -245,13 +247,10 @@ input:checked + .slider:before {
 /* Content */
 .content {
     position: relative;
-    left: 50px;
-    width: 1000px;
     font-size: 1rem;
     font-family: 'Roboto Condensed', cursive, monospace;
-    padding-left: 20%;
-    margin-top: 140px;
     flex: 1;
+    margin: 50px 5px 0px 15px;
 }
 
 .section-heading{
@@ -262,14 +261,13 @@ input:checked + .slider:before {
 .cookie-notice {
     position: fixed;
     bottom: 2%;
-    left: 30%;
     padding: 5px 15px;
-    width: 40%;
     color: #ffffff;
-    background-color: #175a93;
+    background-color: #155083;
     border-radius: 20px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: 'Roboto Condensed', cursive, monospace;
+    z-index: 999;
 }
 
 .cookie-notice a {
@@ -300,10 +298,23 @@ input:checked + .slider:before {
     #language-select {
         background-color: #175a93;
         font-size: 2rem;
+        bottom: 7px;
+    }
+
+    .lang-navbar{
+        width: auto;
     }
 
     .navbar a {
         float: left;
+    }
+
+    .navbar a:hover {
+        border-radius: 15px;
+    }
+
+    .navbar-right a:hover {
+        width: 100%;
     }
 
     .navbar-left{
@@ -326,5 +337,20 @@ input:checked + .slider:before {
 
     .switch {
         left: 0;
+    }
+
+    .content {
+        margin-left: 50px;
+        width: 1000px;
+        padding-left: 20%;
+        margin-top: 140px;
+    }
+    .cookie-notice {
+        width: 40%;
+        left: 30%;
+        font-size: 1.5rem;
+    }
+    .cookie-button{
+        font-size: 1.2rem;
     }
 }
