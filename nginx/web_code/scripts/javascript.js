@@ -34,7 +34,7 @@ function toggle_language(language) {
         el.style.display = 'none';
     });
     document.querySelectorAll('.lang-' + language).forEach(el => {
-        el.style.display = 'block';
+        el.style.display = 'inline-block';
     });
 
     // Save users preference
@@ -106,6 +106,25 @@ function hide_cookie_notice(){
 function check_cookie_consent(){
     if (localStorage.getItem('cookie_consent') === 'accepted'){
         document.getElementById('cookie-notice').style.display = 'none';
+    }
+}
+
+//// Mobile device related
+// Menu
+function toggle_mobile_menu() {
+    // Toggle the appearance of the menu whether it's clicked or not.
+    var nav_icon = document.querySelector(".mobile-nav-icon");
+    nav_icon.classList.toggle("active");
+
+    // Display/hide the menu contents when the menu is selected/unselected.
+    var nav_bar_right = document.querySelector(".navbar-right");
+    nav_bar_right.classList.toggle("active");
+
+    if (nav_bar_right.style.display === 'none' || nav_bar_right.style.display === '') {
+        nav_bar_right.style.display = 'inline-block';
+    }
+    else {
+        nav_bar_right.style.display = 'none';
     }
 }
 
