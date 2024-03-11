@@ -39,6 +39,9 @@ function toggle_language(language) {
 
     // Save users preference
     localStorage.setItem('user_language', language);
+
+    // Collapse mobile menu on selecting language
+    collapse_menu()
 }
 
 // Detect language on page load
@@ -80,6 +83,9 @@ function toggle_dark_mode(){
 
     // Save to localStorage
     localStorage.setItem('dark_mode', is_checked ? 'enabled': 'disabled')
+
+    // Collapse mobile menu on changing mode
+    collapse_menu()
 }
 
 function apply_dark_mode(){
@@ -125,6 +131,16 @@ function toggle_mobile_menu() {
     }
     else {
         nav_bar_right.style.display = 'none';
+    }
+}
+
+// Collapses the mobile menu if the language or dark mode is changed through the menu
+function collapse_menu(){
+    var nav_icon = document.querySelector(".mobile-nav-icon");
+    
+    // First see if the menu is active
+    if (nav_icon.classList.contains("active")){
+        toggle_mobile_menu()
     }
 }
 
