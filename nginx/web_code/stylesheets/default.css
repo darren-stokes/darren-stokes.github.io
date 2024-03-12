@@ -253,7 +253,7 @@ input:checked + .slider:before {
     margin: 50px 5px 0px 15px;
 }
 
-.section-heading{
+.section-heading {
     font-size: 2rem;
 }
 
@@ -290,7 +290,7 @@ input:checked + .slider:before {
         display: none;
     }
 
-    .banner{
+    .banner {
         padding: 20px;
         font-size: 3rem;
     }
@@ -301,7 +301,7 @@ input:checked + .slider:before {
         bottom: 7px;
     }
 
-    .lang-navbar{
+    .lang-navbar {
         width: auto;
     }
 
@@ -317,7 +317,7 @@ input:checked + .slider:before {
         width: 100%;
     }
 
-    .navbar-left{
+    .navbar-left {
         padding-left: 15%;
         display: flex;
     }
@@ -350,7 +350,7 @@ input:checked + .slider:before {
         left: 30%;
         font-size: 1.5rem;
     }
-    .cookie-button{
+    .cookie-button {
         font-size: 1.2rem;
     }
 }
