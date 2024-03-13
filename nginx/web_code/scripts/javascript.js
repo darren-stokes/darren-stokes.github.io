@@ -79,7 +79,7 @@ function hide_language_flags(){
 
 // Toggle dark mode
 function toggle_dark_mode(){
-    var is_checked = document.body.classList.toggle('dark-mode')
+    var is_checked = document.body.classList.toggle('dark-mode');
 
     // Save to localStorage
     localStorage.setItem('dark_mode', is_checked ? 'enabled': 'disabled')
