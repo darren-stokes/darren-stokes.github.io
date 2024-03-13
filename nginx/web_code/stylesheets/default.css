@@ -30,10 +30,33 @@ body {
     }
 }
 
+ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+ul a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.dark-mode ul a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.fa {
+    font-size: 24px;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
 /* Some shared style between the navbar and footer */
 .banner {
     z-index: 999;
-    background-color: #175a93;
+    background-color: rgb(27, 27, 27);
     position: fixed;
     width: 100%;
     display: flex;
@@ -112,7 +135,7 @@ path:nth-child(6) {
 
 .navbar a:hover {
     background: #ffffff;
-    color: #175a93;
+    color: rgb(27, 27, 27);
 }
 
 .navbar a {
@@ -120,6 +143,7 @@ path:nth-child(6) {
     color: #f2f2f2;
     padding: 10px 15px;
     text-decoration: none;
+    letter-spacing: -0.01562em;
 }
 
 .navbar-left {
@@ -131,7 +155,7 @@ path:nth-child(6) {
     font-weight: bold;
     font-size: 1.5rem;
     margin-top: 50px;
-    background-color: #0d3050;
+    background-color: rgb(27, 27, 27);
     width: 100%;
     position: absolute;
     left: 0;
@@ -157,14 +181,14 @@ select {
     font-size: 1.5rem;
     font-weight: bold;
     position: relative;
-    background-color: #0d3050;
+    background-color: rgb(27, 27, 27);
     color: #ffffff;
     cursor: pointer;
 }
 
 #language-select option:hover {
     background-color: #ffffff;
-    color: #175a93;
+    color: rgb(27, 27, 27);
 }
 
 /* Dark mode */
@@ -225,9 +249,9 @@ input:focus + .slider {
 }
   
 input:checked + .slider:before {
-    -webkit-transform: translateX(30px);
-    -ms-transform: translateX(30px);
-    transform: translateX(30px);
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
     background-color: #1a1a1a;
     content: '☾';
     color: #ffffffca;
@@ -244,17 +268,156 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/* Video */
+.video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.dark-background{
+    background-color: rgba(45, 49, 53, 0.75);
+}
+
 /* Content */
+.profile-overview.content-box {
+    position: relative;
+    width: 100%;
+    height: 679px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .content {
     position: relative;
+    flex: 1 0 auto;
     font-size: 1rem;
     font-family: 'Roboto Condensed', cursive, monospace;
     flex: 1;
-    margin: 50px 5px 0px 15px;
+    margin-top: 50px;
+    overflow: hidden;
 }
 
 .section-heading {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin: 0px 0px 0.35em;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.167;
+    letter-spacing: 0em;
+}
+
+.section-text{
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.content-inner {
+    width: 100%;
+    margin: 0px auto;
+    display: block;
+}
+
+.content-box {
+    padding: 0px 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.lang {
+    width: 100%;
+}
+
+.dark-mode .about-me {
+    background-color: #3c3737;
+}
+
+.profile-banner {
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+    z-index: 5;
+}
+
+.salutation {
+    line-height: 33px;
+    text-transform: uppercase;
+    color: rgb(0, 163, 217);
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.name {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 103%;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    letter-spacing: -0.01562em;
+}
+
+.divider {
+    border-width: 0px 0px thin;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.12);
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    width: 80%;
+    margin: 8px auto;
+}
+
+.job-title{
+    margin: 0px;
+    font-size: 1.4rem;
+    line-height: 33px;
+    font-weight: 500;
+    letter-spacing: 0.00938em;
+    color: rgba(255, 255, 255);
+}
+
+.down-button{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+    bottom: 64px;
+    font-size: 56px;
+}
+
+.down-button a {
+    color: rgb(255, 255, 255);
+    transition: .5s;
+}
+
+.about-me {
+    background-color: #b7b7b79f;
+    padding-bottom: 8px;
+}
+
+.wrapper{
+    padding: 62px 0;
 }
 
 /* Cookie notice*/
@@ -263,7 +426,7 @@ input:checked + .slider:before {
     bottom: 2%;
     padding: 5px 15px;
     color: #ffffff;
-    background-color: #155083;
+    background-color: rgb(27, 27, 27);
     border-radius: 20px;
     font-size: 1rem;
     font-family: 'Roboto Condensed', cursive, monospace;
@@ -284,6 +447,11 @@ input:checked + .slider:before {
     font-family: 'Roboto Condensed', cursive, monospace;
 }
 
+@media(min-width: 600px){
+    .content-inner{
+        padding: 0px 24px;
+    }
+}
 
 @media (min-width: 950px){
     svg {
@@ -296,7 +464,7 @@ input:checked + .slider:before {
     }
 
     #language-select {
-        background-color: #175a93;
+        background-color: rgb(27, 27, 27);
         font-size: 2rem;
         bottom: 7px;
     }
@@ -314,7 +482,7 @@ input:checked + .slider:before {
     }
 
     .navbar-right a:hover {
-        width: 100%;
+        width: auto;
     }
 
     .navbar-left {
@@ -325,7 +493,7 @@ input:checked + .slider:before {
     .navbar-right {
         display: flex;
         margin-top: 10px;
-        background-color: #175a93;
+        background-color: rgb(27, 27, 27);
         padding-right: 12%;
         padding-bottom: 0;
         margin-right: 10px;
@@ -340,11 +508,37 @@ input:checked + .slider:before {
     }
 
     .content {
-        margin-left: 50px;
-        width: 1000px;
-        padding-left: 20%;
-        margin-top: 140px;
+        padding: 0; /* 16%;*/
+        margin-top: 126px;
     }
+
+    .section-heading {
+        margin: 10px 0px;
+    }
+
+    .content-box {
+        border-radius: 30px;
+        display: inline-block;
+    }
+
+    .profile-overview {
+        border-radius: 0px;
+    }
+
+    .profile-banner {
+        width: 1000px;
+        padding-left: 50px;
+        vertical-align: middle;
+    }
+
+    .section-text{
+        font-size: 1.2rem;
+    }
+
+    ul {
+        padding-left: 35%;
+    }
+
     .cookie-notice {
         width: 40%;
         left: 30%;
@@ -352,5 +546,11 @@ input:checked + .slider:before {
     }
     .cookie-button {
         font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 1200px){
+    .content-inner{
+        max-width: 1200px;
     }
 }
