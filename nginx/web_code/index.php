@@ -23,7 +23,7 @@
         <div class="content">
             <div class="profile-overview content-box">
                 <div class="overlay">
-                    <!-- Video -->
+                    <!-- Video gotten from https://www.pexels.com/video/a-man-looking-at-computer-monitor-6962343/ -->
                     <video class="video-background" autoplay loop muted="muted" playsinline>
                         <source src="assets/stock_coding_video_1080.mp4" type="video/mp4">
                     </video>
