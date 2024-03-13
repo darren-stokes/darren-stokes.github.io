@@ -3,11 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Darren Stokes Profiles</title>
+        <title>Darren Stokes | DevOps Engineer</title>
 
         <!-- CSS -->
         <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="stylesheets/default.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Javascript -->
         <script src="scripts/javascript.js"></script>
@@ -18,42 +21,95 @@
         ?>
         <!-- Content -->
         <div class="content">
-            <div class="lang lang-en">
-                <p class="content-text">IF you can keep your head when all about you are losing theirs and blaming it on you<br>
-                    If you can trust yourself when all men doubt you, but make allowance for their doubting too;<br>
-                    If you can wait and not be tired by waiting, or being lied about, don't deal in lies, or being hated, don't give way to hating,<br>
-                    And yet don't look too good, nor talk too wise:</p>
-                <p class="content-text">IF you can dream - and not make dreams your master; If you can think - and not make thoughts your aim;<br>
-                If you can meet with Triumph and Disaster and treat those two impostors just the same;<br>
-                If you can bear to hear the truth you've spoken twisted by knaves to make a trap for fools,<br>
-                Or watch the things you gave your life to, broken, and stoop and build 'em up with worn-out tools:</p>
-                <p class="content-text">IF you can make one heap of all your winnings and risk it on one turn of pitch-and-toss,<br>
-                And lose, and start again at your beginnings and never breathe a word about your loss;<br>
-                If you can force your heart and nerve and sinew to serve your turn long after they are gone,<br>
-                And so hold on when there is nothing in you except the Will which says to them: "Hold on!"</p>
-                <p class="content-text">IF you can talk with crowds and keep your virtue, or walk with Kings - nor lose the common touch,<br>
-                If neither foes nor loving friends can hurt you, If all men count with you, but none too much;<br>
-                If you can fill the unforgiving minute with sixty seconds' worth of distance run, <br>
-                Yours is the Earth and everything that's in it, and - which is more - you'll be a Man, my son!</p>
+            <div class="profile-overview content-box">
+                <div class="overlay">
+                    <!-- Video -->
+                    <video class="video-background" autoplay loop muted="muted" playsinline>
+                        <source src="assets/stock_coding_video_1080.mp4" type="video/mp4">
+                    </video>
+                    <!-- Responsible for darking the video -->
+                    <div class="overlay dark-background"></div>
+                    <!-- Banner text -->
+                    <div class="profile-banner">
+                        <div class="lang lang-en">
+                            <p class="salutation">Hello there, I'm</p>
+                        </div>
+                        <div class="lang lang-es">
+                            <p class="salutation">Buenos días, soy</p>
+                        </div>
+                        <h1 class="name">Darren Stokes</h1>
+                        <hr class="divider">
+                        <div class="lang lang-en">
+                            <p class="job-title">DevOps Engineer</p>
+                        </div>
+                        <div class="lang lang-es">
+                            <p class="job-title">Ingeniero DevOps</p>
+                        </div>
+                    </div>
+                    <!-- Down arrow -->
+                    <div class="down-button">
+                        <a href="#about">
+                            <i class="bi bi-arrow-down-circle">
+
+                            </i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="lang lang-es">
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
+            <section id="about" class="about-me">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h3 class="section-heading">About Me</h3>
+                                <p class="section-text">My career in IT has spanned various roles, beginning with a Systems Engineer position at Susquehanna International Group in Dublin, where I focused on server deployments and configuration management.</p>
+                                <p class="section-text">At Securelinx, I expanded my expertise as a Linux Engineer, managing system updates and leading key projects. My role as a Senior DevOps Engineer at Rentalmatics involved implementing CI/CD pipelines and enhancing monitoring and deployment processes.</p>
+                                <p class="section-text">Most recently, at Cyferd in Málaga, I served as a DevOps Engineer, working on cloud computing and operational efficiency projects.</p>
+                                <p class="section-text">My education includes a Master’s degree in Management of Information Systems from Trinity College Dublin and a Bachelor's in Applied Computing from the University of Limerick.</p>
+                                <p class="section-text">My technical proficiency spans cloud platforms like GCP and AWS, as well as tools such as Terraform, Prometheus, and Python.</p>
+                            </div>
+                            <div class="lang lang-es">
+                                <h3 class="section-heading">Sobre Mi</h3>
+                                <p class="section-text">Mi carrera en TI ha abarcado varios roles, comenzando con un puesto de ingeniero de sistemas en Susquehanna International Group en Dublín, donde me centré en implementaciones de servidores y administración de configuración.</p>
+                                <p class="section-text">En Securelinx, amplié mi experiencia como ingeniero de Linux, gestionando actualizaciones de sistemas y liderando proyectos clave. Mi función como ingeniero sénior de DevOps en Rentalmatics consistía en implementar pipelines de CI/CD y mejorar los procesos de supervisión e implementación.</p>
+                                <p class="section-text">Más recientemente, en Cyferd en Málaga, me desempeñé como ingeniero DevOps, trabajando en proyectos de computación en la nube y eficiencia operativa.</p>
+                                <p class="section-text">Mi formación incluye una Maestría en Gestión de Sistemas de Información del Trinity College de Dublín y una Licenciatura en Computación Aplicada de la Universidad de Limerick.</p>
+                                <p class="section-text">Mi competencia técnica abarca plataformas en la nube como GCP y AWS, así como herramientas como Terraform, Prometheus y Python.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h3 class="section-heading">Contact Me</h3>
+                                <p class="content-text">
+                                    <ul class="contact-list">
+                                        <li class="section-text"><i class="material-icons">place</i> Málaga, Spain</li>
+                                        <li class="section-text"><a href="mailto: careers@darren.stokes.technology"><i class="material-icons">local_post_office</i> careers@darren.stokes.technology</a></li>
+                                        <li class="section-text"><a href="https://www.linkedin.com/in/darren-stokes-12a53a5a/"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a></li>
+                                        <li class="section-text"><a href="https://github.com/darren-stokes"><i class="fa fa-github"></i> Github</a></li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="lang lang-es">
+                                <h3 class="section-heading">Contactar Conmigo</h3>
+                                <p class="content-text">
+                                    <ul class="contact-list">
+                                        <li class="section-text"><i class="material-icons">place</i> Málaga, España</li>
+                                        <li class="section-text"><a href="mailto: careers@darren.stokes.technology"><i class="material-icons">local_post_office</i> careers@darren.stokes.technology</a></li>
+                                        <li class="section-text"><a href="https://www.linkedin.com/in/darren-stokes-12a53a5a/"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a></li>
+                                        <li class="section-text"><a href="https://github.com/darren-stokes"><i class="fa fa-github"></i> Github</a></li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
         <?php
             include('footer.php');
