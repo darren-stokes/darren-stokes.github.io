@@ -3,11 +3,12 @@ html {
     margin: 0;
     height: 100vh;
     width: 100vw;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
     animation: fadeInAnimation ease 2s;
@@ -30,18 +31,20 @@ body {
     }
 }
 
+a {
+    text-decoration: none;
+}
+
 ul {
     list-style-type: none;
     padding-left: 10px;
 }
 
 ul a {
-    text-decoration: none;
     color: rgb(0, 0, 0);
 }
 
 .dark-mode ul a {
-    text-decoration: none;
     color: rgb(255, 255, 255);
 }
 
@@ -142,7 +145,6 @@ path:nth-child(6) {
     display: block;
     color: #f2f2f2;
     padding: 10px 15px;
-    text-decoration: none;
     letter-spacing: -0.01562em;
 }
 
@@ -346,10 +348,6 @@ input:checked + .slider:before {
     width: 100%;
 }
 
-.dark-mode .about-me {
-    background-color: #3c3737;
-}
-
 .profile-banner {
     position: absolute;
     width: 100%;
@@ -377,23 +375,6 @@ input:checked + .slider:before {
     letter-spacing: -0.01562em;
 }
 
-.divider {
-    border-width: 0px 0px thin;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.12);
-    background-color: rgb(255, 255, 255);
-    opacity: 0.5;
-    width: 80%;
-    margin: 8px auto;
-}
-
-.content-divider {
-    opacity: 1;
-    border-color: rgba(0, 0, 0, 1);
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
 .job-title{
     margin: 0px;
     font-size: 1.4rem;
@@ -415,15 +396,24 @@ input:checked + .slider:before {
 
 .down-button a {
     color: rgb(255, 255, 255);
-    transition: .5s;
+    transition: 1s;
 }
 
-.about-me {
-    padding-bottom: 8px;
+.divider {
+    border-width: 0px 0px thin;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.12);
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    width: 80%;
+    margin: 8px auto;
 }
 
-.odds{
-    background-color: rgb(245, 238, 238);
+.content-divider {
+    opacity: 1;
+    border-color: rgba(0, 0, 0, 1);
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .wrapper{
@@ -431,9 +421,33 @@ input:checked + .slider:before {
 }
 
 .divider-wrapper {
-    box-shadow: 0 0 25px #0000001a;
-    padding: 0px;
     margin: 0px;
+}
+
+/* Give each section an alternating class of odd/even and distinguish the background colour based on that */
+.evens {
+    background-color: rgb(230, 230, 230);
+}
+
+.dark-mode .evens {
+    background-color: rgb(40, 40, 40);
+}
+
+.divider-wrapper.odds {
+    background-image: linear-gradient( rgb(255, 255, 255), rgb(230, 230, 230));
+}
+
+.dark-mode .divider-wrapper.odds {
+
+    background-image: linear-gradient( rgb(30, 30, 30), rgb(40, 40, 40));
+}
+
+.divider-wrapper.evens {
+    background-image: linear-gradient(rgb(230, 230, 230), rgb(255, 255, 255));
+}
+
+.dark-mode .divider-wrapper.evens {
+    background-image: linear-gradient(rgb(40, 40, 40), rgb(30, 30, 30));
 }
 
 /* Cookie notice*/
