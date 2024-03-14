@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <section id="about" class="about-me odds">
+            <section id="about" class="about-me">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
@@ -79,7 +79,9 @@
                     </div>
                 </div>
             </section>
-            <section id="education">
+            <div class="wrapper divider-wrapper odds">
+            </div>
+            <section id="education" class="evens">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
@@ -97,11 +99,9 @@
                     </div>
                 </div>
             </section>
+            <div class="wrapper divider-wrapper evens">
             </div>
-            <div class="wrapper divider-wrapper">
-                <hr class="divider content-divider">
-            </div>
-            <section id="experience" class="odds">
+            <section id="experience">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
@@ -119,10 +119,9 @@
                     </div>
                 </div>
             </section>
-            <div class="wrapper divider-wrapper">
-                <hr class="divider content-divider">
+            <div class="wrapper divider-wrapper odds">
             </div>
-            <section id="contact">
+            <section id="contact" class="evens">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
