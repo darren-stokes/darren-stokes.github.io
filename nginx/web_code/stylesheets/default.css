@@ -516,7 +516,7 @@ input:checked + .slider:before {
     }
 
     .navbar-left {
-        padding-left: 15%;
+        padding-left: 5%;
         display: flex;
     }
 
@@ -524,7 +524,7 @@ input:checked + .slider:before {
         display: flex;
         margin-top: 10px;
         background-color: rgb(27, 27, 27);
-        padding-right: 12%;
+        padding-right: 5%;
         padding-bottom: 0;
         margin-right: 10px;
         width: auto;
