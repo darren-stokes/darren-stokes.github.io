@@ -50,13 +50,12 @@
                     <div class="down-button">
                         <a href="#about">
                             <i class="bi bi-arrow-down-circle">
-
                             </i>
                         </a>
                     </div>
                 </div>
             </div>
-            <section id="about" class="about-me">
+            <section id="about" class="about-me odds">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
@@ -80,6 +79,49 @@
                     </div>
                 </div>
             </section>
+            <section id="education">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h3 class="section-heading">Education</h3>
+                                <p class="section-text">Masters in Management of Information Systems</p>
+                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                            </div>
+                            <div class="lang lang-es">
+                                <h3 class="section-heading">Educación</h3>
+                                <p class="section-text">Masters in Management of Information Systems</p>
+                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+            <div class="wrapper divider-wrapper">
+                <hr class="divider content-divider">
+            </div>
+            <section id="experience" class="odds">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h3 class="section-heading">Experience</h3>
+                                <p class="section-text">Masters in Management of Information Systems</p>
+                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                            </div>
+                            <div class="lang lang-es">
+                                <h3 class="section-heading">Experiencia</h3>
+                                <p class="section-text">Masters in Management of Information Systems</p>
+                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="wrapper divider-wrapper">
+                <hr class="divider content-divider">
+            </div>
             <section id="contact">
                 <div class="wrapper">
                     <div class="content-box">

@@ -387,6 +387,13 @@ input:checked + .slider:before {
     margin: 8px auto;
 }
 
+.content-divider {
+    opacity: 1;
+    border-color: rgba(0, 0, 0, 1);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .job-title{
     margin: 0px;
     font-size: 1.4rem;
@@ -412,12 +419,21 @@ input:checked + .slider:before {
 }
 
 .about-me {
-    background-color: #b7b7b79f;
     padding-bottom: 8px;
+}
+
+.odds{
+    background-color: rgb(245, 238, 238);
 }
 
 .wrapper{
     padding: 62px 0;
+}
+
+.divider-wrapper {
+    box-shadow: 0 0 25px #0000001a;
+    padding: 0px;
+    margin: 0px;
 }
 
 /* Cookie notice*/
