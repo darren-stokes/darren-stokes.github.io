@@ -87,13 +87,32 @@
                         <div class="content-inner">
                             <div class="lang lang-en">
                                 <h3 class="section-heading">Education</h3>
-                                <p class="section-text">Masters in Management of Information Systems</p>
-                                <p class="section-text">Trinity College Dublin, Ireland</p>
                             </div>
                             <div class="lang lang-es">
                                 <h3 class="section-heading">Educación</h3>
-                                <p class="section-text">Masters in Management of Information Systems</p>
-                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                            </div>
+                            <div class="education-titles">
+                                <div class="content-left">
+                                    <div class="lang lang-en">
+                                        <p class="section-text strong">&#8226; Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
+                                        <p class="section-text italic">University of Limerick, Ireland</p>
+                                    </div>
+                                    <div class="lang lang-es">
+                                        <p class="section-text strong">&#8226; Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
+                                        <p class="section-text italic">University of Limerick, Ireland</p>
+                                    </div>
+                                </div>
+                                <hr class="education-divider">
+                                <div class="content-right">
+                                    <div class="lang lang-en">
+                                        <p class="section-text strong">&#8226; Máster of Science (M.Sc.) in Management of Information Systems</p>
+                                        <p class="section-text italic">Trinity College Dublin, Irlanda</p>
+                                    </div>
+                                    <div class="lang lang-es">
+                                        <p class="section-text strong">&#8226; Máster of Science (M.Sc.) in Management of Information Systems</p>
+                                        <p class="section-text italic">Trinity College Dublin, Irlanda</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
