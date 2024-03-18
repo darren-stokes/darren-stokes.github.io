@@ -1,14 +1,23 @@
+/* Set some variables to make some changes easier */
+:root{
+    --dark-mode-dark-colour: rgb(30, 30, 30);
+    --dark-mode-light-colour: rgb(40, 40, 40);
+    --content-alternate-bg-colour: rgb(240, 240, 240);
+    --navbar-bg-colour: rgb(27, 27, 27);
+}
+
 /* Make sure HTML and Body tags take up the full screen*/
 html {
     margin: 0;
     height: 100vh;
     width: 100vw;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: white;
+    color: black;
     margin: 0;
     padding: 0;
     animation: fadeInAnimation ease 2s;
@@ -41,11 +50,11 @@ ul {
 }
 
 ul a {
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 .dark-mode ul a {
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 .fa {
@@ -59,12 +68,12 @@ ul a {
 /* Some shared style between the navbar and footer */
 .banner {
     z-index: 999;
-    background-color: rgb(27, 27, 27);
+    background-color: var(--navbar-bg-colour);
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    color: #f2f2f2;
+    color: rgb(242, 242, 242);
     font-family: "Roboto Condensed", cursive, monospace;
     font-size: 1.5rem;
 }
@@ -137,13 +146,13 @@ path:nth-child(6) {
 }
 
 .navbar a:hover {
-    background: #ffffff;
-    color: rgb(27, 27, 27);
+    background: white;
+    color: var(--navbar-bg-colour);
 }
 
 .navbar a {
     display: block;
-    color: #f2f2f2;
+    color: rgb(242, 242, 242);
     padding: 10px 15px;
     letter-spacing: -0.01562em;
 }
@@ -157,7 +166,7 @@ path:nth-child(6) {
     font-weight: bold;
     font-size: 1.5rem;
     margin-top: 50px;
-    background-color: rgb(27, 27, 27);
+    background-color: var(--navbar-bg-colour);
     width: 100%;
     position: absolute;
     left: 0;
@@ -183,20 +192,20 @@ select {
     font-size: 1.5rem;
     font-weight: bold;
     position: relative;
-    background-color: rgb(27, 27, 27);
-    color: #ffffff;
+    background-color: var(--navbar-bg-colour);
+    color: white;
     cursor: pointer;
 }
 
 #language-select option:hover {
-    background-color: #ffffff;
-    color: rgb(27, 27, 27);
+    background-color: white;
+    color: var(--navbar-bg-colour);
 }
 
 /* Dark mode */
 .dark-mode {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--dark-mode-dark-colour);
+    color: white;
 }
 
 .switch {
@@ -220,7 +229,7 @@ select {
     left: 10px;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: rgb(204, 204, 204);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -236,27 +245,27 @@ select {
     -webkit-transition: .4s;
     transition: .4s;
     content: '✹';
-    color: #000000;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 input:checked + .slider {
-    background-color: #6b6b6b;
+    background-color: rgb(107, 107, 107);
 }
   
 input:focus + .slider {
-    box-shadow: 0 0 1px #6b6b6b;
+    box-shadow: 0 0 1px rgb(107, 107, 107);
 }
   
 input:checked + .slider:before {
     -webkit-transform: translateX(32px);
     -ms-transform: translateX(32px);
     transform: translateX(32px);
-    background-color: #1a1a1a;
+    background-color: rgb(40, 40, 40);
     content: '☾';
-    color: #ffffffca;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -344,6 +353,14 @@ input:checked + .slider:before {
     height: 100%;
 }
 
+.content-left{
+    float: left;
+}
+
+.content-right{
+    float: right;
+}
+
 .lang {
     width: 100%;
 }
@@ -370,7 +387,7 @@ input:checked + .slider:before {
     font-size: 6rem;
     font-weight: 900;
     line-height: 103%;
-    color: rgb(255, 255, 255);
+    color: white;
     margin: 0;
     letter-spacing: -0.01562em;
 }
@@ -395,7 +412,7 @@ input:checked + .slider:before {
 }
 
 .down-button a {
-    color: rgb(255, 255, 255);
+    color: white;
     transition: 1s;
 }
 
@@ -403,7 +420,7 @@ input:checked + .slider:before {
     border-width: 0px 0px thin;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.12);
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     opacity: 0.5;
     width: 80%;
     margin: 8px auto;
@@ -417,7 +434,7 @@ input:checked + .slider:before {
 }
 
 .wrapper{
-    padding: 62px 0;
+    padding: 20px 0;
 }
 
 .divider-wrapper {
@@ -426,28 +443,28 @@ input:checked + .slider:before {
 
 /* Give each section an alternating class of odd/even and distinguish the background colour based on that */
 .evens {
-    background-color: rgb(230, 230, 230);
+    background-color: var(--content-alternate-bg-colour);
 }
 
 .dark-mode .evens {
-    background-color: rgb(40, 40, 40);
+    background-color: var(--dark-mode-light-colour);
 }
 
 .divider-wrapper.odds {
-    background-image: linear-gradient( rgb(255, 255, 255), rgb(230, 230, 230));
+    background-image: linear-gradient( white, var(--content-alternate-bg-colour));
 }
 
 .dark-mode .divider-wrapper.odds {
 
-    background-image: linear-gradient( rgb(30, 30, 30), rgb(40, 40, 40));
+    background-image: linear-gradient(var(--dark-mode-dark-colour), var(--dark-mode-light-colour));
 }
 
 .divider-wrapper.evens {
-    background-image: linear-gradient(rgb(230, 230, 230), rgb(255, 255, 255));
+    background-image: linear-gradient(var(--content-alternate-bg-colour), white);
 }
 
 .dark-mode .divider-wrapper.evens {
-    background-image: linear-gradient(rgb(40, 40, 40), rgb(30, 30, 30));
+    background-image: linear-gradient(var(--dark-mode-light-colour), var(--dark-mode-dark-colour));
 }
 
 /* Cookie notice*/
@@ -455,8 +472,8 @@ input:checked + .slider:before {
     position: fixed;
     bottom: 2%;
     padding: 5px 15px;
-    color: #ffffff;
-    background-color: rgb(27, 27, 27);
+    color: white;
+    background-color: var(--navbar-bg-colour);
     border-radius: 20px;
     font-size: 1rem;
     font-family: 'Roboto Condensed', cursive, monospace;
@@ -464,7 +481,7 @@ input:checked + .slider:before {
 }
 
 .cookie-notice a {
-    color: #ffffff;
+    color: white;
     font-weight: bold;
 }
 
@@ -494,7 +511,7 @@ input:checked + .slider:before {
     }
 
     #language-select {
-        background-color: rgb(27, 27, 27);
+        background-color: var(--navbar-bg-colour);
         font-size: 2rem;
         bottom: 7px;
     }
@@ -523,7 +540,7 @@ input:checked + .slider:before {
     .navbar-right {
         display: flex;
         margin-top: 10px;
-        background-color: rgb(27, 27, 27);
+        background-color: var(--navbar-bg-colour);
         padding-right: 5%;
         padding-bottom: 0;
         margin-right: 10px;
@@ -567,6 +584,10 @@ input:checked + .slider:before {
 
     ul {
         padding-left: 35%;
+    }
+
+    .wrapper{
+        padding: 40px 0;
     }
 
     .cookie-notice {
