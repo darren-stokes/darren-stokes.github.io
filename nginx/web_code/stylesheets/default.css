@@ -65,6 +65,14 @@ ul a {
     vertical-align: middle;
 }
 
+.strong {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+
+}
 /* Some shared style between the navbar and footer */
 .banner {
     z-index: 999;
@@ -86,7 +94,7 @@ ul a {
     text-align: center;
 }
 
-/* For the hamburger transform into an X */
+/* For the hamburger transform into an X. Credit: https://codepen.io/ainalem/pen/PoYvggj*/
 svg {
     position: absolute;
     top: -2px;
@@ -349,7 +357,7 @@ input:checked + .slider:before {
 
 .content-box {
     padding: 0px 5px;
-    width: 100%;
+    width: 97%;
     height: 100%;
 }
 
@@ -467,6 +475,17 @@ input:checked + .slider:before {
     background-image: linear-gradient(var(--dark-mode-light-colour), var(--dark-mode-dark-colour));
 }
 
+.education-titles {
+    display: inline-block;
+}
+
+.education-divider{
+    border: none;
+    border-top: 1px solid black;
+    height: 1px;
+    width: 70%;
+}
+
 /* Cookie notice*/
 .cookie-notice {
     position: fixed;
@@ -555,7 +574,7 @@ input:checked + .slider:before {
     }
 
     .content {
-        padding: 0; /* 16%;*/
+        padding: 0;
         margin-top: 126px;
     }
 
@@ -566,6 +585,7 @@ input:checked + .slider:before {
     .content-box {
         border-radius: 30px;
         display: inline-block;
+        width: 100%;
     }
 
     .profile-overview {
@@ -588,6 +608,18 @@ input:checked + .slider:before {
 
     .wrapper{
         padding: 40px 0;
+    }
+
+    .education-titles {
+        display: flex;
+    }
+
+    .education-divider{
+        border: none;
+        border-left: 1.5px solid black;
+        height: 100px;
+        width: 1px;
+        margin: 20px 20px 0px 0px;
     }
 
     .cookie-notice {
