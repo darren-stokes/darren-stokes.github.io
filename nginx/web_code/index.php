@@ -127,51 +127,44 @@
                             <div class="lang lang-en">
                                 <h3 class="section-heading">Experience</h3>
                                     <!-- Cyferd -->
-                                    <p class="section-text strong">DevOps Engineer - Cyferd | <span class="italic">May 2023 - February 2024</span></p>
+                                    <p class="section-text strong">DevOps Engineer - Cyferd<span class="experience-dates"> | May 2023 - February 2024</span></p>
                                     <p class="section-text italic">Málaga, Spain</p>
                                     <p class="section-text">&#8226; Short description here</p>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
-                                    <p class="section-text strong">DevOps Engineer - Rentalmatics</p>
-                                    <p class="section-text strong italic">February 2020 - May 2023</p>
+                                    <p class="section-text strong">DevOps Engineer - Rentalmatics<span class="experience-dates"> | February 2020 - May 2023</p>
                                     <p class="section-text italic">Dublin, Ireland</p>
                                     <p class="section-text">&#8226; Short description here</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
-                                    <p class="section-text strong">Linux Engineer - SecureLinx</p>
-                                    <p class="section-text strong italic">October 2017 - January 2020</p>
+                                    <p class="section-text strong">Linux Engineer - SecureLinx<span class="experience-dates"> | October 2017 - January 2020</p>
                                     <p class="section-text italic">Dublin, Ireland</p>
                                     <p class="section-text">&#8226; Short description here</p>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
-                                    <p class="section-text strong">Systems Engineer - Susquehanna</p>
-                                    <p class="section-text strong italic">June 2012 - October 2017</p>
+                                    <p class="section-text strong">Systems Engineer - Susquehanna<span class="experience-dates"> | June 2012 - October 2017</p>
                                     <p class="section-text italic">Dublin, Ireland</p>
                                     <p class="section-text">&#8226; Short description here</p>
                             </div>
                             <div class="lang lang-es">
                                 <h3 class="section-heading">Experiencia</h3>
                                     <!-- Cyferd -->
-                                    <p class="section-text strong">Ingeniero DevOps - Cyferd</p>
-                                    <p class="section-text strong italic">Mayo 2023 - Febrero 2024</p>
+                                    <p class="section-text strong">Ingeniero DevOps - Cyferd<span class="experience-dates"> | Mayo 2023 - Febrero 2024</p>
                                     <p class="section-text italic">Málaga, España</p>
                                     <p class="section-text">&#8226; Short description here</p>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
-                                    <p class="section-text strong">Ingeniero DevOps - Rentalmatics</p>
-                                    <p class="section-text strong italic">Febrero 2020 - Mayo 2023</p>
+                                    <p class="section-text strong">Ingeniero DevOps - Rentalmatics<span class="experience-dates"> | Febrero 2020 - Mayo 2023</p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Short description here</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
-                                    <p class="section-text strong">Ingeniero Linux - SecureLinx</p>
-                                    <p class="section-text strong italic">Octobre 2017 - Enero 2020</p>
+                                    <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates"> | Octobre 2017 - Enero 2020</p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Short description here</p>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
-                                    <p class="section-text strong">Ingeniero de Sistemas - Susquehanna</p>
-                                    <p class="section-text strong italic">Junio 2012 - Octobre 2017</p>
+                                    <p class="section-text strong">Ingeniero de Sistemas - Susquehanna<span class="experience-dates"> | Junio 2012 - Octobre 2017</p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Short description here</p>
                             </div>
