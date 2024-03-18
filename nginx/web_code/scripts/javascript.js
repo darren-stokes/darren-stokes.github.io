@@ -28,7 +28,7 @@ navigator.what_browser = (() => {
     return browser_info[0]
   })()
 
-// Add event listner to the language selector
+// Add event listener to the language selector
 function setup_language(){
     document.getElementById('language-select').addEventListener('change', function(){
         toggle_language(this.value);
