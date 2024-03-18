@@ -502,6 +502,10 @@ input:checked + .slider:before {
     border-top: 1px solid white;
 }
 
+.experience-dates {
+    font-weight: normal;
+}
+
 /* Cookie notice*/
 .cookie-notice {
     position: fixed;
@@ -637,14 +641,21 @@ input:checked + .slider:before {
         width: 1px;
         margin: 20px 20px 0px 0px;
     }
+
     .dark-mode .education-divider{
         border-left: 1.5px solid white;
     }
+
+    .experience-dates {
+        font-size: 1.1rem;
+    }
+
     .cookie-notice {
         width: 40%;
         left: 30%;
         font-size: 1.5rem;
     }
+
     .cookie-button {
         font-size: 1.2rem;
     }
