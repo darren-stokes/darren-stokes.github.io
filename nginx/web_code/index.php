@@ -94,23 +94,23 @@
                             <div class="education-titles">
                                 <div class="content-left">
                                     <div class="lang lang-en">
-                                        <p class="section-text strong">&#8226; Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
-                                        <p class="section-text italic">University of Limerick, Ireland</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
+                                        <p class="section-text italic"> - University of Limerick, Ireland</p>
                                     </div>
                                     <div class="lang lang-es">
-                                        <p class="section-text strong">&#8226; Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
-                                        <p class="section-text italic">University of Limerick, Ireland</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
+                                        <p class="section-text italic"> - University of Limerick, Irlanda</p>
                                     </div>
                                 </div>
                                 <hr class="education-divider">
                                 <div class="content-right">
                                     <div class="lang lang-en">
-                                        <p class="section-text strong">&#8226; Máster of Science (M.Sc.) in Management of Information Systems</p>
-                                        <p class="section-text italic">Trinity College Dublin, Irlanda</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Master of Science (M.Sc.) in Management of Information Systems</p>
+                                        <p class="section-text italic"> - Trinity College Dublin, Ireland</p>
                                     </div>
                                     <div class="lang lang-es">
-                                        <p class="section-text strong">&#8226; Máster of Science (M.Sc.) in Management of Information Systems</p>
-                                        <p class="section-text italic">Trinity College Dublin, Irlanda</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Máster of Science (M.Sc.) in Management of Information Systems</p>
+                                        <p class="section-text italic"> - Trinity College Dublin, Irlanda</p>
                                     </div>
                                 </div>
                             </div>
@@ -126,13 +126,54 @@
                         <div class="content-inner">
                             <div class="lang lang-en">
                                 <h3 class="section-heading">Experience</h3>
-                                <p class="section-text">Masters in Management of Information Systems</p>
-                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                                    <!-- Cyferd -->
+                                    <p class="section-text strong">DevOps Engineer - Cyferd | <span class="italic">May 2023 - February 2024</span></p>
+                                    <p class="section-text italic">Málaga, Spain</p>
+                                    <p class="section-text">&#8226; Short description here</p>
+                                    <hr class="divider divider-exp">
+                                    <!-- Rentalmatics -->
+                                    <p class="section-text strong">DevOps Engineer - Rentalmatics</p>
+                                    <p class="section-text strong italic">February 2020 - May 2023</p>
+                                    <p class="section-text italic">Dublin, Ireland</p>
+                                    <p class="section-text">&#8226; Short description here</p>
+                                    <hr class="divider divider-exp">
+                                    <!-- Securelinx-->
+                                    <p class="section-text strong">Linux Engineer - SecureLinx</p>
+                                    <p class="section-text strong italic">October 2017 - January 2020</p>
+                                    <p class="section-text italic">Dublin, Ireland</p>
+                                    <p class="section-text">&#8226; Short description here</p>
+                                    <hr class="divider divider-exp">
+                                    <!-- Susquehanna -->
+                                    <p class="section-text strong">Systems Engineer - Susquehanna</p>
+                                    <p class="section-text strong italic">June 2012 - October 2017</p>
+                                    <p class="section-text italic">Dublin, Ireland</p>
+                                    <p class="section-text">&#8226; Short description here</p>
                             </div>
                             <div class="lang lang-es">
                                 <h3 class="section-heading">Experiencia</h3>
-                                <p class="section-text">Masters in Management of Information Systems</p>
-                                <p class="section-text">Trinity College Dublin, Ireland</p>
+                                    <!-- Cyferd -->
+                                    <p class="section-text strong">Ingeniero DevOps - Cyferd</p>
+                                    <p class="section-text strong italic">Mayo 2023 - Febrero 2024</p>
+                                    <p class="section-text italic">Málaga, España</p>
+                                    <p class="section-text">&#8226; Short description here</p>
+                                    <hr class="divider divider-exp">
+                                    <!-- Rentalmatics -->
+                                    <p class="section-text strong">Ingeniero DevOps - Rentalmatics</p>
+                                    <p class="section-text strong italic">Febrero 2020 - Mayo 2023</p>
+                                    <p class="section-text italic">Dublin, Irlanda</p>
+                                    <p class="section-text">&#8226; Short description here</p>
+                                    <hr class="divider divider-exp">
+                                    <!-- Securelinx-->
+                                    <p class="section-text strong">Ingeniero Linux - SecureLinx</p>
+                                    <p class="section-text strong italic">Octobre 2017 - Enero 2020</p>
+                                    <p class="section-text italic">Dublin, Irlanda</p>
+                                    <p class="section-text">&#8226; Short description here</p>
+                                    <hr class="divider divider-exp">
+                                    <!-- Susquehanna -->
+                                    <p class="section-text strong">Ingeniero de Sistemas - Susquehanna</p>
+                                    <p class="section-text strong italic">Junio 2012 - Octobre 2017</p>
+                                    <p class="section-text italic">Dublin, Irlanda</p>
+                                    <p class="section-text">&#8226; Short description here</p>
                             </div>
                         </div>
                     </div>
