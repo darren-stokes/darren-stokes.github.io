@@ -28,6 +28,13 @@ navigator.what_browser = (() => {
     return browser_info[0]
   })()
 
+// Add event listner to the language selector
+function setup_language(){
+    document.getElementById('language-select').addEventListener('change', function(){
+        toggle_language(this.value);
+    });
+}
+
 // Toggle display lanuage
 function toggle_language(language) {
     document.querySelectorAll('.lang').forEach(el => {
@@ -144,11 +151,67 @@ function collapse_menu(){
     }
 }
 
+// Configure the Banner anchors to account for the banners offset
+function banner_offset(){
+    document.querySelectorAll('.lang-navbar a').forEach(link=>{
+        link.addEventListener('click', function(e){
+            // Prevent the default anchor action
+            e.preventDefault();
+
+            const target_id = this.getAttribute('href').substring(1);
+            const target_element = document.getElementById(target_id);
+
+            if(target_element){
+                scroll_to_adjusted_target(target_element);
+            }
+        });
+    });
+}
+
+function handle_hash_change(){
+    window.addEventListener('hashchange', function() {
+        const target_element = this.document.getElementById(window.location.hash.substring(1));
+        if (target_element){
+            scroll_to_adjusted_target(target_element);
+        }
+    });
+}
+
+function scroll_to_adjusted_target(element){
+    // get the current height of the banner
+    const header_offset = get_dynamic_header_height();
+    const element_position = element.getBoundingClientRect().top;
+    const offset_position = element_position + window.pageYOffset - header_offset;
+
+    window.scrollTo({
+        top: offset_position,
+        behavior: "smooth"
+    });
+}
+
+function get_dynamic_header_height(){
+    const header = document.querySelector('.navbar.banner');
+    console.log("Header "+header.offsetHeight)
+    return header.offsetHeight;
+}
+
+function adjust_scroll_position_for_anchors(){
+    if(window.location.hash){
+        const target_element = document.getElementById(window.location.hash.substring(1));
+        if (target_element){
+            setTimeout(() => scroll_to_adjusted_target(target_element), 0);
+        }
+    }
+}
+
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('language-select').addEventListener('change', function(){
-        toggle_language(this.value);
-    });
+    setup_language();
+
+    // Set up self links to account for the sticky banner
+    banner_offset();
+    handle_hash_change();
+    adjust_scroll_position_for_anchors();
 
     // Check local storage for language and dark mode preferences, apply changes where necessary
     set_language();
