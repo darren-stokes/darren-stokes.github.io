@@ -71,8 +71,8 @@ ul a {
 
 .italic {
     font-style: italic;
-
 }
+
 /* Some shared style between the navbar and footer */
 .banner {
     z-index: 999;
@@ -161,7 +161,7 @@ path:nth-child(6) {
 .navbar a {
     display: block;
     color: rgb(242, 242, 242);
-    padding: 10px 15px;
+    padding: 10px;
     letter-spacing: -0.01562em;
 }
 
@@ -191,6 +191,7 @@ select {
 
 .lang-navbar {
     width: 100%;
+    word-spacing: -0.1em;
 }
 
 #language-select {
