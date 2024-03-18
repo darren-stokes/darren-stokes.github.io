@@ -197,7 +197,7 @@
                                 </p>
                             </div>
                             <div class="lang lang-es">
-                                <h3 class="section-heading">Contactar Conmigo</h3>
+                                <h3 class="section-heading">Contacta Conmigo</h3>
                                 <p class="content-text">
                                     <ul class="contact-list">
                                         <li class="section-text"><i class="material-icons">place</i> Málaga, España</li>
