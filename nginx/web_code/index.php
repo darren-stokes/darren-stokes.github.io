@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Tell Dark Reader that it doesn't need to apply as we have a dark mode defined -->
+        <meta name="darkreader-lock">
         <title>Darren Stokes | DevOps Engineer</title>
 
         <!-- CSS -->
