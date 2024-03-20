@@ -168,6 +168,7 @@ function banner_offset(){
     });
 }
 
+// Get the hash part of URL and pass it to the scroll to function
 function handle_hash_change(){
     window.addEventListener('hashchange', function() {
         const target_element = this.document.getElementById(window.location.hash.substring(1));
@@ -181,7 +182,7 @@ function scroll_to_adjusted_target(element){
     // get the current height of the banner
     const header_offset = get_dynamic_header_height();
     const element_position = element.getBoundingClientRect().top;
-    const offset_position = element_position + window.pageYOffset - header_offset;
+    const offset_position = element_position + window.scrollY - header_offset;
 
     window.scrollTo({
         top: offset_position,
