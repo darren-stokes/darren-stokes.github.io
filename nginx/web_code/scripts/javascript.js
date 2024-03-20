@@ -1,15 +1,15 @@
 // Get what browser the user is using
-navigator.what_browser = (() => {
+navigator.whatBrowser = (() => {
     const { userAgent } = navigator
-    let browser_info = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
+    let browserInfo = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
     let temp
   
-    if (/trident/i.test(browser_info[1])) {
+    if (/trident/i.test(browserInfo[1])) {
         temp = /\brv[ :]+(\d+)/g.exec(userAgent) || []
         return `IE ${temp[1] || ''}`
     }
   
-    if (browser_info[1] === 'Chrome') {
+    if (browserInfo[1] === 'Chrome') {
         // Check if Opera adn return if it is
         temp = userAgent.match(/\b(OPR|Edge)\/(\d+)/)
         if (temp !== null) {
@@ -23,20 +23,20 @@ navigator.what_browser = (() => {
         }
     }
   
-    browser_info = browser_info[2] ? [ browser_info[1], browser_info[2] ] : [ navigator.appName, navigator.appVersion, '-?' ]
+    browserInfo = browserInfo[2] ? [ browserInfo[1], browserInfo[2] ] : [ navigator.appName, navigator.appVersion, '-?' ]
     temp = userAgent.match(/version\/(\d+)/i)
-    return browser_info[0]
+    return browserInfo[0]
   })()
 
 // Add event listener to the language selector
-function setup_language(){
+function setupLanguage(){
     document.getElementById('language-select').addEventListener('change', function(){
-        toggle_language(this.value);
+        toggleLanguage(this.value);
     });
 }
 
 // Toggle display lanuage
-function toggle_language(language) {
+function toggleLanguage(language) {
     document.querySelectorAll('.lang').forEach(el => {
         el.style.display = 'none';
     });
@@ -45,34 +45,34 @@ function toggle_language(language) {
     });
 
     // Save users preference
-    localStorage.setItem('user_language', language);
+    localStorage.setItem('userLanguage', language);
 
     // Collapse mobile menu on selecting language
-    collapse_menu()
+    collapseMenu()
 }
 
 // Detect language on page load
-function set_language(){
+function setLanguage(){
     // Check if user has already set the language
-    let saved_language = localStorage.getItem('user_language')
+    let savedLanguage = localStorage.getItem('userLanguage')
 
     // use the users chosen language and if not set, use the browsers language
-    let language = saved_language ? saved_language:  navigator.language || navigator.userLanguage;
+    let language = savedLanguage ? savedLanguage:  navigator.language || navigator.userLanguage;
 
     // Defaults to English, if any other language than Spanish is detected
     language = language.startsWith('es') ? 'es' : 'en'
     document.getElementById('language-select').value = language;
-    toggle_language(language);
+    toggleLanguage(language);
 }
 
 // Some browsers can't handle the flag unicode characters in the language selection, so only display them where suitable
-function hide_language_flags(){
-    if (navigator.what_browser === 'Firefox'){
-        var language_select = document.getElementById('language-select');
+function hideLanguageFlags(){
+    if (navigator.whatBrowser === 'Firefox'){
+        var languageSelect = document.getElementById('language-select');
 
         // Loop over and replace the corresponding text to include the flag
-        for(var i = 0; i < language_select.options.length; i++){
-            var option = language_select.options[i];
+        for(var i = 0; i < languageSelect.options.length; i++){
+            var option = languageSelect.options[i];
 
             if (option.value === 'en'){
                 option.text = 'English \u{1F1EC}\u{1F1E7}';
@@ -85,19 +85,19 @@ function hide_language_flags(){
 }
 
 // Toggle dark mode
-function toggle_dark_mode(){
-    var is_checked = document.body.classList.toggle('dark-mode');
+function toggleDarkMode(){
+    var isChecked = document.body.classList.toggle('dark-mode');
 
     // Save to localStorage
-    localStorage.setItem('dark_mode', is_checked ? 'enabled': 'disabled')
+    localStorage.setItem('darkMode', isChecked ? 'enabled': 'disabled')
 
     // Collapse mobile menu on changing mode
-    collapse_menu()
+    collapseMenu()
 }
 
-function apply_dark_mode(){
+function applyDarkMode(){
     // Enable dark mode if set in local storage
-    if (localStorage.getItem('dark_mode') === 'enabled'){
+    if (localStorage.getItem('darkMode') === 'enabled'){
         document.body.classList.add('dark-mode');
         document.querySelector('.switch input[type="checkbox"]').checked = true;
     }
@@ -110,115 +110,114 @@ function apply_dark_mode(){
 }
 
 // Hide cookie notice if accepted by user and store that choice in local storage
-function hide_cookie_notice(){
+function hideCookieNotice(){
     document.getElementById('cookie-notice').style.display = 'none';
-    localStorage.setItem('cookie_consent', 'accepted');
+    localStorage.setItem('cookieConsent', 'accepted');
 }
 
 // Hide cookie notice if already accepted
-function check_cookie_consent(){
-    if (localStorage.getItem('cookie_consent') === 'accepted'){
+function checkCookieConsent(){
+    if (localStorage.getItem('cookieConsent') === 'accepted'){
         document.getElementById('cookie-notice').style.display = 'none';
     }
 }
 
 //// Mobile device related
 // Menu
-function toggle_mobile_menu() {
+function toggleMobileMenu() {
     // Toggle the appearance of the menu whether it's clicked or not.
-    var nav_icon = document.querySelector(".mobile-nav-icon");
-    nav_icon.classList.toggle("active");
+    var navIcon = document.querySelector(".mobile-nav-icon");
+    navIcon.classList.toggle("active");
 
     // Display/hide the menu contents when the menu is selected/unselected.
-    var nav_bar_right = document.querySelector(".navbar-right");
-    nav_bar_right.classList.toggle("active");
+    var navBarRight = document.querySelector(".navbar-right");
+    navBarRight.classList.toggle("active");
 
-    if (nav_bar_right.style.display === 'none' || nav_bar_right.style.display === '') {
-        nav_bar_right.style.display = 'inline-block';
+    if (navBarRight.style.display === 'none' || navBarRight.style.display === '') {
+        navBarRight.style.display = 'inline-block';
     }
     else {
-        nav_bar_right.style.display = 'none';
+        navBarRight.style.display = 'none';
     }
 }
 
 // Collapses the mobile menu if the language or dark mode is changed through the menu
-function collapse_menu(){
-    var nav_icon = document.querySelector(".mobile-nav-icon");
+function collapseMenu(){
+    var navIcon = document.querySelector(".mobile-nav-icon");
     
     // First see if the menu is active
-    if (nav_icon.classList.contains("active")){
-        toggle_mobile_menu()
+    if (navIcon.classList.contains("active")){
+        toggleMobileMenu()
     }
 }
 
 // Configure the Banner anchors to account for the banners offset
-function banner_offset(){
+function bannerOffset(){
     document.querySelectorAll('.lang-navbar a').forEach(link=>{
         link.addEventListener('click', function(e){
             // Prevent the default anchor action
             e.preventDefault();
 
-            const target_id = this.getAttribute('href').substring(1);
-            const target_element = document.getElementById(target_id);
+            const TARGETID = this.getAttribute('href').substring(1);
+            const TARGETELEMENT = document.getElementById(TARGETID);
 
-            if(target_element){
-                scroll_to_adjusted_target(target_element);
+            if(TARGETELEMENT){
+                scrollToAdjustedTarget(TARGETELEMENT);
             }
         });
     });
 }
 
 // Get the hash part of URL and pass it to the scroll to function
-function handle_hash_change(){
+function handleHashChange(){
     window.addEventListener('hashchange', function() {
-        const target_element = this.document.getElementById(window.location.hash.substring(1));
-        if (target_element){
-            scroll_to_adjusted_target(target_element);
+        const TARGETELEMENT = this.document.getElementById(window.location.hash.substring(1));
+        if (TARGETELEMENT){
+            scrollToAdjustedTarget(TARGETELEMENT);
         }
     });
 }
 
-function scroll_to_adjusted_target(element){
+function scrollToAdjustedTarget(element){
     // get the current height of the banner
-    const header_offset = get_dynamic_header_height();
-    const element_position = element.getBoundingClientRect().top;
-    const offset_position = element_position + window.scrollY - header_offset;
+    const HEADEROFFSET = getDynamicHeaderHeight();
+    const ELEMENTPOSITION = element.getBoundingClientRect().top;
+    const OFFSETPOSITION = ELEMENTPOSITION + window.scrollY - HEADEROFFSET;
 
     window.scrollTo({
-        top: offset_position,
+        top: OFFSETPOSITION,
         behavior: "smooth"
     });
 }
 
-function get_dynamic_header_height(){
-    const header = document.querySelector('.navbar.banner');
-    console.log("Header "+header.offsetHeight)
-    return header.offsetHeight;
+function getDynamicHeaderHeight(){
+    const HEADER = document.querySelector('.navbar.banner');
+    return HEADER.offsetHeight;
 }
 
-function adjust_scroll_position_for_anchors(){
+function adjustScrollPositionForAnchors(){
     if(window.location.hash){
-        const target_element = document.getElementById(window.location.hash.substring(1));
-        if (target_element){
-            setTimeout(() => scroll_to_adjusted_target(target_element), 0);
+        const TARGETELEMENT = document.getElementById(window.location.hash.substring(1));
+        if (TARGETELEMENT){
+            setTimeout(() => scrollToAdjustedTarget(TARGETELEMENT), 0);
         }
     }
 }
 
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
-    setup_language();
+    setupLanguage();
 
     // Set up self links to account for the sticky banner
-    banner_offset();
-    handle_hash_change();
-    adjust_scroll_position_for_anchors();
+    bannerOffset();
+    handleHashChange();
+    adjustScrollPositionForAnchors();
 
     // Check local storage for language and dark mode preferences, apply changes where necessary
-    set_language();
-    hide_language_flags();
-    apply_dark_mode();
+    setLanguage();
+    hideLanguageFlags();
+    applyDarkMode();
 
     //Check cookie consent and remove popup if accepted
-    check_cookie_consent();
+    checkCookieConsent();
 });
