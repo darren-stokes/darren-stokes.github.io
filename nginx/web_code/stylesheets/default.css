@@ -75,7 +75,7 @@ ul a {
 
 /* Some shared style between the navbar and footer */
 .banner {
-    z-index: 999;
+    z-index: 10;
     background-color: var(--navbar-bg-colour);
     position: fixed;
     width: 100%;
@@ -248,7 +248,7 @@ select {
     content: '';
     height: 50px;
     width: 50px;
-    left: 0px;
+    left: -2px;
     bottom: -5px;
     background-color: white;
     -webkit-transition: .4s;
