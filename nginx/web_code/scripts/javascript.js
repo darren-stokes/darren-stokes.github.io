@@ -211,30 +211,48 @@ function monthCalculator(){
 
         // get dates
         var dates = dateString.split(" - ");
+        // If "Present" is not used, convert the month name to English
+        var startMonthName = dates[0].split(" ")[0];
+        var endMonthName = (dates[1] === "Present" || dates[1] === "Presente") ? "Present" : dates[1].split(" ")[0];
 
-        var startDate = new Date(dates[0] + " 1");
+        var startDate = new Date(getMonthsInEnglish(startMonthName) + dates[0].slice(dates[0].indexOf(" ")) + " 1");
+        var endDate = (endMonthName === "Present") ? new Date() : new Date(getMonthsInEnglish(endMonthName) + dates[1].slice(dates[1].indexOf(" ")) + " 1");
 
-        // Calculate the length of time using todays date if end date is "Present"
-        if(dates[1] === "Present"){
-            var endDate = new Date(Date.now());
-        }
-        // Else use the end date supplied
-        else{
-            var endDate = new Date(dates[1] + " 1");
-        }
-
-        // get the years and months
+        // Get the total months
         var months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
         months -= startDate.getMonth();
-        months += endDate.getMonth();
+        months += endDate.getMonth() + 1;
 
+        // Calculate years and remaining months
         var years = Math.floor(months / 12);
-        months = months % 12 + 1;
+        months = months % 12;
 
-        // Build the output and add it to the spans
-        var timeString = (years > 0 ? years + " years " : "") + (months > 0 ? months + " months" : "");
+        // Depending on the span class, add the years and months in English or Spanish
+        var timeString = span.classList.contains('en') ?
+            (years > 0 ? years + " years " : "") + (months > 0 ? months + " months" : "") :
+            (years > 0 ? years + " años " : "") + (months > 0 ? months + " meses" : "");
+
+        // Add the computed duration to the existing text
         span.textContent += " (" + timeString.trim() + ")";
     });
+}
+
+function getMonthsInEnglish (month){
+    const monthMap = {
+        'Enero': 'January',
+        'Febrero': 'February',
+        'Marzo': 'March',
+        'Abril': 'April',
+        'Mayo': 'May',
+        'Junio': 'June',
+        'Julio': 'July',
+        'Agosto': 'August',
+        'Septiembre': 'September',
+        'Octubre': 'October',
+        'Noviembre': 'November',
+        'Diciembre': 'December'
+    };
+    return monthMap[month] || month;
 }
 
 // On page load, do some preflight checks
