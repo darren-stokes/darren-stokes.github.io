@@ -204,6 +204,39 @@ function adjustScrollPositionForAnchors(){
     }
 }
 
+function monthCalculator(){
+    document.querySelectorAll('.experience-dates').forEach(function(span){
+        // remove the pipe and space
+        var dateString = span.textContent.trim().split("|")[1];
+
+        // get dates
+        var dates = dateString.split(" - ");
+
+        var startDate = new Date(dates[0] + " 1");
+
+        // Calculate the length of time using todays date if end date is "Present"
+        if(dates[1] === "Present"){
+            var endDate = new Date(Date.now());
+        }
+        // Else use the end date supplied
+        else{
+            var endDate = new Date(dates[1] + " 1");
+        }
+
+        // get the years and months
+        var months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
+        months -= startDate.getMonth();
+        months += endDate.getMonth();
+
+        var years = Math.floor(months / 12);
+        months = months % 12 + 1;
+
+        // Build the output and add it to the spans
+        var timeString = (years > 0 ? years + " years " : "") + (months > 0 ? months + " months" : "");
+        span.textContent += " (" + timeString.trim() + ")";
+    });
+}
+
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
     setupLanguage();
@@ -220,4 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Check cookie consent and remove popup if accepted
     checkCookieConsent();
+
+    monthCalculator();
 });
