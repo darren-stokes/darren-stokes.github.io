@@ -40,6 +40,15 @@ body {
     }
 }
 
+@keyframes moveIcons {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -429,7 +438,6 @@ input:checked + .slider:before {
     border-width: 0px 0px thin;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.12);
-    background-color: white;
     opacity: 0.5;
     width: 80%;
     margin: 8px auto;
@@ -485,6 +493,27 @@ input:checked + .slider:before {
 
 .dark-mode .divider-wrapper.evens {
     background-image: linear-gradient(var(--dark-mode-light-colour), var(--dark-mode-dark-colour));
+}
+
+.conveyor-belt {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 20px;
+}
+
+.icon-container {
+    display: flex;
+    animation: moveIcons 30s linear infinite;
+}
+
+.skill-icon {
+    height: 100px;
+    margin-right: 20px;
+}
+
+.dark-mode .skill-icon {
+    filter: drop-shadow(0 0 5px #ffffff);
 }
 
 .education-titles {
@@ -628,6 +657,11 @@ input:checked + .slider:before {
 
     .wrapper{
         padding: 40px 0;
+    }
+
+    .skill-icon {
+        height: 150px;
+        margin-right: 40px;
     }
 
     .education-titles {
