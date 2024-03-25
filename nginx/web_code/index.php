@@ -27,7 +27,7 @@
                 <div class="overlay">
                     <!-- Video gotten from https://www.pexels.com/video/a-man-looking-at-computer-monitor-6962343/ -->
                     <video class="video-background" autoplay loop muted="muted" playsinline>
-                        <source src="assets/stock_coding_video_1080.mp4" type="video/mp4">
+                        <source src="assets/stock_coding_video_540.mp4" type="video/mp4">
                     </video>
                     <!-- Responsible for darking the video -->
                     <div class="overlay dark-background"></div>
