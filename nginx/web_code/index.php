@@ -165,44 +165,44 @@
                             <div class="lang lang-en">
                                 <h3 class="section-heading">Experience</h3>
                                     <!-- Cyferd -->
-                                    <p class="section-text strong">DevOps Engineer - Cyferd<span class="experience-dates"> | May 2023 - February 2024</span></p>
+                                    <p class="section-text strong">DevOps Engineer - Cyferd<span class="experience-dates en"> | May 2023 - February 2024</span></p>
                                     <p class="section-text italic">Málaga, Spain</p>
                                     <p class="section-text">&#8226; I leveraged my DevOps expertise to develop Python-based custom metric exporters, deploy secure AWS environments, and overhaul Terraform code for improved reusability. My efforts to streamline CI/CD pipelines, enhance monitoring through Prometheus, and establish a centralized Jenkins shared library markedly boosted software delivery efficiency and operational performance. </p>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
-                                    <p class="section-text strong">DevOps Engineer - Rentalmatics<span class="experience-dates"> | February 2020 - May 2023</span></p>
+                                    <p class="section-text strong">DevOps Engineer - Rentalmatics<span class="experience-dates en"> | February 2020 - May 2023</span></p>
                                     <p class="section-text italic">Dublin, Ireland</p>
                                     <p class="section-text">&#8226; My position as Senior DevOps Engineer saw me enhancing deployment efficiency through CI/CD pipelines and automation tools like Jenkins and Terraform. I played a key role in optimizing GCP costs, implementing dynamic monitoring solutions, and spearheading the integration of Prometheus with Grafana, significantly improving system reliability and operational agility.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
-                                    <p class="section-text strong">Linux Engineer - SecureLinx<span class="experience-dates"> | October 2017 - January 2020</span></p>
+                                    <p class="section-text strong">Linux Engineer - SecureLinx<span class="experience-dates en"> | October 2017 - January 2020</span></p>
                                     <p class="section-text italic">Dublin, Ireland</p>
                                     <p class="section-text">&#8226; I was instrumental in providing top-tier client support, overseeing monthly patching activities, and leading significant projects, including a web CMS upgrade for an insurer. My role emphasized proactive monitoring, system performance enhancements, and managing high-availability clusters, showcasing my deep understanding of Apache, Tomcat, and Linux environments.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
-                                    <p class="section-text strong">Systems Engineer - Susquehanna<span class="experience-dates"> | June 2012 - October 2017</span></p>
+                                    <p class="section-text strong">Systems Engineer - Susquehanna<span class="experience-dates en"> | June 2012 - October 2017</span></p>
                                     <p class="section-text italic">Dublin, Ireland</p>
                                     <p class="section-text">&#8226; Starting my career at Susquehanna International Group in Dublin, I initially served as an Infrastructure Engineer Intern, designing and implementing an internal website for server deployment management. Progressing to a Systems Engineer, I specialized in server deployments, streamlined processes with SCCM, and mastered Ansible for efficient server configuration, playing a crucial mentoring role for new team members.</p>
                             </div>
                             <div class="lang lang-es">
                                 <h3 class="section-heading">Experiencia</h3>
                                     <!-- Cyferd -->
-                                    <p class="section-text strong">Ingeniero DevOps - Cyferd<span class="experience-dates"> | Mayo 2023 - Febrero 2024</span></p>
+                                    <p class="section-text strong">Ingeniero DevOps - Cyferd<span class="experience-dates es"> | Mayo 2023 - Febrero 2024</span></p>
                                     <p class="section-text italic">Málaga, España</p>
                                     <p class="section-text">&#8226; Aproveché mi experiencia en DevOps para desarrollar exportadores de métricas personalizadas basados en Python, implementar entornos seguros de AWS y revisar el código de Terraform para mejorar la reutilización. Mis esfuerzos por optimizar las canalizaciones de CI/CD, mejorar la supervisión a través de Prometheus y establecer una biblioteca compartida centralizada de Jenkins aumentaron notablemente la eficiencia de la entrega de software y el rendimiento operativo.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
-                                    <p class="section-text strong">Ingeniero DevOps - Rentalmatics<span class="experience-dates"> | Febrero 2020 - Mayo 2023</span></p>
+                                    <p class="section-text strong">Ingeniero DevOps - Rentalmatics<span class="experience-dates es"> | Febrero 2020 - Mayo 2023</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Mi puesto como ingeniero sénior de DevOps me permitió mejorar la eficiencia de la implementación a través de canalizaciones de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de los costos de GCP, la implementación de soluciones de monitoreo dinámico y la dirección de la integración de Prometheus con Grafana, mejorando significativamente la confiabilidad del sistema y la agilidad operativa.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
-                                    <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates"> | Octubre 2017 - Enero 2020</span></p>
+                                    <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates es"> | Octubre 2017 - Enero 2020</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Desempeñé un papel decisivo en la prestación de asistencia al cliente de primer nivel, la supervisión de las actividades mensuales de aplicación de parches y la dirección de proyectos importantes, incluida una actualización de CMS web para una aseguradora. Mi función se centró en la supervisión proactiva, las mejoras en el rendimiento del sistema y la gestión de clústeres de alta disponibilidad, lo que demuestra mi profundo conocimiento de los entornos Apache, Tomcat y Linux.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
-                                    <p class="section-text strong">Ingeniero de Sistemas - Susquehanna<span class="experience-dates"> | Junio 2012 - Octobre 2017</span></p>
+                                    <p class="section-text strong">Ingeniero de Sistemas - Susquehanna<span class="experience-dates es"> | Junio 2012 - Octobre 2017</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Al comenzar mi carrera en Susquehanna International Group en Dublín, inicialmente me desempeñé como pasante de ingeniería de infraestructura, diseñando e implementando un sitio web interno para la administración de implementación de servidores. Al progresar a ingeniero de sistemas, me especialicé en implementaciones de servidores, agilicé los procesos con SCCM y dominé Ansible para una configuración eficiente del servidor, desempeñando un papel crucial de tutoría para los nuevos miembros del equipo.</p>
                             </div>
