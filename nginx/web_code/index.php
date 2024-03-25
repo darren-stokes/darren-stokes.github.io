@@ -83,7 +83,43 @@
             </section>
             <div class="wrapper divider-wrapper odds">
             </div>
-            <section id="education" class="evens">
+            <section id="technical_skills" class="evens">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h3 class="section-heading">Tech Skills</h3>
+                            </div>
+                            <div class="lang lang-es">
+                                <h3 class="section-heading">Habilidades Tecnológicas</h3>
+                            </div>
+                            <div class="conveyor-belt">
+                                <div class="icon-container">
+                                    <img src="assets/terraform.png" class="skill-icon" alt="Terraform">
+                                    <img src="assets/prometheus.png" class="skill-icon" alt="Prometheus">
+                                    <img src="assets/grafana.png" class="skill-icon" alt="Grafana">
+                                    <img src="assets/python.png" class="skill-icon" alt="Python">
+                                    <img src="assets/jenkins.png" class="skill-icon" alt="Jenkins">
+                                    <img src="assets/elastic_stack.png" class="skill-icon" alt="ElasticStack">
+                                    <img src="assets/debian.png" class="skill-icon" alt="Debian">
+                                    <!-- Repeat-->
+                                    <img src="assets/terraform.png" class="skill-icon" alt="Terraform">
+                                    <img src="assets/prometheus.png" class="skill-icon" alt="Prometheus">
+                                    <img src="assets/grafana.png" class="skill-icon" alt="Grafana">
+                                    <img src="assets/python.png" class="skill-icon" alt="Python">
+                                    <img src="assets/jenkins.png" class="skill-icon" alt="Jenkins">
+                                    <img src="assets/elastic_stack.png" class="skill-icon" alt="ElasticStack">
+                                    <img src="assets/debian.png" class="skill-icon" alt="Debian">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="wrapper divider-wrapper evens">
+            </div>
+            <section id="education" class="odds">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
@@ -120,9 +156,9 @@
                     </div>
                 </div>
             </section>
-            <div class="wrapper divider-wrapper evens">
+            <div class="wrapper divider-wrapper odds">
             </div>
-            <section id="experience">
+            <section id="experience" class="evens">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
@@ -161,7 +197,7 @@
                                     <p class="section-text">&#8226; Mi puesto como ingeniero sénior de DevOps me permitió mejorar la eficiencia de la implementación a través de canalizaciones de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de los costos de GCP, la implementación de soluciones de monitoreo dinámico y la dirección de la integración de Prometheus con Grafana, mejorando significativamente la confiabilidad del sistema y la agilidad operativa.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
-                                    <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates"> | Octobre 2017 - Enero 2020</span></p>
+                                    <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates"> | Octubre 2017 - Enero 2020</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
                                     <p class="section-text">&#8226; Desempeñé un papel decisivo en la prestación de asistencia al cliente de primer nivel, la supervisión de las actividades mensuales de aplicación de parches y la dirección de proyectos importantes, incluida una actualización de CMS web para una aseguradora. Mi función se centró en la supervisión proactiva, las mejoras en el rendimiento del sistema y la gestión de clústeres de alta disponibilidad, lo que demuestra mi profundo conocimiento de los entornos Apache, Tomcat y Linux.</p>
                                     <hr class="divider divider-exp">
@@ -174,9 +210,9 @@
                     </div>
                 </div>
             </section>
-            <div class="wrapper divider-wrapper odds">
+            <div class="wrapper divider-wrapper evens">
             </div>
-            <section id="contact" class="evens">
+            <section id="contact" class="odds">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
