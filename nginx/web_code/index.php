@@ -37,7 +37,7 @@
                             <p class="salutation">Hello there, I'm</p>
                         </div>
                         <div class="lang lang-es">
-                            <p class="salutation">Buenos días, soy</p>
+                            <p class="salutation">Hola, soy</p>
                         </div>
                         <h1 class="name">Darren Stokes</h1>
                         <hr class="divider">
@@ -63,19 +63,17 @@
                         <div class="content-inner">
                             <div class="lang lang-en">
                                 <h3 class="section-heading">About Me</h3>
-                                <p class="section-text">My career in IT has spanned various roles, beginning with a Systems Engineer position at Susquehanna International Group in Dublin, where I focused on server deployments and configuration management.</p>
-                                <p class="section-text">At Securelinx, I expanded my expertise as a Linux Engineer, managing system updates and leading key projects. My role as a Senior DevOps Engineer at Rentalmatics involved implementing CI/CD pipelines and enhancing monitoring and deployment processes.</p>
-                                <p class="section-text">Most recently, at Cyferd in Málaga, I served as a DevOps Engineer, working on cloud computing and operational efficiency projects.</p>
-                                <p class="section-text">My education includes a Master’s degree in Management of Information Systems from Trinity College Dublin and a Bachelor's in Applied Computing from the University of Limerick.</p>
-                                <p class="section-text">My technical proficiency spans cloud platforms like GCP and AWS, as well as tools such as Terraform, Prometheus, and Python.</p>
+                                <p class="section-text">I'm an experienced IT professional with a solid background in Linux engineering, supported by a BSc in Applied Computing from the University of Limerick and an MSc in Management of Information Systems from Trinity College Dublin. My career trajectory showcases a commitment to technological excellence and strategic insight across various domains.</p>
+                                <p class="section-text">Skilled in a broad spectrum of technologies, I have developed proficiency in AWS, Kubernetes, ArgoCD, Helm, Elastic Stack, Python, Docker, Jenkins, Git, Grafana, Prometheus, Terraform, and GCP. This technical journey is augmented by my experiences in the financial sector and customer-facing roles, demonstrating my capability to excel in demanding situations and surpass expectations.</p>
+                                <p class="section-text">Currently, I am focusing on deepening my understanding of Python, drawn to its adaptability and innovative applications. My expertise also covers advanced data analysis and visualization through the Elastic Stack, aiming to enhance organizational insights.</p>
+                                <p class="section-text">I am eager to leverage my specialized skill set in an innovative organization, driving transformative projects forward and contributing to sustained business growth. With a proven track record in navigating complex IT challenges and a deep passion for technology, I am well-prepared to deliver significant contributions and results.</p>
                             </div>
                             <div class="lang lang-es">
                                 <h3 class="section-heading">Sobre Mi</h3>
-                                <p class="section-text">Mi carrera en IT ha abarcado varios roles, comenzando con un puesto de ingeniero de sistemas en Susquehanna International Group en Dublín, donde me centré en implementaciones de servidores y administración de configuración.</p>
-                                <p class="section-text">En Securelinx, amplié mi experiencia como ingeniero de Linux, gestionando actualizaciones de sistemas y liderando proyectos clave. Mi función como ingeniero sénior de DevOps en Rentalmatics consistía en implementar pipelines de CI/CD y mejorar los procesos de supervisión e implementación.</p>
-                                <p class="section-text">Más recientemente, en Cyferd en Málaga, me desempeñé como ingeniero DevOps, trabajando en proyectos de computación en la nube y eficiencia operativa.</p>
-                                <p class="section-text">Mi formación incluye una Maestría en Gestión de Sistemas de Información del Trinity College de Dublín y una Licenciatura en Computación Aplicada de la Universidad de Limerick.</p>
-                                <p class="section-text">Mi competencia técnica abarca plataformas en la nube como GCP y AWS, así como herramientas como Terraform, Prometheus y Python.</p>
+                                <p class="section-text">Soy un profesional de TI con experiencia y una sólida formación en ingeniería de Linux, respaldado por un BSc en Computación Aplicada de la Universidad de Limerick y un MSc en Gestión de Sistemas de Información de Trinity College Dublin. Mi trayectoria profesional demuestra un compromiso con la excelencia tecnológica y la perspicacia estratégica en diversos ámbitos.</p>
+                                <p class="section-text">Experto en un amplio espectro de tecnologías, he desarrollado competencias en AWS, Kubernetes, ArgoCD, Helm, Elastic Stack, Python, Docker, Jenkins, Git, Grafana, Prometheus, Terraform y GCP. Este viaje técnico se complementa con mis experiencias en el sector financiero y roles orientados al cliente, demostrando mi capacidad para sobresalir en situaciones exigentes y superar expectativas.</p>
+                                <p class="section-text">Actualmente, estoy concentrándome en profundizar mi comprensión de Python, atraído por su adaptabilidad y aplicaciones innovadoras. Mi experiencia también abarca el análisis y la visualización avanzados de datos a través de Elastic Stack, con el objetivo de mejorar las percepciones organizativas.</p>
+                                <p class="section-text">Estoy ansioso por aprovechar mi conjunto de habilidades completo en una organización progresiva, contribuyendo a proyectos transformadores y promoviendo el crecimiento empresarial. Con una rica experiencia y un entusiasmo por la tecnología, estoy preparado para enfrentar desafíos complejos y entregar resultados significativos.</p>
                             </div>
                         </div>
                     </div>
@@ -95,21 +93,21 @@
                             </div>
                             <div class="conveyor-belt">
                                 <div class="icon-container">
-                                    <img src="assets/terraform.png" class="skill-icon" alt="Terraform">
-                                    <img src="assets/prometheus.png" class="skill-icon" alt="Prometheus">
-                                    <img src="assets/grafana.png" class="skill-icon" alt="Grafana">
-                                    <img src="assets/python.png" class="skill-icon" alt="Python">
-                                    <img src="assets/jenkins.png" class="skill-icon" alt="Jenkins">
-                                    <img src="assets/elastic_stack.png" class="skill-icon" alt="ElasticStack">
-                                    <img src="assets/debian.png" class="skill-icon" alt="Debian">
+                                    <img src="assets/terraform.png" class="skill-icon" alt="Terraform" loading="lazy">
+                                    <img src="assets/prometheus.png" class="skill-icon" alt="Prometheus" loading="lazy">
+                                    <img src="assets/grafana.png" class="skill-icon" alt="Grafana" loading="lazy">
+                                    <img src="assets/python.png" class="skill-icon" alt="Python" loading="lazy">
+                                    <img src="assets/jenkins.png" class="skill-icon" alt="Jenkins" loading="lazy">
+                                    <img src="assets/elastic_stack.png" class="skill-icon" alt="ElasticStack" loading="lazy">
+                                    <img src="assets/debian.png" class="skill-icon" alt="Debian" loading="lazy">
                                     <!-- Repeat-->
-                                    <img src="assets/terraform.png" class="skill-icon" alt="Terraform">
-                                    <img src="assets/prometheus.png" class="skill-icon" alt="Prometheus">
-                                    <img src="assets/grafana.png" class="skill-icon" alt="Grafana">
-                                    <img src="assets/python.png" class="skill-icon" alt="Python">
-                                    <img src="assets/jenkins.png" class="skill-icon" alt="Jenkins">
-                                    <img src="assets/elastic_stack.png" class="skill-icon" alt="ElasticStack">
-                                    <img src="assets/debian.png" class="skill-icon" alt="Debian">
+                                    <img src="assets/terraform.png" class="skill-icon" alt="Terraform" loading="lazy">
+                                    <img src="assets/prometheus.png" class="skill-icon" alt="Prometheus" loading="lazy">
+                                    <img src="assets/grafana.png" class="skill-icon" alt="Grafana" loading="lazy">
+                                    <img src="assets/python.png" class="skill-icon" alt="Python" loading="lazy">
+                                    <img src="assets/jenkins.png" class="skill-icon" alt="Jenkins" loading="lazy">
+                                    <img src="assets/elastic_stack.png" class="skill-icon" alt="ElasticStack" loading="lazy">
+                                    <img src="assets/debian.png" class="skill-icon" alt="Debian" loading="lazy">
 
                                 </div>
                             </div>
@@ -189,22 +187,22 @@
                                     <!-- Cyferd -->
                                     <p class="section-text strong">Ingeniero DevOps - Cyferd<span class="experience-dates es"> | Mayo 2023 - Febrero 2024</span></p>
                                     <p class="section-text italic">Málaga, España</p>
-                                    <p class="section-text">&#8226; Aproveché mi experiencia en DevOps para desarrollar exportadores de métricas personalizadas basados en Python, implementar entornos seguros de AWS y revisar el código de Terraform para mejorar la reutilización. Mis esfuerzos por optimizar las canalizaciones de CI/CD, mejorar la supervisión a través de Prometheus y establecer una biblioteca compartida centralizada de Jenkins aumentaron notablemente la eficiencia de la entrega de software y el rendimiento operativo.</p>
+                                    <p class="section-text">&#8226; Utilicé mi experiencia en DevOps para desarrollar exportadores de métricas personalizados basados en Python, desplegar entornos seguros de AWS y revisar el código de Terraform para mejorar su reutilización. Mis esfuerzos por optimizar las tuberías de CI/CD, mejorar el monitoreo a través de Prometheus y establecer una biblioteca compartida centralizada de Jenkins incrementaron notablemente la eficiencia en la entrega de software y el rendimiento operativo.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
                                     <p class="section-text strong">Ingeniero DevOps - Rentalmatics<span class="experience-dates es"> | Febrero 2020 - Mayo 2023</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
-                                    <p class="section-text">&#8226; Mi puesto como ingeniero sénior de DevOps me permitió mejorar la eficiencia de la implementación a través de canalizaciones de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de los costos de GCP, la implementación de soluciones de monitoreo dinámico y la dirección de la integración de Prometheus con Grafana, mejorando significativamente la confiabilidad del sistema y la agilidad operativa.</p>
+                                    <p class="section-text">&#8226; Mi posición como Ingeniero Senior de DevOps me llevó a mejorar la eficiencia de despliegue a través de tuberías de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de costos en GCP, implementando soluciones de monitoreo dinámico y liderando la integración de Prometheus con Grafana, mejorando significativamente la fiabilidad del sistema y la agilidad operacional.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
                                     <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates es"> | Octubre 2017 - Enero 2020</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
-                                    <p class="section-text">&#8226; Desempeñé un papel decisivo en la prestación de asistencia al cliente de primer nivel, la supervisión de las actividades mensuales de aplicación de parches y la dirección de proyectos importantes, incluida una actualización de CMS web para una aseguradora. Mi función se centró en la supervisión proactiva, las mejoras en el rendimiento del sistema y la gestión de clústeres de alta disponibilidad, lo que demuestra mi profundo conocimiento de los entornos Apache, Tomcat y Linux.</p>
+                                    <p class="section-text">&#8226; Tuve un papel fundamental en proporcionar soporte de primer nivel a los clientes, supervisar las actividades de parcheo mensuales y liderar proyectos significativos, incluida una actualización del CMS web para una aseguradora. Mi rol enfatizó el monitoreo proactivo, las mejoras en el rendimiento del sistema y la gestión de clústeres de alta disponibilidad, demostrando mi profundo entendimiento de los entornos Apache, Tomcat y Linux.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
                                     <p class="section-text strong">Ingeniero de Sistemas - Susquehanna<span class="experience-dates es"> | Junio 2012 - Octobre 2017</span></p>
                                     <p class="section-text italic">Dublin, Irlanda</p>
-                                    <p class="section-text">&#8226; Al comenzar mi carrera en Susquehanna International Group en Dublín, inicialmente me desempeñé como pasante de ingeniería de infraestructura, diseñando e implementando un sitio web interno para la administración de implementación de servidores. Al progresar a ingeniero de sistemas, me especialicé en implementaciones de servidores, agilicé los procesos con SCCM y dominé Ansible para una configuración eficiente del servidor, desempeñando un papel crucial de tutoría para los nuevos miembros del equipo.</p>
+                                    <p class="section-text">&#8226; Iniciando mi carrera en Susquehanna International Group en Dublín, comencé como pasante de Ingeniero de Infraestructura, diseñando e implementando un sitio web interno para la gestión del despliegue de servidores. Avanzando a Ingeniero de Sistemas, me especialicé en despliegues de servidores, optimicé procesos con SCCM y dominé Ansible para una configuración eficiente de servidores, desempeñando un papel de mentoría crucial para los nuevos miembros del equipo.</p>
                             </div>
                         </div>
                     </div>
