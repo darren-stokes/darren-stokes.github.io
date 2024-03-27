@@ -19,7 +19,7 @@
     </head>
     <body>
         <?php
-        include('banner.html');
+        include('banner.php');
         ?>
         <!-- Content -->
         <div class="content">
