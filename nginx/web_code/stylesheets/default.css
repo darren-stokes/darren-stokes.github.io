@@ -656,6 +656,10 @@ input:checked + .slider:before {
         padding-left: 35%;
     }
 
+    ul.cookies {
+        padding-left: 0;
+    }
+
     .wrapper{
         padding: 40px 0;
     }
