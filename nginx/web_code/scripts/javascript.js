@@ -155,14 +155,20 @@ function collapseMenu(){
 function bannerOffset(){
     document.querySelectorAll('.lang-navbar a').forEach(link=>{
         link.addEventListener('click', function(e){
-            // Prevent the default anchor action
-            e.preventDefault();
+            // Get the current page
+            currentPage = window.location.pathname.split("/").pop();
 
-            const TARGETID = this.getAttribute('href').substring(1);
-            const TARGETELEMENT = document.getElementById(TARGETID);
+            // Only change default behaviour if the current page is the home page
+            if(!currentPage){
+                // Prevent the default anchor action
+                e.preventDefault();
 
-            if(TARGETELEMENT){
-                scrollToAdjustedTarget(TARGETELEMENT);
+                const TARGETID = this.getAttribute('href').substring(1);
+                const TARGETELEMENT = document.getElementById(TARGETID);
+
+                if(TARGETELEMENT){
+                    scrollToAdjustedTarget(TARGETELEMENT);
+                }
             }
         });
     });
