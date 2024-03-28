@@ -1,3 +1,6 @@
+        <?php
+          $current_page = basename($_SERVER['PHP_SELF']);
+        ?>
         <!-- Banner -->
         <div class="navbar banner">
             <div class="navbar-left">
@@ -48,10 +51,18 @@
 
             <div class="navbar-right">
               <div class="lang lang-en lang-navbar">
-                <a href="#about" onclick="collapseMenu()">About</a>
-                <a href="#education" onclick="collapseMenu()">Education</a>
-                <a href="#experience" onclick="collapseMenu()">Experience</a>
-                <a href="#contact" onclick="collapseMenu()">Contact</a>
+                <?php
+                  if($current_page == 'index.php'): ?>
+                    <a href="#about" onclick="collapseMenu()">About</a>
+                    <a href="#education" onclick="collapseMenu()">Education</a>
+                    <a href="#experience" onclick="collapseMenu()">Experience</a>
+                    <a href="#contact" onclick="collapseMenu()">Contact</a>
+                  <?php else: ?>
+                    <a href="/#about" onclick="collapseMenu()">About</a>
+                    <a href="/#education" onclick="collapseMenu()">Education</a>
+                    <a href="/#experience" onclick="collapseMenu()">Experience</a>
+                    <a href="/#contact" onclick="collapseMenu()">Contact</a>
+                  <?php endif; ?>
               </div>
               <div class="lang lang-es lang-navbar">
                 <a href="#about" onclick="collapseMenu()">Sobre Mi</a>
