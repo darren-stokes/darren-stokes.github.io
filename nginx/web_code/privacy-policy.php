@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Tell Dark Reader that it doesn't need to apply as we have a dark mode defined -->
-        <meta name="darkreader-lock">
         <title>Darren Stokes - Privacy Policy</title>
-
-        <!-- CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
-        <link href="stylesheets/default.css" rel="stylesheet">
-
-        <!-- Javascript -->
-        <script src="scripts/javascript.js"></script>
+        <?php
+            include('styles_and_scripts.html');
+        ?>
     </head>
     <body>
         <?php
