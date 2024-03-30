@@ -52,12 +52,15 @@
             <div class="navbar-right">
               <div class="lang lang-en lang-navbar">
                 <?php
+                  # If we're on the homepage, set the links to be the sections on this page
                   if($current_page == 'index.php'): ?>
                     <a href="#about" onclick="collapseMenu()">About</a>
                     <a href="#education" onclick="collapseMenu()">Education</a>
                     <a href="#experience" onclick="collapseMenu()">Experience</a>
                     <a href="#contact" onclick="collapseMenu()">Contact</a>
-                  <?php else: ?>
+                  <?php
+                    # Otherwise, we're on a different page, set the links to go back to the homepage and the correct section
+                    else: ?>
                     <a href="/#about" onclick="collapseMenu()">About</a>
                     <a href="/#education" onclick="collapseMenu()">Education</a>
                     <a href="/#experience" onclick="collapseMenu()">Experience</a>
@@ -65,10 +68,21 @@
                   <?php endif; ?>
               </div>
               <div class="lang lang-es lang-navbar">
-                <a href="#about" onclick="collapseMenu()">Sobre Mi</a>
-                <a href="#education" onclick="collapseMenu()">Educación</a>
-                <a href="#experience" onclick="collapseMenu()">Experiencia</a>
-                <a href="#contact" onclick="collapseMenu()">Contacto</a>
+              <?php
+                  # If we're on the homepage, set the links to be the sections on this page
+                  if($current_page == 'index.php'): ?>
+                    <a href="#about" onclick="collapseMenu()">Sobre Mi</a>
+                    <a href="#education" onclick="collapseMenu()">Educación</a>
+                    <a href="#experience" onclick="collapseMenu()">Experiencia</a>
+                    <a href="#contact" onclick="collapseMenu()">Contacto</a>
+                  <?php
+                  # Otherwise, we're on a different page, set the links to go back to the homepage and the correct section
+                  else: ?>
+                    <a href="/#about" onclick="collapseMenu()">Sobre Mi</a>
+                    <a href="/#education" onclick="collapseMenu()">Educación</a>
+                    <a href="/#experience" onclick="collapseMenu()">Experiencia</a>
+                    <a href="/#contact" onclick="collapseMenu()">Contacto</a>
+                    <?php endif; ?>
               </div>
               <select id="language-select" onfocus='this.size=2;' onblur='this.size=0;' onchange='this.size=1; this.blur();'>
                 <option value="en">English</option>
