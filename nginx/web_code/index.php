@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Tell Dark Reader that it doesn't need to apply as we have a dark mode defined -->
-        <meta name="darkreader-lock">
         <title>Darren Stokes | DevOps Engineer</title>
-
-        <!-- CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="stylesheets/default.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Javascript -->
-        <script src="scripts/javascript.js"></script>
+        <?php
+            include('styles_and_scripts.html');
+        ?>
     </head>
     <body>
         <?php
-        include('banner.php');
+            include('banner.php');
         ?>
         <!-- Content -->
         <div class="content">
