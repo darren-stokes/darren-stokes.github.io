@@ -91,7 +91,7 @@ ul a {
     display: flex;
     justify-content: space-between;
     color: rgb(242, 242, 242);
-    font-family: "Roboto Condensed", cursive, monospace;
+    font-family: "Roboto Condensed", arial, monospace;
     font-size: 1.5rem;
 }
 
@@ -206,7 +206,7 @@ select {
 #language-select {
     appearance: none;
     -webkit-appearance: none;
-    font-family: 'Roboto Condensed', cursive, monospace;
+    font-family: 'Roboto Condensed', arial, monospace;
     font-size: 1.5rem;
     font-weight: bold;
     position: relative;
@@ -339,7 +339,7 @@ input:checked + .slider:before {
     position: relative;
     flex: 1 0 auto;
     font-size: 1rem;
-    font-family: 'Roboto Condensed', cursive, monospace;
+    font-family: 'Roboto Condensed', arial, monospace;
     flex: 1;
     margin-top: 50px;
     overflow: hidden;
@@ -545,7 +545,7 @@ input:checked + .slider:before {
     background-color: var(--navbar-bg-colour);
     border-radius: 20px;
     font-size: 1rem;
-    font-family: 'Roboto Condensed', cursive, monospace;
+    font-family: 'Roboto Condensed', arial, monospace;
     z-index: 999;
 }
 
@@ -560,7 +560,7 @@ input:checked + .slider:before {
     width: 100px;
     border-radius: 20px;
     font-size: 1.2rem;
-    font-family: 'Roboto Condensed', cursive, monospace;
+    font-family: 'Roboto Condensed', arial, monospace;
 }
 
 @media(min-width: 600px){
