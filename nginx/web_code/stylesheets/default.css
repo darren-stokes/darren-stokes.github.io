@@ -496,6 +496,7 @@ input:checked + .slider:before {
 }
 
 .conveyor-belt {
+    will-change: transform;
     display: flex;
     overflow: hidden;
     white-space: nowrap;
@@ -504,6 +505,9 @@ input:checked + .slider:before {
 }
 
 .icon-container {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
     display: flex;
     animation: moveIcons 30s linear infinite;
 }
