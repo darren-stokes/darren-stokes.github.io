@@ -59,10 +59,10 @@
                             </div>
                             <div class="lang lang-es">
                                 <h3 class="section-heading">Sobre Mi</h3>
-                                <p class="section-text">Soy un profesional de TI con experiencia y una sólida formación en ingeniería de Linux, respaldado por un BSc en Computación Aplicada de la Universidad de Limerick y un MSc en Gestión de Sistemas de Información de Trinity College Dublin. Mi trayectoria profesional demuestra un compromiso con la excelencia tecnológica y la perspicacia estratégica en diversos ámbitos.</p>
-                                <p class="section-text">Experto en un amplio espectro de tecnologías, he desarrollado competencias en AWS, Kubernetes, ArgoCD, Helm, Elastic Stack, Python, Docker, Jenkins, Git, Grafana, Prometheus, Terraform y GCP. Este viaje técnico se complementa con mis experiencias en el sector financiero y roles orientados al cliente, demostrando mi capacidad para sobresalir en situaciones exigentes y superar expectativas.</p>
-                                <p class="section-text">Actualmente, estoy concentrándome en profundizar mi comprensión de Python, atraído por su adaptabilidad y aplicaciones innovadoras. Mi experiencia también abarca el análisis y la visualización avanzados de datos a través de Elastic Stack, con el objetivo de mejorar las percepciones organizativas.</p>
-                                <p class="section-text">Estoy ansioso por aprovechar mi conjunto de habilidades completo en una organización progresiva, contribuyendo a proyectos transformadores y promoviendo el crecimiento empresarial. Con una rica experiencia y un entusiasmo por la tecnología, estoy preparado para enfrentar desafíos complejos y entregar resultados significativos.</p>
+                                <p class="section-text">Soy un profesional de TI con experiencia y una sólida formación en ingeniería Linux, respaldado por un grado en Informatica Aplicada de la Universidad de Limerick y un master en Gestión de Sistemas de Información en Trinity College Dublin. Mi trayectoria profesional demuestra un compromiso con la excelencia tecnológica y la perspicacia estratégica en diversos ámbitos.</p>
+                                <p class="section-text">Experto en un amplio espectro de tecnologías, he desarrollado competencias en AWS, Kubernetes, ArgoCD, Helm, Elastic Stack, Python, Docker, Jenkins, Git, Grafana, Prometheus, Terraform y GCP. Este viaje técnico se complementa con mi experiencia en el sector financiero y roles orientados al cliente, demostrando mi capacidad para sobresalir en situaciones exigentes y superar expectativas.</p>
+                                <p class="section-text">Actualmente, estoy concentrándome en profundizar mi conocemiento de Python, atraído por su adaptabilidad y aplicaciones innovadoras. Mi experiencia también abarca el análisis y la visualización avanzada de datos a través de Elastic Stack, con el objetivo de mejorar las percepciones organizativas.</p>
+                                <p class="section-text">Estoy entusiasmado por aprovechar mi conjunto de habilidades completo en una empresa progresiva, contribuyendo a proyectos transformadores y promoviendo el crecimiento empresarial. Con una rica experiencia y pasión por la tecnología, estoy preparado para enfrentar desafíos complejos y entregar resultados significativos.</p>
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                                         <p class="section-text italic"> - University of Limerick, Ireland</p>
                                     </div>
                                     <div class="lang lang-es">
-                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Bachelor of Science (B.Sc.) in Applied Computing and Network Technologies</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Grado en Ciencia (B.Sc.) Informática Aplicada y Tecnologías de Redes</p>
                                         <p class="section-text italic"> - University of Limerick, Irlanda</p>
                                     </div>
                                 </div>
@@ -134,8 +134,8 @@
                                         <p class="section-text italic"> - Trinity College Dublin, Ireland</p>
                                     </div>
                                     <div class="lang lang-es">
-                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Máster of Science (M.Sc.) in Management of Information Systems</p>
-                                        <p class="section-text italic"> - Trinity College Dublin, Irlanda</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Master en Ciencia (M.Sc.) de Gestión de Sistemas de Información</p>
+                                        <p class="section-text italic"> - Trinity College Dublín, Irlanda</p>
                                     </div>
                                 </div>
                             </div>
@@ -176,22 +176,22 @@
                                     <!-- Cyferd -->
                                     <p class="section-text strong">Ingeniero DevOps - Cyferd<span class="experience-dates es"> | Mayo 2023 - Febrero 2024</span></p>
                                     <p class="section-text italic">Málaga, España</p>
-                                    <p class="section-text">&#8226; Utilicé mi experiencia en DevOps para desarrollar exportadores de métricas personalizados basados en Python, desplegar entornos seguros de AWS y revisar el código de Terraform para mejorar su reutilización. Mis esfuerzos por optimizar las tuberías de CI/CD, mejorar el monitoreo a través de Prometheus y establecer una biblioteca compartida centralizada de Jenkins incrementaron notablemente la eficiencia en la entrega de software y el rendimiento operativo.</p>
+                                    <p class="section-text">&#8226; Utilicé mi experiencia en DevOps para desarrollar exportadores de métricas personalizados basados en Python, desplegar entornos seguros de AWS y revisar el código de Terraform para mejorar su reutilización. Mis esfuerzos por optimizar pipelines de CI/CD, mejorar el monitoreo a través de Prometheus y establecer una biblioteca compartida centralizada de Jenkins, incrementaron notablemente la eficiencia en la entrega de software y el rendimiento operativo.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
                                     <p class="section-text strong">Ingeniero DevOps - Rentalmatics<span class="experience-dates es"> | Febrero 2020 - Mayo 2023</span></p>
-                                    <p class="section-text italic">Dublin, Irlanda</p>
-                                    <p class="section-text">&#8226; Mi posición como Ingeniero Senior de DevOps me llevó a mejorar la eficiencia de despliegue a través de tuberías de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de costos en GCP, implementando soluciones de monitoreo dinámico y liderando la integración de Prometheus con Grafana, mejorando significativamente la fiabilidad del sistema y la agilidad operacional.</p>
+                                    <p class="section-text italic">Dublín, Irlanda</p>
+                                    <p class="section-text">&#8226; Mi posición como Ingeniero Senior de DevOps me llevó a mejorar la eficiencia de despliegue a través de pipelines de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de costes en GCP, implementando soluciones de monitoreo dinámico y liderando la integración de Prometheus con Grafana, mejorando significativamente la fiabilidad del sistema y la agilidad operacional.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Securelinx-->
                                     <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates es"> | Octubre 2017 - Enero 2020</span></p>
-                                    <p class="section-text italic">Dublin, Irlanda</p>
-                                    <p class="section-text">&#8226; Tuve un papel fundamental en proporcionar soporte de primer nivel a los clientes, supervisar las actividades de parcheo mensuales y liderar proyectos significativos, incluida una actualización del CMS web para una aseguradora. Mi rol enfatizó el monitoreo proactivo, las mejoras en el rendimiento del sistema y la gestión de clústeres de alta disponibilidad, demostrando mi profundo entendimiento de los entornos Apache, Tomcat y Linux.</p>
+                                    <p class="section-text italic">Dublín, Irlanda</p>
+                                    <p class="section-text">&#8226; Tuve un rol fundamental a la hora de proporcionar soporte de primer nivel a los clientes, supervisar las actividades de parcheo mensuales y liderar proyectos significativos, incluida una actualización del CMS web para una aseguradora. Mi labor enfatizó el monitoreo proactivo, las mejoras en el rendimiento del sistema y la gestión de grupos de alta disponibilidad, demostrando mi profundo entendimiento de los entornos Apache, Tomcat y Linux.</p>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
                                     <p class="section-text strong">Ingeniero de Sistemas - Susquehanna<span class="experience-dates es"> | Junio 2012 - Octobre 2017</span></p>
-                                    <p class="section-text italic">Dublin, Irlanda</p>
-                                    <p class="section-text">&#8226; Iniciando mi carrera en Susquehanna International Group en Dublín, comencé como pasante de Ingeniero de Infraestructura, diseñando e implementando un sitio web interno para la gestión del despliegue de servidores. Avanzando a Ingeniero de Sistemas, me especialicé en despliegues de servidores, optimicé procesos con SCCM y dominé Ansible para una configuración eficiente de servidores, desempeñando un papel de mentoría crucial para los nuevos miembros del equipo.</p>
+                                    <p class="section-text italic">Dublín, Irlanda</p>
+                                    <p class="section-text">&#8226; Iniciando mi carrera en Susquehanna International Group en Dublín, comencé como Ingeniero becario de Infraestructura, diseñando e implementando un sitio web interno para la gestión del despliegue de servidores. Ascendí a Ingeniero de Sistemas, me especialicé en despliegues de servidores, optimicé procesos con SCCM y dominé Ansible para una configuración eficiente de servidores, desempeñando un papel de mentoría crucial para los nuevos miembros del equipo.</p>
                             </div>
                         </div>
                     </div>
