@@ -505,6 +505,7 @@ input:checked + .slider:before {
 .icon-container {
     will-change: transform;
     transform: translateZ(0);
+    backface-visibility: hidden;
     display: flex;
     animation: moveIcons 30s linear infinite;
 }
