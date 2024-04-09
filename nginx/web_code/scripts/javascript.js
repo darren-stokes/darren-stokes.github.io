@@ -261,6 +261,59 @@ function getMonthsInEnglish (month){
     return monthMap[month] || month;
 }
 
+function technologyConveyorBelt(){
+    const canvas = document.getElementById('conveyorCanvas');
+    if (!canvas) {
+        console.error('Canvas element not found');
+        return;
+    }
+
+    // set canvas dimensions
+    canvas.width = window.innerWidth;
+    canvas.height = 150;
+
+    const ctx = canvas.getContext('2d');
+    const icons = [
+        '/assets/terraform.webp',
+        '/assets/prometheus.webp',
+        '/assets/grafana.webp',
+        '/assets/python.webp',
+        '/assets/jenkins.webp',
+        '/assets/elastic_stack.webp',
+        '/assets/debian.webp'
+    ];
+    let loadedIcons = [];
+    let offset = 0;
+
+    icons.forEach(src=> {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedIcons.push(img);
+            if(loadedIcons.length === icons.length){
+                requestAnimationFrame(draw);
+            }
+        }
+    });
+
+    function draw(){
+        const moveSpeed = 1;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        offset = (offset + moveSpeed) % canvas.width;
+        loadedIcons.forEach((img, index) => {
+            const x = (index * img.width) - offset;
+            ctx.drawImage(img, x, 0);
+            // Draw a second time if the iamge is moving out of the canvas view
+            if (x < canvas.width) {
+                ctx.drawImage(img, x + canvas.width, 0)
+            }
+        });
+        requestAnimationFrame(draw)
+    }
+}
+
+
+
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
     setupLanguage();
@@ -279,4 +332,5 @@ document.addEventListener('DOMContentLoaded', () => {
     checkCookieConsent();
 
     monthCalculator();
+    technologyConveyorBelt();
 });
