@@ -297,17 +297,35 @@ function technologyConveyorBelt(){
     });
 
     function draw(){
-        const moveSpeed = 1;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        offset = (offset + moveSpeed) % canvas.width;
-        loadedIcons.forEach((img, index) => {
-            const x = (index * img.width) - offset;
-            ctx.drawImage(img, x, 0);
-            // Draw a second time if the iamge is moving out of the canvas view
-            if (x < canvas.width) {
-                ctx.drawImage(img, x + canvas.width, 0)
+        offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length);
+
+        for (let i = 0; i < loadedIcons.length; i++) {
+            let x = i * iconWidth - offset;
+            // Apply styling such as shadows here 
+            ctx.shadowColour = 'rgba(0,0,0,0.5)';
+            ctx.shadowBlur = 5;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 4;
+
+            // Draw the image
+            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
+
+            // If part of the image is offscreen, draw it at the end too
+            if (x < -iconWidth) {
+                ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth, iconHeight);
             }
-        });
+            else if (x > canvas.width - iconWidth) {
+                ctx.drawImage(loadedIcons[i], x - (iconWidth * loadedIcons.length), iconYPosition, iconWidth, iconHeight);
+            }
+
+            // Clear the styles after drawing
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+        }
+
         requestAnimationFrame(draw)
     }
 }
