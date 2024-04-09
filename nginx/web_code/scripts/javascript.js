@@ -266,7 +266,7 @@ function technologyConveyorBelt(){
     let moveSpeed = 1;
     let iconHeight = 150;
     let iconWidth = 300;
-    let iconYPosition = 50;
+    let iconYPosition = 0;
 
     const canvas = document.getElementById('conveyorCanvas');
     if (!canvas) {
