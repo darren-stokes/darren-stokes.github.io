@@ -266,7 +266,8 @@ function technologyConveyorBelt(){
     let moveSpeed = 1;
     let iconHeight = 150;
     let iconWidth = 300;
-    let iconYPosition = 0;
+    let iconYPosition = 75;
+    let iconPadding = 30;
 
     const canvas = document.getElementById('conveyorCanvas');
     if (!canvas) {
@@ -304,32 +305,31 @@ function technologyConveyorBelt(){
 
     function draw(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Set the gradient for fading edges
+        let gradient = ctx.createLinearGradient(0, 0, 100, 0);
+        gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
+        gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+
+        // Apply gradient to edges
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
+        ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
+
         offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length);
 
         for (let i = 0; i < loadedIcons.length; i++) {
-            let x = i * iconWidth - offset;
-            // Apply styling such as shadows here 
-            ctx.shadowColour = 'rgba(0,0,0,0.5)';
-            ctx.shadowBlur = 5;
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 4;
+            let x = i * iconWidth - offset + iconPadding; // Adjust X position with padding
 
             // Draw the image
-            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
+            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
 
-            // If part of the image is offscreen, draw it at the end too
+            // Wrap icons around
             if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth, iconHeight);
+                ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
+            } else if (x > canvas.width) {
+                ctx.drawImage(loadedIcons[i], x - (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
             }
-            else if (x > canvas.width - iconWidth) {
-                ctx.drawImage(loadedIcons[i], x - (iconWidth * loadedIcons.length), iconYPosition, iconWidth, iconHeight);
-            }
-
-            // Clear the styles after drawing
-            ctx.shadowColor = 'transparent';
-            ctx.shadowBlur = 0;
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
         }
 
         requestAnimationFrame(draw)
