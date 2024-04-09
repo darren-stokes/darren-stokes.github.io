@@ -262,6 +262,12 @@ function getMonthsInEnglish (month){
 }
 
 function technologyConveyorBelt(){
+    // Set some initial variables
+    let moveSpeed = 1;
+    let iconHeight = 150;
+    let iconWidth = 300;
+    let iconYPosition = 50;
+
     const canvas = document.getElementById('conveyorCanvas');
     if (!canvas) {
         console.error('Canvas element not found');
@@ -271,7 +277,6 @@ function technologyConveyorBelt(){
     // set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = 150;
-    let moveSpeed = 1;
 
     const ctx = canvas.getContext('2d');
     const icons = [
