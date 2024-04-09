@@ -271,6 +271,7 @@ function technologyConveyorBelt(){
     // set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = 150;
+    let moveSpeed = 1;
 
     const ctx = canvas.getContext('2d');
     const icons = [
