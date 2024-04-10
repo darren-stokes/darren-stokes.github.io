@@ -319,25 +319,24 @@ function technologyConveyorBelt(){
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-        // Get the right offset of the .content-inner div
-        const contentInnerDiv = document.querySelector('.content-inner');
-        const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
+        // Compute the total width of all icons including padding
+        let totalWidth = (iconWidth + iconPadding * 2) * loadedIcons.length;
     
-        // Calculate the total width of all icons including padding
-        const totalIconSetWidth = (iconWidth + iconPadding * 2) * loadedIcons.length;
-        
-        // Calculate the offset to keep the animation smooth
-        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
-
-        for (let i = -1; i < loadedIcons.length + 1; i++) { // Adjusted the loop to cover offscreen icons
+        // Calculate the new offset for the loop, making sure it loops around smoothly
+        offset = (offset + moveSpeed) % totalWidth;
+    
+        // Begin drawing the icons starting from the first one
+        for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
     
-            // Apply shadow if in dark mode
-            if (darkMode === 'enabled') {
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-                ctx.shadowBlur = 5;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
+            // Only apply shadow if the icon is visible
+            if (x + iconWidth + iconPadding > 0 && x - iconPadding < canvas.width) {
+                if (darkMode === 'enabled') {
+                    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                    ctx.shadowBlur = 5;
+                    ctx.shadowOffsetX = 0;
+                    ctx.shadowOffsetY = 0;
+                }
             } else {
                 ctx.shadowColor = 'transparent';
                 ctx.shadowBlur = 0;
@@ -345,17 +344,12 @@ function technologyConveyorBelt(){
                 ctx.shadowOffsetY = 0;
             }
     
-            let iconIndex = (i + loadedIcons.length) % loadedIcons.length;
-    
-            // Draw the icon
-            ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
-    
-            // If the icon is partly offscreen on the right, draw its pair on the left
-            if (x > canvas.width - iconWidth - iconPadding) {
-                ctx.drawImage(loadedIcons[iconIndex], x - totalIconSetWidth, iconYPosition, iconWidth, iconHeight);
+            // Draw the icon if it is within the visible canvas
+            if (x < canvas.width && x + iconWidth > -iconPadding * 2) {
+                ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
     
-            // Reset the shadow for next icon
+            // Reset shadow settings for the next icon
             ctx.shadowColor = 'transparent';
             ctx.shadowBlur = 0;
             ctx.shadowOffsetX = 0;
