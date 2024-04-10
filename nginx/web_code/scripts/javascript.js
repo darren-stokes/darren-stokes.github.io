@@ -264,9 +264,9 @@ function getMonthsInEnglish (month){
     return monthMap[month] || month;
 }
 
-function technologyConveyorBelt(){
-    // initialise some variables
-    let iconHeight, iconWidth, iconPadding = setIconSizes();
+function technologyConveyorBelt() {
+    // Define the sizes based on the current viewport size
+    let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes();
     let moveSpeed = 1;
     let iconYPosition = 0;
     let offset = 0;
@@ -279,7 +279,7 @@ function technologyConveyorBelt(){
         return;
     }
 
-    // set canvas dimensions
+    // Set initial canvas dimensions
     canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
     canvas.height = iconHeight;
 
@@ -294,50 +294,59 @@ function technologyConveyorBelt(){
         '/assets/debian.webp'
     ];
 
-    icons.forEach(src=> {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-            loadedIcons.push(img);
-            if(loadedIcons.length === icons.length){
-                draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled);
-            }
-        }
+    // Preload icons and draw when ready
+    preloadIcons(icons, loadedIcons, () => {
+        draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled);
     });
 
     // Listen for window resize events to adjust icon sizes dynamically
     window.addEventListener('resize', () => {
-        // Update sizes and canvas dimensions
         let sizes = setIconSizes();
         iconHeight = sizes.height;
         iconWidth = sizes.width;
         iconPadding = sizes.padding;
         canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
         canvas.height = iconHeight;
+
+        // Redraw icons when resizing
+        draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled);
+    });
+}
+
+function preloadIcons(icons, loadedIcons, callback) {
+    icons.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedIcons.push(img);
+            if (loadedIcons.length === icons.length) {
+                callback(); // Call the callback when all icons have loaded
+            }
+        };
     });
 }
 
 function draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled) {
-    console.log("ctx: "+ctx+", canvas: "+ctx.canvas+", width: "+ctx.canvas.width+", height:"+ctx.canvas.height);
-    //ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     
     // Draw the icons with offset
     for (let i = 0; i < loadedIcons.length; i++) {
         let x = i * (iconWidth + iconPadding * 2) - offset;
-
-        setIconShadow(ctx, darkModeEnabled);
+        setIconShadow(ctx, darkModeEnabled); // Set shadow based on dark mode
 
         // If the icon goes off-screen to the left, draw it coming in from the right
         if (x < -iconWidth) {
             ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
         }
+
         // Regular draw
         ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
     }
+
     // Update the offset for the next frame
     offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-    requestAnimationFrame(() => draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset));
+    requestAnimationFrame(() => draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled));
 }
 
 function setIconSizes(){
