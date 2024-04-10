@@ -323,34 +323,45 @@ function technologyConveyorBelt(){
         // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
-        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().left;
+        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().right;
 
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
 
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
 
-            if (x + iconWidth > contentInnerLeftOffset && x < contentInnerRightOffset) {
-                // Apply shadow if in dark mode
-                if (darkMode === 'enabled') {
-                    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-                    ctx.shadowBlur = 10;
-                    ctx.shadowOffsetX = 0;
-                    ctx.shadowOffsetY = 0;
-                } else {
-                    ctx.shadowColor = 'transparent';
-                }
+            // If in dark mode, prepare to apply a shadow to the icon
+            if (darkMode === 'enabled' && x + iconWidth > 0 && x < contentInnerRightOffset) {
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
             }
-
-            if (x < contentInnerRightOffset) {    
+            else {
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+            }
+        
+            // Draw the icon with the possible shadow applied
+            if (x + iconWidth + iconPadding > 0 && x - iconPadding < canvas.width) {
                 ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
-    
+        
+            // If part of the image is offscreen, draw it at the end too
             if (x < -iconWidth) {
                 ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
-            } else if (x > canvas.width - iconWidth) {
+            }
+            else if (x > canvas.width - iconWidth) {
                 ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
+        
+            // Reset shadow settings for the next icon
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
         }
     
         requestAnimationFrame(draw);
