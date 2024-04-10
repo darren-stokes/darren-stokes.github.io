@@ -267,6 +267,7 @@ function technologyConveyorBelt(){
     let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes ();
     let moveSpeed = 1;
     let iconYPosition = 0;
+    let darkMode = localStorage.getItem('darkMode');
 
     // Listen for window resize events to adjust icon sizes dynamically
     window.addEventListener('resize', () => {
@@ -326,7 +327,7 @@ function technologyConveyorBelt(){
         let gradient = ctx.createLinearGradient(0, 0, 100, 0);
 
         // set the correct gradient depending on whether dark mode is set or not
-        if (localStorage.getItem('darkMode') === 'enabled'){
+        if (darkMode === 'enabled'){
             gradient.addColorStop(0, "rgba(40, 40, 40, 0)");
             gradient.addColorStop(1, "rgba(40, 40, 40, 1)");
         }
@@ -344,7 +345,18 @@ function technologyConveyorBelt(){
 
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
-    
+
+            // Save the current state
+            ctx.save();
+
+            // Check if we are in dark mode and apply shadow accordingly
+            if (darkMode === 'enabled') {
+                ctx.shadowColor = 'rgba(255, 255, 255, 1)';
+                ctx.shadowBlur = 1;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+            }
+
             if (x < contentInnerRightOffset) {
                 ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
@@ -354,6 +366,9 @@ function technologyConveyorBelt(){
             } else if (x > canvas.width - iconWidth) {
                 ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
+
+            // Restore the state to remove the shadow for next icon
+            ctx.restore();
         }
     
         requestAnimationFrame(draw);
