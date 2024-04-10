@@ -319,27 +319,21 @@ function technologyConveyorBelt(){
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-        // Calculate the new offset for the loop, making sure it loops around smoothly
-        offset += moveSpeed;
-        if (offset >= (iconWidth + iconPadding * 2) * loadedIcons.length) {
-            offset = 0;
-        }
-    
-        // Draw all the icons including the first one again after the last to create a seamless loop
-        for (let i = -1; i <= loadedIcons.length; i++) {
+        // Draw the icons with offset
+        for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
     
-            // Correct the icon index when i is -1 (drawing the first icon after the last)
-            let iconIndex = i === -1 ? loadedIcons.length - 1 : i;
-    
-            // Skip if the image is outside the canvas bounds
-            if (x + iconWidth + iconPadding < 0 || x - iconPadding > canvas.width) {
-                continue;
+            // If the icon goes off-screen to the left, draw it coming in from the right
+            if (x < -iconWidth) {
+                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
     
-            // Draw the image
-            ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
+            // Regular draw
+            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
         }
+    
+        // Update the offset for the next frame
+        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
         requestAnimationFrame(draw);
     }
