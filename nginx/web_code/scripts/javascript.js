@@ -323,6 +323,7 @@ function technologyConveyorBelt(){
         // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
+        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().left;
 
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
 
