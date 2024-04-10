@@ -265,17 +265,13 @@ function getMonthsInEnglish (month){
 }
 
 function technologyConveyorBelt(){
-    // Listen for window resize events to adjust icon sizes dynamically
-    window.addEventListener('resize', () => {
-        let { height, width, padding } = setIconSizes();
-        iconHeight = height;
-        iconWidth = width;
-        iconPadding = padding;
-
-        // Update canvas size if needed
-        canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
-        canvas.height = iconHeight;
-    });
+    // initialise some variables
+    let iconHeight, iconWidth, iconPadding = setIconSizes();
+    let moveSpeed = 1;
+    let iconYPosition = 0;
+    let offset = 0;
+    let darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+    let loadedIcons = [];
 
     const canvas = document.getElementById('conveyorCanvas');
     if (!canvas) {
@@ -298,22 +294,30 @@ function technologyConveyorBelt(){
         '/assets/debian.webp'
     ];
 
-    let loadedIcons = [];
-    let offset = 0;
-
     icons.forEach(src=> {
         const img = new Image();
         img.src = src;
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset);
+                draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled);
             }
         }
     });
+
+    // Listen for window resize events to adjust icon sizes dynamically
+    window.addEventListener('resize', () => {
+        // Update sizes and canvas dimensions
+        let sizes = setIconSizes();
+        iconHeight = sizes.height;
+        iconWidth = sizes.width;
+        iconPadding = sizes.padding;
+        canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
+        canvas.height = iconHeight;
+    });
 }
 
-function draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset) {
+function draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled) {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     
     // Draw the icons with offset
