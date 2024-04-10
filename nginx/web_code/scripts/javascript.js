@@ -306,7 +306,7 @@ function technologyConveyorBelt(){
     function draw(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Get the right offset of the .content-inner div
+        // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
@@ -328,23 +328,23 @@ function technologyConveyorBelt(){
         ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
         ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
-        offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length);
+        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
 
         for (let i = 0; i < loadedIcons.length; i++) {
-            let x = i * iconWidth - offset + iconPadding; // Adjust X position with padding
-
-            // Ensure we only start drawing the icons when they are within the .content-inner div
+            let x = i * (iconWidth + iconPadding * 2) - offset;
+    
             if (x < contentInnerRightOffset) {
-                ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
+                ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
-
-            // If an image completely passes the left side, draw it on the right side
+    
             if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
+                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+            } else if (x > canvas.width - iconWidth) {
+                ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
         }
-
-        requestAnimationFrame(draw)
+    
+        requestAnimationFrame(draw);
     }
 }
 
