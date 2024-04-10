@@ -343,7 +343,7 @@ function draw(darkModeEnabled) {
     
         requestAnimationFrame(() => draw(darkModeEnabled));
     }
-}
+
 
 function setIconSizes(){
     // set different sizes of the technology icons based on screen size
