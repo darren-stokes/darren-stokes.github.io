@@ -91,6 +91,9 @@ function toggleDarkMode(){
     // Save to localStorage
     localStorage.setItem('darkMode', isChecked ? 'enabled': 'disabled')
 
+    // Apply shadow to tech icons if dark mode is enabled
+    applyShadowToCanvasIcons(isChecked);
+
     // Collapse mobile menu on changing mode
     collapseMenu()
 }
@@ -316,27 +319,14 @@ function technologyConveyorBelt(){
         }
     });
 
-    function draw() {
+    function draw(darkModeEnabled) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     
         // Draw the icons with offset
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
 
-            // If in dark mode, prepare to apply a shadow to the icon
-            if (darkMode === 'enabled' && x + iconWidth > 0 && x < contentInnerRightOffset) {
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-                ctx.shadowBlur = 10;
-                ctx.shadowBlur = 5;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
-            }
-            else {
-                ctx.shadowColor = 'transparent';
-                ctx.shadowBlur = 0;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
-            }
+            setIconShadow(ctx, darkModeEnabled);
     
             // If the icon goes off-screen to the left, draw it coming in from the right
             if (x < -iconWidth) {
@@ -350,7 +340,7 @@ function technologyConveyorBelt(){
         // Update the offset for the next frame
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-        requestAnimationFrame(draw);
+        requestAnimationFrame(() => draw(darkModeEnabled));
     }
 }
 
@@ -372,8 +362,32 @@ function setIconSizes(){
     }
 }
 
+// Redraw icons with or without shadow based on dark mode
+function applyShadowToCanvasIcons(darkModeEnabled) {
+    // Trigger a redraw of the canvas with the appropriate shadow
+    requestAnimationFrame(() => draw(darkModeEnabled));
+}
+
+// Function to set shadow on context for icons
+function setIconShadow(ctx, enabled) {
+    if (enabled) {
+        // set the shadow for dark mode
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+        ctx.shadowBlur = 5;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+    } else {
+        // clear the shadow for light mode
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+    }
+}
+
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
+    let darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
     setupLanguage();
 
     // Set up self links to account for the sticky banner
@@ -385,6 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage();
     hideLanguageFlags();
     applyDarkMode();
+    // Add drop shadow to tech icons if applicable
+    draw(darkModeEnabled);
 
     //Check cookie consent and remove popup if accepted
     checkCookieConsent();
