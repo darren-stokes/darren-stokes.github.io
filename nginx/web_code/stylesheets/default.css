@@ -40,15 +40,6 @@ body {
     }
 }
 
-@keyframes moveIcons {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
 a {
     text-decoration: none;
 }
@@ -496,23 +487,7 @@ input:checked + .slider:before {
 }
 
 #icon-conveyor-belt {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    padding-top: 20px;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
-
-.icon-container {
-    will-change: transform;
-    transform: translateZ(0);
-    display: flex;
-    animation: moveIcons 30s linear infinite;
-}
-
-.skill-icon {
-    height: 100px;
-    margin-right: 20px;
 }
 
 .dark-mode .conveyor-belt {
