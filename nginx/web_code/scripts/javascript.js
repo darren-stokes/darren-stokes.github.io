@@ -318,11 +318,30 @@ function technologyConveyorBelt(){
     function draw(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        // Define fade efft
+        const fadeEdgeWidth = 100;
+        const fadeStart = contentInnerDiv.getBoundingClientRect().left;
+        const fadeEnd = contentInnerRightOffset - fadeEdgeWidth;
+
         // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
-;
+        // Set the gradient for fading edges
+        let gradient = ctx.createLinearGradient(0, 0, 100, 0);
+
+        // set the correct gradient depending on whether dark mode is set or not
+        if (localStorage.getItem('darkMode') === 'enabled'){
+            gradient.addColorStop(0, "rgba(40, 40, 40, 0)");
+            gradient.addColorStop(1, "rgba(40, 40, 40, 1)");
+        }
+        else {
+            gradient.addColorStop(0, "rgba(240, 240, 240, 0)");
+            gradient.addColorStop(1, "rgba(240, 240, 240, 1)");
+        }
+
+        // Apply gradient to edges
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
         ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
@@ -331,6 +350,28 @@ function technologyConveyorBelt(){
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
     
+            // calculate the opacity based on the icon's position
+            let opacity = 1;
+            if (x < fadeStart) {
+                opacity = Math.min(1, (x + iconWidth) / fadeEdgeWidth);
+            }
+            else if (x > fadeEnd) {
+                opacity = Math.min(1, (canvas.width - x) / fadeEdgeWidth)
+            }
+
+            // Save the current state
+            ctx.save();
+
+            // Apply the drop shadow filter only if the icon is fully visible
+            if (opacity === 1){
+                ctx.shadowColor = 'rgba(255,255, 255, 1)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 4;
+            }
+
+            ctx.globalAlpha = opacity;
+
             if (x < contentInnerRightOffset) {
                 ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
@@ -340,6 +381,7 @@ function technologyConveyorBelt(){
             } else if (x > canvas.width - iconWidth) {
                 ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
+            ctx.restore();
         }
     
         requestAnimationFrame(draw);
