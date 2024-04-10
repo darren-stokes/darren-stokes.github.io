@@ -340,7 +340,7 @@ function draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offs
         // Update the offset for the next frame
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-        requestAnimationFrame(() => draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
+        requestAnimationFrame(() => draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
     }
 
 
