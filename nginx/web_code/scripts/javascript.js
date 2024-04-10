@@ -314,7 +314,7 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                console.log(canvas)
+                console.log("Canvas "+canvas)
                 requestAnimationFrame(draw(ctx, canvas, darkModeEnabled));
             }
         }
