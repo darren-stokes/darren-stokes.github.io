@@ -271,6 +271,8 @@ function technologyConveyorBelt(){
     let moveSpeed = 1;
     let iconYPosition = 0;
     let darkMode = localStorage.getItem('darkMode');
+    let loadedIcons = [];
+    let offset = 0;
 
     // Listen for window resize events to adjust icon sizes dynamically
     window.addEventListener('resize', () => {
@@ -304,9 +306,6 @@ function technologyConveyorBelt(){
         '/assets/elastic_stack.webp',
         '/assets/debian.webp'
     ];
-
-    let loadedIcons = [];
-    let offset = 0;
 
     icons.forEach(src=> {
         const img = new Image();
