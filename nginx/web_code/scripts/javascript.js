@@ -318,14 +318,14 @@ function technologyConveyorBelt(){
     function draw(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        // Get the right offset of the .content-inner div
+        const contentInnerDiv = document.querySelector('.content-inner');
+        const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
+
         // Define fade efft
         const fadeEdgeWidth = 100;
         const fadeStart = contentInnerDiv.getBoundingClientRect().left;
         const fadeEnd = contentInnerRightOffset - fadeEdgeWidth;
-
-        // Get the right offset of the .content-inner div
-        const contentInnerDiv = document.querySelector('.content-inner');
-        const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
         // Set the gradient for fading edges
         let gradient = ctx.createLinearGradient(0, 0, 100, 0);
