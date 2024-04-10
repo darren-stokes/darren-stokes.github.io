@@ -316,7 +316,7 @@ function technologyConveyorBelt(){
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 console.log("Belt: "+typeof loadedIcons)
 
-                requestAnimationFrame(draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
+                requestAnimationFrame(() => draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
             }
         }
     });
