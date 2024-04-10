@@ -278,7 +278,7 @@ function technologyConveyorBelt(){
     // set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = 210;
-
+    console.log("Window inner width: "+window.innerWidth+", window general: "+window)
 
     const ctx = canvas.getContext('2d');
     const icons = [
@@ -332,16 +332,16 @@ function technologyConveyorBelt(){
         offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length);
 
         for (let i = 0; i < loadedIcons.length; i++) {
-            let x = i * iconWidth - offset;
+            let x = i * iconWidth - offset + iconPadding; // Adjust X position with padding
 
-            // Only start drawing the icons if they are within the right edge of the .content-inner div
+            // Ensure we only start drawing the icons when they are within the .content-inner div
             if (x < contentInnerRightOffset) {
                 ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
             }
 
-            // If an icon completely passes the left side of the screen, draw it again at the right end
+            // If an image completely passes the left side, draw it on the right side
             if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth, iconHeight);
+                ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
             }
         }
 
