@@ -276,7 +276,7 @@ function technologyConveyorBelt(){
     }
 
     // set canvas dimensions
-    canvas.width = document.getElementById('icon-conveyor-belt').offsetWidth;
+    canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
     canvas.height = 210;
 
     const ctx = canvas.getContext('2d');
