@@ -319,41 +319,26 @@ function technologyConveyorBelt(){
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-        // Compute the total width of all icons including padding
-        let totalWidth = (iconWidth + iconPadding * 2) * loadedIcons.length;
-    
         // Calculate the new offset for the loop, making sure it loops around smoothly
-        offset = (offset + moveSpeed) % totalWidth;
+        offset += moveSpeed;
+        if (offset >= (iconWidth + iconPadding * 2) * loadedIcons.length) {
+            offset = 0;
+        }
     
-        // Begin drawing the icons starting from the first one
-        for (let i = 0; i < loadedIcons.length; i++) {
+        // Draw all the icons including the first one again after the last to create a seamless loop
+        for (let i = -1; i <= loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
     
-            // Only apply shadow if the icon is visible
-            if (x + iconWidth + iconPadding > 0 && x - iconPadding < canvas.width) {
-                if (darkMode === 'enabled') {
-                    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-                    ctx.shadowBlur = 5;
-                    ctx.shadowOffsetX = 0;
-                    ctx.shadowOffsetY = 0;
-                }
-            } else {
-                ctx.shadowColor = 'transparent';
-                ctx.shadowBlur = 0;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
+            // Correct the icon index when i is -1 (drawing the first icon after the last)
+            let iconIndex = i === -1 ? loadedIcons.length - 1 : i;
+    
+            // Skip if the image is outside the canvas bounds
+            if (x + iconWidth + iconPadding < 0 || x - iconPadding > canvas.width) {
+                continue;
             }
     
-            // Draw the icon if it is within the visible canvas
-            if (x < canvas.width && x + iconWidth > -iconPadding * 2) {
-                ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
-            }
-    
-            // Reset shadow settings for the next icon
-            ctx.shadowColor = 'transparent';
-            ctx.shadowBlur = 0;
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
+            // Draw the image
+            ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
         }
     
         requestAnimationFrame(draw);
