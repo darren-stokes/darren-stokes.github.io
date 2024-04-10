@@ -264,7 +264,7 @@ function getMonthsInEnglish (month){
 function technologyConveyorBelt(){
     // Set some initial variables
     let moveSpeed = 1;
-    let iconHeight = 150;
+    let iconHeight = 210;
     let iconWidth = 300;
     let iconYPosition;
     let iconPadding = 30;
@@ -277,9 +277,11 @@ function technologyConveyorBelt(){
 
     // set canvas dimensions
     canvas.width = window.innerWidth;
-    canvas.height = 150;
+    canvas.height = 210;
     iconYPosition = (canvas.height - iconHeight) /2;
-
+    
+    // iconYPosition should theoritically be 0, log to console to confirm
+    console.log(iconYPosition)
     const ctx = canvas.getContext('2d');
     const icons = [
         '/assets/terraform.webp',
