@@ -314,13 +314,13 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                requestAnimationFrame(draw(ctx, darkModeEnabled));
+                requestAnimationFrame(draw(ctx, canvas, darkModeEnabled));
             }
         }
     });
 }
 
-function draw(ctx, darkModeEnabled) {
+function draw(ctx, canvas, darkModeEnabled) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     
         // Draw the icons with offset
