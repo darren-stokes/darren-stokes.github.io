@@ -343,7 +343,6 @@ function technologyConveyorBelt(){
 
 function draw(state) {
     const { ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode } = state;
-    console.log("State: "+state+"\nCtx: "+ctx)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Draw the icons with offset
