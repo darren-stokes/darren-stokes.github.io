@@ -335,7 +335,7 @@ function technologyConveyorBelt(){
                     iconYPosition,
                     darkMode
                 };
-                requestAnimationFrame(() => draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
+                requestAnimationFrame(() => draw(globalDrawingState));
             }
         }
     });
