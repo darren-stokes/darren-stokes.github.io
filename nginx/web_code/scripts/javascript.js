@@ -265,13 +265,6 @@ function getMonthsInEnglish (month){
 }
 
 function technologyConveyorBelt(){
-    // Set some initial variables
-    // Get the icon dimensions based on the screen size
-    let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes ();
-    let moveSpeed = 1;
-    let iconYPosition = 0;
-    let darkMode = localStorage.getItem('darkMode');
-
     // Listen for window resize events to adjust icon sizes dynamically
     window.addEventListener('resize', () => {
         let { height, width, padding } = setIconSizes();
@@ -314,35 +307,34 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                requestAnimationFrame(draw);
+                draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset, darkMode);
             }
         }
     });
-
-    function draw(darkModeEnabled) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-        // Draw the icons with offset
-        for (let i = 0; i < loadedIcons.length; i++) {
-            let x = i * (iconWidth + iconPadding * 2) - offset;
-
-            setIconShadow(ctx, darkModeEnabled);
-    
-            // If the icon goes off-screen to the left, draw it coming in from the right
-            if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
-            }
-    
-            // Regular draw
-            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
-        }
-    
-        // Update the offset for the next frame
-        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
-    
-        requestAnimationFrame(() => draw(darkModeEnabled));
-    }
 }
+
+function draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw the icons with offset
+    for (let i = 0; i < loadedIcons.length; i++) {
+        let x = i * (iconWidth + iconPadding * 2) - offset;
+
+        setIconShadow(ctx, darkModeEnabled);
+
+        // If the icon goes off-screen to the left, draw it coming in from the right
+        if (x < -iconWidth) {
+            ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+        }
+        // Regular draw
+        ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
+    }
+    // Update the offset for the next frame
+    offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+    
+    requestAnimationFrame(() => draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled));
+}
+
 
 function setIconSizes(){
     // set different sizes of the technology icons based on screen size
