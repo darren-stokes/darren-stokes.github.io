@@ -1,3 +1,6 @@
+// Global variable for the drop shadow on the tech icons
+let globalDrawingState = {};
+
 // Get what browser the user is using
 navigator.whatBrowser = (() => {
     const { userAgent } = navigator
@@ -284,6 +287,13 @@ function technologyConveyorBelt(){
         // Update canvas size if needed
         canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
         canvas.height = iconHeight;
+
+        // Update globalDrawingState for resize
+        globalDrawingState.iconHeight = iconHeight;
+        globalDrawingState.iconWidth = iconWidth;
+        globalDrawingState.iconPadding = iconPadding;
+        globalDrawingState.canvas.width = canvas.width;
+        globalDrawingState.canvas.height = canvas.height;
     });
 
     const canvas = document.getElementById('conveyorCanvas');
@@ -313,13 +323,26 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
+                globalDrawingState = {
+                    ctx,
+                    canvas,
+                    loadedIcons,
+                    iconHeight,
+                    iconWidth,
+                    iconPadding,
+                    offset,
+                    moveSpeed,
+                    iconYPosition,
+                    darkMode
+                };
                 requestAnimationFrame(() => draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
             }
         }
     });
 }
 
-function draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode) {
+function draw(state) {
+    const { ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode } = state;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Draw the icons with offset
@@ -338,9 +361,9 @@ function draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offs
         }
     
         // Update the offset for the next frame
-        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+        state.offset = (state.offset + state.moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-        requestAnimationFrame(() => draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
+        requestAnimationFrame(() => draw(state));
     }
 
 
@@ -364,8 +387,11 @@ function setIconSizes(){
 
 // Redraw icons with or without shadow based on dark mode
 function applyShadowToCanvasIcons(darkModeEnabled) {
+    // Update the 'darkMode' property of the global state
+    globalDrawingState.darkMode = darkModeEnabled;
+
     // Trigger a redraw of the canvas with the appropriate shadow
-    requestAnimationFrame(() => draw(darkModeEnabled));
+    requestAnimationFrame(() => draw(globalDrawingState));
 }
 
 // Function to set shadow on context for icons
