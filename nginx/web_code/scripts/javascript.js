@@ -265,7 +265,7 @@ function technologyConveyorBelt(){
     // Set some initial variables
     let moveSpeed = 1;
     let iconHeight = 210;
-    let iconWidth = 330;
+    let iconWidth = 350;
     let iconYPosition = 0;
     let iconPadding = 30;
 
