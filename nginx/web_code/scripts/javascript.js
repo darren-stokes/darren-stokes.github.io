@@ -325,9 +325,10 @@ function technologyConveyorBelt(){
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
         const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().right;
 
-        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * (loadedIcons.length + 1));
 
-        for (let i = 0; i < loadedIcons.length; i++) {
+        // start with -1 to prepare the first offscreen left image
+        for (let i = -1; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
 
             // If in dark mode, prepare to apply a shadow to the icon
@@ -343,18 +344,21 @@ function technologyConveyorBelt(){
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
             }
-        
+
+            // Use modulo operator to wrap around the icon index when it goes below 0
+            let iconIndex = (i + loadedIcons.length) % loadedIcons.length;
+
             // Draw the icon with the possible shadow applied
             if (x + iconWidth + iconPadding > 0 && x - iconPadding < canvas.width) {
-                ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
+                ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
         
             // If part of the image is offscreen, draw it at the end too
             if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+                ctx.drawImage(loadedIcons[iconIndex], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
             else if (x > canvas.width - iconWidth) {
-                ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+                ctx.drawImage(loadedIcons[iconIndex], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
         
             // Reset shadow settings for the next icon
