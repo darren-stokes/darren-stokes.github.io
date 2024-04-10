@@ -276,7 +276,7 @@ function technologyConveyorBelt(){
     }
 
     // set canvas dimensions
-    canvas.width = window.innerWidth;
+    canvas.width = 1200; // window.innerWidth;
     canvas.height = 210;
     console.log("Window inner width: "+window.innerWidth+", window general: "+window)
 
