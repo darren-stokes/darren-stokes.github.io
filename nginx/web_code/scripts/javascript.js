@@ -313,13 +313,13 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                requestAnimationFrame(() => draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
+                requestAnimationFrame(() => draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
             }
         }
     });
 }
 
-function draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode) {
+function draw(ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Draw the icons with offset
