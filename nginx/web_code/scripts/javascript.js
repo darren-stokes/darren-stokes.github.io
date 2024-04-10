@@ -317,19 +317,19 @@ function technologyConveyorBelt(){
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 console.log("Belt: "+typeof loadedIcons)
 
-                requestAnimationFrame(draw(ctx, loadedIcons, darkModeEnabled));
+                requestAnimationFrame(draw(ctx, loadedIcons, darkMode));
             }
         }
     });
 }
 
-function draw(ctx, loadedIcons, darkModeEnabled) {
+function draw(ctx, loadedIcons, darkMode) {
     console.log("draw: "+typeof loadedIcons)
         // Draw the icons with offset
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
 
-            setIconShadow(ctx, darkModeEnabled);
+            setIconShadow(ctx, darkMode);
     
             // If the icon goes off-screen to the left, draw it coming in from the right
             if (x < -iconWidth) {
@@ -343,7 +343,7 @@ function draw(ctx, loadedIcons, darkModeEnabled) {
         // Update the offset for the next frame
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-        requestAnimationFrame(() => draw(darkModeEnabled));
+        requestAnimationFrame(() => draw(ctx, loadedIcons, darkMode));
     }
 
 
