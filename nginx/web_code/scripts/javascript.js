@@ -307,14 +307,14 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                draw(ctx, canvas.width, canvas.height, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset, darkMode);
+                draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset);
             }
         }
     });
 }
 
-function draw(ctx, canvasWidth, canvasHeight, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled) {
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+function draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset) {
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     
     // Draw the icons with offset
     for (let i = 0; i < loadedIcons.length; i++) {
@@ -332,9 +332,8 @@ function draw(ctx, canvasWidth, canvasHeight, loadedIcons, iconWidth, iconPaddin
     // Update the offset for the next frame
     offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-    requestAnimationFrame(() => draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled));
+    requestAnimationFrame(() => draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset));
 }
-
 
 function setIconSizes(){
     // set different sizes of the technology icons based on screen size
