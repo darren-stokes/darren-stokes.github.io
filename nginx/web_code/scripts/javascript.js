@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hideLanguageFlags();
     applyDarkMode();
     // Add drop shadow to tech icons if applicable
-    draw(darkModeEnabled);
+    //draw(darkModeEnabled);
 
     //Check cookie consent and remove popup if accepted
     checkCookieConsent();
