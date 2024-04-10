@@ -324,20 +324,7 @@ function technologyConveyorBelt(){
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
         // Set the gradient for fading edges
-        let gradient = ctx.createLinearGradient(0, 0, 100, 0);
-
-        // set the correct gradient depending on whether dark mode is set or not
-        if (darkMode === 'enabled'){
-            gradient.addColorStop(0, "rgba(40, 40, 40, 0)");
-            gradient.addColorStop(1, "rgba(40, 40, 40, 1)");
-        }
-        else {
-            gradient.addColorStop(0, "rgba(240, 240, 240, 0)");
-            gradient.addColorStop(1, "rgba(240, 240, 240, 1)");
-        }
-
-        // Apply gradient to edges
-        ctx.fillStyle = gradient;
+        
         ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
         ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
