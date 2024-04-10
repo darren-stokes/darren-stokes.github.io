@@ -316,52 +316,43 @@ function technologyConveyorBelt(){
         }
     });
 
-    function draw(){
+    function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'rgba(0, 0, 0, 0)';
-
+    
         // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
-        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().right;
-
-        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * (loadedIcons.length + 1));
-
-        // start with -1 to prepare the first offscreen left image
-        for (let i = -1; i < loadedIcons.length; i++) {
+    
+        // Calculate the total width of all icons including padding
+        const totalIconSetWidth = (iconWidth + iconPadding * 2) * loadedIcons.length;
+        
+        // Calculate the offset to keep the animation smooth
+        offset = (offset + moveSpeed) % totalIconSetWidth;
+    
+        // Draw the icons with wrapping
+        for (let i = -1; i < loadedIcons.length + 1; i++) { // start with -1 to prep the first offscreen left image
             let x = i * (iconWidth + iconPadding * 2) - offset;
-
-            // If in dark mode, prepare to apply a shadow to the icon
+    
+            // Ensure we're applying the shadow only to visible icons
             if (darkMode === 'enabled' && x + iconWidth > 0 && x < contentInnerRightOffset) {
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
                 ctx.shadowBlur = 5;
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
-            }
-            else {
+            } else {
                 ctx.shadowColor = 'transparent';
                 ctx.shadowBlur = 0;
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
             }
-
+    
             // Use modulo operator to wrap around the icon index when it goes below 0
             let iconIndex = (i + loadedIcons.length) % loadedIcons.length;
-
-            // Draw the icon with the possible shadow applied
-            if (x + iconWidth + iconPadding > 0 && x - iconPadding < canvas.width) {
-                ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
-            }
-        
-            // If part of the image is offscreen, draw it at the end too
-            if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[iconIndex], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
-            }
-            else if (x > canvas.width - iconWidth) {
-                ctx.drawImage(loadedIcons[iconIndex], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
-            }
-        
-            // Reset shadow settings for the next icon
+    
+            // Draw the icons, making sure to wrap correctly on both sides
+            ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
+    
+            // Reset the shadow for the next icon
             ctx.shadowColor = 'transparent';
             ctx.shadowBlur = 0;
             ctx.shadowOffsetX = 0;
