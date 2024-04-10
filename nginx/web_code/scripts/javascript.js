@@ -321,7 +321,6 @@ function technologyConveyorBelt(){
 
         // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
-        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().left;
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
         // Set the gradient for fading edges
@@ -346,28 +345,25 @@ function technologyConveyorBelt(){
 
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
-    
-            // Only apply shadow if icon is within the visible area
-            if (x + iconWidth > contentInnerLeftOffset && x < contentInnerRightOffset) {
-                // Apply shadow if in dark mode
-                if (darkMode === 'enabled') {
-                    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-                    ctx.shadowBlur = 10;
-                    ctx.shadowOffsetX = 0;
-                    ctx.shadowOffsetY = 0;
-                } else {
-                    ctx.shadowColor = 'transparent';
-                }
-    
-                // Draw the image with shadow
-                ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
-                
-                // Reset shadow after drawing
-                ctx.shadowColor = 'transparent';
-                ctx.shadowBlur = 0;
+
+            if (darkMode === 'enabled') {
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                ctx.shadowBlur = 10;
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
             }
+
+            if (x < contentInnerRightOffset) {
+                ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
+            }
+    
+            if (x < -iconWidth) {
+                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+            } else if (x > canvas.width - iconWidth) {
+                ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+            }
+            // Restore the state to remove the shadow for next icon
+            ctx.restore();
         }
     
         requestAnimationFrame(draw);
