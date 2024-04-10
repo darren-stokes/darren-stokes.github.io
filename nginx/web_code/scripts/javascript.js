@@ -266,7 +266,7 @@ function technologyConveyorBelt(){
     let moveSpeed = 1;
     let iconHeight = 150;
     let iconWidth = 300;
-    let iconYPosition = 75;
+    let iconYPosition;
     let iconPadding = 30;
 
     const canvas = document.getElementById('conveyorCanvas');
@@ -278,6 +278,7 @@ function technologyConveyorBelt(){
     // set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = 150;
+    iconYPosition = (canvas.height - iconHeight) /2;
 
     const ctx = canvas.getContext('2d');
     const icons = [
