@@ -329,24 +329,18 @@ function technologyConveyorBelt(){
         ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
         ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
-        offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length) + contentInnerRightOffset;
+        offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length);
 
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * iconWidth - offset + iconPadding; // Adjust X position with padding
 
             // Ensure we only start drawing the icons when they are within the .content-inner div
-            if (x + iconWidth > contentInnerRightOffset && x < contentInnerRightOffset + contentInnerDiv.offsetWidth) {
-                // Draw the image
-                ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
-
-                // If part of the image is offscreen to the left, draw it at the right end too
-                if (x < -iconWidth) {
-                    ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
-                }
+            if (x < contentInnerRightOffset) {
+                ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
             }
 
             // If an image completely passes the left side, draw it on the right side
-            if (x < contentInnerRightOffset - iconWidth) {
+            if (x < -iconWidth) {
                 ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
             }
         }
