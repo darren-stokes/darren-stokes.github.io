@@ -328,8 +328,8 @@ function technologyConveyorBelt(){
 
         // Apply gradient to edges
         ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
-        ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
+        //ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
+        //ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
 
