@@ -308,7 +308,6 @@ function technologyConveyorBelt(){
     let loadedIcons = [];
     let offset = 0;
 
-    console.log("Belt: "+typeof loadedIcons)
     icons.forEach(src=> {
         const img = new Image();
         img.src = src;
@@ -316,6 +315,8 @@ function technologyConveyorBelt(){
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
+                console.log("Belt: "+typeof loadedIcons)
+
                 requestAnimationFrame(draw(ctx, loadedIcons, darkModeEnabled));
             }
         }
