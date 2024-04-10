@@ -515,7 +515,7 @@ input:checked + .slider:before {
     margin-right: 20px;
 }
 
-.dark-mode .skill-icon {
+.dark-mode .conveyor-belt {
     filter: drop-shadow(0 0 1px #ffffff);
 }
 

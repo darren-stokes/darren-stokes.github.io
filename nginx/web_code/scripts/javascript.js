@@ -263,11 +263,22 @@ function getMonthsInEnglish (month){
 
 function technologyConveyorBelt(){
     // Set some initial variables
+    // Get the icon dimensions based on the screen size
+    let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes ();
     let moveSpeed = 1;
-    let iconHeight = 180;
-    let iconWidth = 350;
     let iconYPosition = 0;
-    let iconPadding = 20;
+
+    // Listen for window resize events to adjust icon sizes dynamically
+    window.addEventListener('resize', () => {
+        let { height, width, padding } = setIconSizes();
+        iconHeight = height;
+        iconWidth = width;
+        iconPadding = padding;
+
+        // Update canvas size if needed
+        canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
+        canvas.height = iconHeight;
+    });
 
     const canvas = document.getElementById('conveyorCanvas');
     if (!canvas) {
@@ -348,7 +359,23 @@ function technologyConveyorBelt(){
     }
 }
 
-
+function setIconSizes(){
+    // set different sizes of the technology icons based on screen size
+    if (window.innerWidth <= 768){
+        return{
+            height: 120,
+            width: 200,
+            padding: 10
+        };
+    }
+    else{
+        return{
+            height: 180,
+            width: 350,
+            padding: 20
+        };
+    }
+}
 
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
