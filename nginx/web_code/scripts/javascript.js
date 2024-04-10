@@ -322,11 +322,6 @@ function technologyConveyorBelt(){
         const contentInnerDiv = document.querySelector('.content-inner');
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
-        // Define fade efft
-        const fadeEdgeWidth = 100;
-        const fadeStart = contentInnerDiv.getBoundingClientRect().left;
-        const fadeEnd = contentInnerRightOffset - fadeEdgeWidth;
-
         // Set the gradient for fading edges
         let gradient = ctx.createLinearGradient(0, 0, 100, 0);
 
@@ -350,28 +345,6 @@ function technologyConveyorBelt(){
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
     
-            // calculate the opacity based on the icon's position
-            let opacity = 1;
-            if (x < fadeStart) {
-                opacity = Math.min(1, (x + iconWidth) / fadeEdgeWidth);
-            }
-            else if (x > fadeEnd) {
-                opacity = Math.min(1, (canvas.width - x) / fadeEdgeWidth)
-            }
-
-            // Save the current state
-            ctx.save();
-
-            // Apply the drop shadow filter only if the icon is fully visible
-            if (opacity === 1){
-                ctx.shadowColor = 'rgba(255,255, 255, 1)';
-                ctx.shadowBlur = 10;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 4;
-            }
-
-            ctx.globalAlpha = opacity;
-
             if (x < contentInnerRightOffset) {
                 ctx.drawImage(loadedIcons[i], x + iconPadding, iconYPosition, iconWidth, iconHeight);
             }
@@ -381,7 +354,6 @@ function technologyConveyorBelt(){
             } else if (x > canvas.width - iconWidth) {
                 ctx.drawImage(loadedIcons[i], x - (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
             }
-            ctx.restore();
         }
     
         requestAnimationFrame(draw);

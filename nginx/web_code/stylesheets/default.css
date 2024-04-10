@@ -495,7 +495,7 @@ input:checked + .slider:before {
     background-image: linear-gradient(var(--dark-mode-light-colour), var(--dark-mode-dark-colour));
 }
 
-.conveyor-belt {
+#icon-conveyor-belt {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
