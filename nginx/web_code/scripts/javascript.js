@@ -324,7 +324,10 @@ function technologyConveyorBelt(){
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
         // Set the gradient for fading edges
-        
+        let gradient = ctx.createLinearGradient(0, 0, 100, 0);
+
+        // Apply gradient to edges
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
         ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
