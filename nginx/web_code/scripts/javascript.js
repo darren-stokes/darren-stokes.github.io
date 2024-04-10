@@ -1,5 +1,7 @@
 // Global variable for the drop shadow on the tech icons
-let globalDrawingState = {};
+let globalDrawingState = {
+    animationFrameId: null,
+};
 
 // Get what browser the user is using
 navigator.whatBrowser = (() => {
@@ -346,25 +348,30 @@ function draw(state) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Draw the icons with offset
-        for (let i = 0; i < loadedIcons.length; i++) {
-            let x = i * (iconWidth + iconPadding * 2) - offset;
+    for (let i = 0; i < loadedIcons.length; i++) {
+        let x = i * (iconWidth + iconPadding * 2) - offset;
 
-            setIconShadow(ctx, darkMode);
+        setIconShadow(ctx, darkMode);
     
-            // If the icon goes off-screen to the left, draw it coming in from the right
-            if (x < -iconWidth) {
-                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
-            }
-    
-            // Regular draw
-            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
+        // If the icon goes off-screen to the left, draw it coming in from the right
+        if (x < -iconWidth) {
+            ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
         }
-    
-        // Update the offset for the next frame
-        state.offset = (state.offset + state.moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
-    
-        requestAnimationFrame(() => draw(state));
+
+        // Regular draw
+        ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
     }
+
+    // Update the offset for the next frame
+    state.offset = (state.offset + state.moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+
+    // Cancel the previous animation frame before starting a new one
+    if (state.animationFrameId) {
+        cancelAnimationFrame(state.animationFrameId);
+    }
+
+    state.animationFrameId = requestAnimationFrame(() => draw(state));
+}
 
 
 function setIconSizes(){
