@@ -307,13 +307,13 @@ function technologyConveyorBelt(){
         img.onload = () => {
             loadedIcons.push(img);
             if(loadedIcons.length === icons.length){
-                draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset);
+                draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset);
             }
         }
     });
 }
 
-function draw(ctx, loadedIcons, iconWidth, iconPadding, iconYPosition, moveSpeed, offset) {
+function draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset) {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     
     // Draw the icons with offset
