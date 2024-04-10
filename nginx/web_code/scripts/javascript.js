@@ -309,8 +309,16 @@ function technologyConveyorBelt(){
 
         // Set the gradient for fading edges
         let gradient = ctx.createLinearGradient(0, 0, 100, 0);
-        gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
-        gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+
+        // set the correct gradient depending on whether dark mode is set or not
+        if (localStorage.getItem('darkMode') === 'enabled'){
+            gradient.addColorStop(0, "rgba(240, 240, 240, 0)");
+            gradient.addColorStop(1, "rgba(240, 240, 240, 1)");
+        }
+        else {
+            gradient.addColorStop(0, "rgba(40, 40, 40, 0)");
+            gradient.addColorStop(1, "rgba(40, 40, 40, 1)");
+        }
 
         // Apply gradient to edges
         ctx.fillStyle = gradient;
