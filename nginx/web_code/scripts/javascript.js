@@ -308,6 +308,7 @@ function technologyConveyorBelt(){
     let loadedIcons = [];
     let offset = 0;
 
+    console.log(typeof loadedIcons)
     icons.forEach(src=> {
         const img = new Image();
         img.src = src;
@@ -322,7 +323,7 @@ function technologyConveyorBelt(){
 }
 
 function draw(ctx, loadedIcons, darkModeEnabled) {
-    
+    console.log(typeof loadedIcons)
         // Draw the icons with offset
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * (iconWidth + iconPadding * 2) - offset;
