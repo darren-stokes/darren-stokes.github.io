@@ -327,14 +327,13 @@ function technologyConveyorBelt(){
         const totalIconSetWidth = (iconWidth + iconPadding * 2) * loadedIcons.length;
         
         // Calculate the offset to keep the animation smooth
-        offset = (offset + moveSpeed) % totalIconSetWidth;
-    
-        // Draw the icons with wrapping
-        for (let i = -1; i < loadedIcons.length + 1; i++) { // start with -1 to prep the first offscreen left image
+        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+
+        for (let i = -1; i < loadedIcons.length + 1; i++) { // Adjusted the loop to cover offscreen icons
             let x = i * (iconWidth + iconPadding * 2) - offset;
     
-            // Ensure we're applying the shadow only to visible icons
-            if (darkMode === 'enabled' && x + iconWidth > 0 && x < contentInnerRightOffset) {
+            // Apply shadow if in dark mode
+            if (darkMode === 'enabled') {
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
                 ctx.shadowBlur = 5;
                 ctx.shadowOffsetX = 0;
@@ -346,13 +345,17 @@ function technologyConveyorBelt(){
                 ctx.shadowOffsetY = 0;
             }
     
-            // Use modulo operator to wrap around the icon index when it goes below 0
             let iconIndex = (i + loadedIcons.length) % loadedIcons.length;
     
-            // Draw the icons, making sure to wrap correctly on both sides
+            // Draw the icon
             ctx.drawImage(loadedIcons[iconIndex], x + iconPadding, iconYPosition, iconWidth, iconHeight);
     
-            // Reset the shadow for the next icon
+            // If the icon is partly offscreen on the right, draw its pair on the left
+            if (x > canvas.width - iconWidth - iconPadding) {
+                ctx.drawImage(loadedIcons[iconIndex], x - totalIconSetWidth, iconYPosition, iconWidth, iconHeight);
+            }
+    
+            // Reset the shadow for next icon
             ctx.shadowColor = 'transparent';
             ctx.shadowBlur = 0;
             ctx.shadowOffsetX = 0;
