@@ -309,7 +309,7 @@ function technologyConveyorBelt(){
 
         // Get the offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
-        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().left;
+        const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
         // Set the gradient for fading edges
         let gradient = ctx.createLinearGradient(0, 0, 100, 0);
@@ -329,13 +329,13 @@ function technologyConveyorBelt(){
         ctx.fillRect(0, 0, 100, canvas.height); // Fade on left
         ctx.fillRect(canvas.width - 100, 0, 100, canvas.height); // Fade on right
 
-        offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length) + contentInnerLeftOffset;
+        offset = (offset + moveSpeed) % (iconWidth * loadedIcons.length) + contentInnerRightOffset;
 
         for (let i = 0; i < loadedIcons.length; i++) {
             let x = i * iconWidth - offset + iconPadding; // Adjust X position with padding
 
             // Ensure we only start drawing the icons when they are within the .content-inner div
-            if (x + iconWidth > contentInnerLeftOffset && x < contentInnerLeftOffset + contentInnerDiv.offsetWidth) {
+            if (x + iconWidth > contentInnerRightOffset && x < contentInnerRightOffset + contentInnerDiv.offsetWidth) {
                 // Draw the image
                 ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
 
@@ -346,7 +346,7 @@ function technologyConveyorBelt(){
             }
 
             // If an image completely passes the left side, draw it on the right side
-            if (x < contentInnerLeftOffset - iconWidth) {
+            if (x < contentInnerRightOffset - iconWidth) {
                 ctx.drawImage(loadedIcons[i], x + (iconWidth * loadedIcons.length), iconYPosition, iconWidth - (2 * iconPadding), iconHeight);
             }
         }
