@@ -321,6 +321,7 @@ function technologyConveyorBelt(){
 
         // Get the right offset of the .content-inner div
         const contentInnerDiv = document.querySelector('.content-inner');
+        const contentInnerLeftOffset = contentInnerDiv.getBoundingClientRect().left;
         const contentInnerRightOffset = contentInnerDiv.getBoundingClientRect().right;
 
         // Set the gradient for fading edges
