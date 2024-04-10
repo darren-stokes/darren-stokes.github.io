@@ -91,9 +91,6 @@ function toggleDarkMode(){
     // Save to localStorage
     localStorage.setItem('darkMode', isChecked ? 'enabled': 'disabled')
 
-    // Apply shadow to tech icons if dark mode is enabled
-    applyShadowToCanvasIcons(isChecked);
-
     // Collapse mobile menu on changing mode
     collapseMenu()
 }
@@ -264,14 +261,25 @@ function getMonthsInEnglish (month){
     return monthMap[month] || month;
 }
 
-function technologyConveyorBelt() {
-    // Define the sizes based on the current viewport size
-    let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes();
+function technologyConveyorBelt(){
+    // Set some initial variables
+    // Get the icon dimensions based on the screen size
+    let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes ();
     let moveSpeed = 1;
     let iconYPosition = 0;
-    let offset = 0;
-    let darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
-    let loadedIcons = [];
+    let darkMode = localStorage.getItem('darkMode');
+
+    // Listen for window resize events to adjust icon sizes dynamically
+    window.addEventListener('resize', () => {
+        let { height, width, padding } = setIconSizes();
+        iconHeight = height;
+        iconWidth = width;
+        iconPadding = padding;
+
+        // Update canvas size if needed
+        canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
+        canvas.height = iconHeight;
+    });
 
     const canvas = document.getElementById('conveyorCanvas');
     if (!canvas) {
@@ -279,7 +287,7 @@ function technologyConveyorBelt() {
         return;
     }
 
-    // Set initial canvas dimensions
+    // set canvas dimensions
     canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
     canvas.height = iconHeight;
 
@@ -294,59 +302,56 @@ function technologyConveyorBelt() {
         '/assets/debian.webp'
     ];
 
-    // Preload icons and draw when ready
-    preloadIcons(icons, loadedIcons, () => {
-        draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled);
-    });
+    let loadedIcons = [];
+    let offset = 0;
 
-    // Listen for window resize events to adjust icon sizes dynamically
-    window.addEventListener('resize', () => {
-        let sizes = setIconSizes();
-        iconHeight = sizes.height;
-        iconWidth = sizes.width;
-        iconPadding = sizes.padding;
-        canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
-        canvas.height = iconHeight;
-
-        // Redraw icons when resizing
-        draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled);
-    });
-}
-
-function preloadIcons(icons, loadedIcons, callback) {
-    icons.forEach(src => {
+    icons.forEach(src=> {
         const img = new Image();
         img.src = src;
         img.onload = () => {
             loadedIcons.push(img);
-            if (loadedIcons.length === icons.length) {
-                callback(); // Call the callback when all icons have loaded
+            if(loadedIcons.length === icons.length){
+                requestAnimationFrame(draw);
             }
-        };
-    });
-}
-
-function draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled) {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    
-    // Draw the icons with offset
-    for (let i = 0; i < loadedIcons.length; i++) {
-        let x = i * (iconWidth + iconPadding * 2) - offset;
-        setIconShadow(ctx, darkModeEnabled); // Set shadow based on dark mode
-
-        // If the icon goes off-screen to the left, draw it coming in from the right
-        if (x < -iconWidth) {
-            ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
         }
+    });
 
-        // Regular draw
-        ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
-    }
-
-    // Update the offset for the next frame
-    offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    requestAnimationFrame(() => draw(ctx, loadedIcons, iconWidth, iconHeight, iconPadding, iconYPosition, moveSpeed, offset, darkModeEnabled));
+        // Draw the icons with offset
+        for (let i = 0; i < loadedIcons.length; i++) {
+            let x = i * (iconWidth + iconPadding * 2) - offset;
+
+            // If in dark mode, prepare to apply a shadow to the icon
+            if (darkMode === 'enabled' && x + iconWidth > 0 && x < contentInnerRightOffset) {
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                ctx.shadowBlur = 10;
+                ctx.shadowBlur = 5;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+            }
+            else {
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+            }
+    
+            // If the icon goes off-screen to the left, draw it coming in from the right
+            if (x < -iconWidth) {
+                ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
+            }
+    
+            // Regular draw
+            ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
+        }
+    
+        // Update the offset for the next frame
+        offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
+    
+        requestAnimationFrame(draw);
+    }
 }
 
 function setIconSizes(){
@@ -367,32 +372,8 @@ function setIconSizes(){
     }
 }
 
-// Redraw icons with or without shadow based on dark mode
-function applyShadowToCanvasIcons(darkModeEnabled) {
-    // Trigger a redraw of the canvas with the appropriate shadow
-    requestAnimationFrame(() => draw(darkModeEnabled));
-}
-
-// Function to set shadow on context for icons
-function setIconShadow(ctx, enabled) {
-    if (enabled) {
-        // set the shadow for dark mode
-        ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-        ctx.shadowBlur = 5;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-    } else {
-        // clear the shadow for light mode
-        ctx.shadowColor = 'transparent';
-        ctx.shadowBlur = 0;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-    }
-}
-
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
-    let darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
     setupLanguage();
 
     // Set up self links to account for the sticky banner
@@ -404,8 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage();
     hideLanguageFlags();
     applyDarkMode();
-    // Add drop shadow to tech icons if applicable
-    draw(darkModeEnabled);
 
     //Check cookie consent and remove popup if accepted
     checkCookieConsent();
