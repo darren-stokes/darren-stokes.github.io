@@ -324,16 +324,9 @@ function technologyConveyorBelt(){
             let x = i * (iconWidth + iconPadding * 2) - offset;
 
             // If in dark mode, prepare to apply a shadow to the icon
-            if (darkMode === 'enabled' && x + iconWidth > 0 && x < contentInnerRightOffset) {
+            if (darkMode === 'enabled') {
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-                ctx.shadowBlur = 10;
                 ctx.shadowBlur = 5;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
-            }
-            else {
-                ctx.shadowColor = 'transparent';
-                ctx.shadowBlur = 0;
                 ctx.shadowOffsetX = 0;
                 ctx.shadowOffsetY = 0;
             }
