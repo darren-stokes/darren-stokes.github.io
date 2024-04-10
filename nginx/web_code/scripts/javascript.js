@@ -318,8 +318,9 @@ function technologyConveyorBelt(){
             }
         }
     });
+}
 
-    function draw(darkModeEnabled) {
+function draw(darkModeEnabled) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     
         // Draw the icons with offset
@@ -399,6 +400,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage();
     hideLanguageFlags();
     applyDarkMode();
+    // Add drop shadow to tech icons if applicable
+    draw(darkModeEnabled);
 
     //Check cookie consent and remove popup if accepted
     checkCookieConsent();
