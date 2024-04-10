@@ -317,13 +317,13 @@ function technologyConveyorBelt(){
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 console.log("Belt: "+typeof loadedIcons)
 
-                requestAnimationFrame(draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, darkMode));
+                requestAnimationFrame(draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
             }
         }
     });
 }
 
-function draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, darkMode) {
+function draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode) {
     console.log("draw: "+typeof loadedIcons)
         // Draw the icons with offset
         for (let i = 0; i < loadedIcons.length; i++) {
@@ -343,7 +343,7 @@ function draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, darkMode) {
         // Update the offset for the next frame
         offset = (offset + moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
     
-        requestAnimationFrame(() => draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, darkMode));
+        requestAnimationFrame(() => draw(ctx, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode));
     }
 
 
