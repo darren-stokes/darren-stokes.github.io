@@ -104,11 +104,11 @@ function toggleDarkMode(){
 }
 
 function applyDarkMode(){
-    console.log(localStorage.getItem('darkMode'))
     // Enable dark mode if set in local storage
-    if (localStorage.getItem('darkMode') === 'enabled'){
+    if (localStorage.getItem('darkMode') === 'enabled' || localStorage.getItem('darkMode') === null){
         document.body.classList.add('dark-mode');
         document.querySelector('.switch input[type="checkbox"]').checked = true;
+        localStorage.setItem('darkMode', 'enabled')
     }
 
     // if not set, remove the CSS
