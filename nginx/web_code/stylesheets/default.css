@@ -357,8 +357,8 @@ input:checked + .slider:before {
 }
 
 .content-box {
-    padding: 0px 5px;
-    width: 93%;
+    padding: 0px 10px;
+    width: 95%;
     height: 100%;
 }
 
