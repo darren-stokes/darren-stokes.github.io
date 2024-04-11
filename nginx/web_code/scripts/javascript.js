@@ -104,6 +104,7 @@ function toggleDarkMode(){
 }
 
 function applyDarkMode(){
+    console.log(localStorage.getItem('darkMode'))
     // Enable dark mode if set in local storage
     if (localStorage.getItem('darkMode') === 'enabled'){
         document.body.classList.add('dark-mode');
@@ -420,7 +421,6 @@ function setIconShadow(ctx, enabled) {
 
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
-    let darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
     setupLanguage();
 
     // Set up self links to account for the sticky banner
@@ -432,8 +432,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage();
     hideLanguageFlags();
     applyDarkMode();
-    // Add drop shadow to tech icons if applicable
-    //draw(darkModeEnabled);
 
     //Check cookie consent and remove popup if accepted
     checkCookieConsent();
