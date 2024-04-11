@@ -357,8 +357,8 @@ input:checked + .slider:before {
 }
 
 .content-box {
-    padding: 0px 10px;
-    width: 97%;
+    padding: 0px 5px;
+    width: 93%;
     height: 100%;
 }
 
@@ -613,6 +613,7 @@ input:checked + .slider:before {
         border-radius: 30px;
         display: inline-block;
         width: 100%;
+        padding: 0px 5px;
     }
 
     .profile-overview {
