@@ -94,7 +94,7 @@ function toggleDarkMode(){
     var isChecked = document.body.classList.toggle('dark-mode');
 
     // Save to localStorage
-    localStorage.setItem('darkMode', isChecked ? 'enabled': 'disabled')
+    localStorage.setItem('darkMode', isChecked ? 'enabled': 'disabled');
 
     // Apply shadow to tech icons if dark mode is enabled
     applyShadowToCanvasIcons(isChecked);
@@ -108,7 +108,7 @@ function applyDarkMode(){
     if (localStorage.getItem('darkMode') === 'enabled' || localStorage.getItem('darkMode') === null){
         document.body.classList.add('dark-mode');
         document.querySelector('.switch input[type="checkbox"]').checked = true;
-        localStorage.setItem('darkMode', 'enabled')
+        localStorage.setItem('darkMode', 'enabled');
     }
 
     // if not set, remove the CSS
