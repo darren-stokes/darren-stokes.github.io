@@ -536,7 +536,7 @@ input:checked + .slider:before {
     font-weight: bold;
 }
 
-.dark-mode .cookie-notice {
+.dark-mode .cookie-notice a {
     color: black;
 }
 
