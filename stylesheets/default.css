@@ -526,9 +526,18 @@ input:checked + .slider:before {
     z-index: 999;
 }
 
+.dark-mode .cookie-notice {
+    background-color: white;
+    color: black;
+}
+
 .cookie-notice a {
     color: white;
     font-weight: bold;
+}
+
+.dark-mode .cookie-notice {
+    color: black;
 }
 
 .cookie-button {
