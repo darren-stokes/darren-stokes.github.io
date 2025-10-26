@@ -312,7 +312,7 @@ function technologyConveyorBelt(){
     const ctx = canvas.getContext('2d');
     const icons = [
         '/assets/kubernetes.png',
-        '/assets/argo.webp',
+        '/assets/argo.png',
         '/assets/terraform.webp',
         '/assets/prometheus.webp',
         '/assets/grafana.webp',
