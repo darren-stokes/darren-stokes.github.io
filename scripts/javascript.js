@@ -1,8 +1,3 @@
-// Global variable for the drop shadow on the tech icons
-let globalDrawingState = {
-    animationFrameId: null,
-};
-
 // Get what browser the user is using
 navigator.whatBrowser = (() => {
     const { userAgent } = navigator
@@ -48,6 +43,8 @@ function toggleLanguage(language) {
     document.querySelectorAll('.lang-' + language).forEach(el => {
         el.style.display = 'inline-block';
     });
+
+    document.documentElement.lang = language;
 
     // Save users preference
     localStorage.setItem('userLanguage', language);
@@ -96,9 +93,6 @@ function toggleDarkMode(){
     // Save to localStorage
     localStorage.setItem('darkMode', isChecked ? 'enabled': 'disabled');
 
-    // Apply shadow to tech icons if dark mode is enabled
-    applyShadowToCanvasIcons(isChecked);
-
     // Collapse mobile menu on changing mode
     collapseMenu()
 }
@@ -135,19 +129,10 @@ function checkCookieConsent(){
 // Menu
 function toggleMobileMenu() {
     // Toggle the appearance of the menu whether it's clicked or not.
-    var navIcon = document.querySelector(".mobile-nav-icon");
-    navIcon.classList.toggle("active");
+    document.querySelector(".mobile-nav-icon").classList.toggle("active");
 
     // Display/hide the menu contents when the menu is selected/unselected.
-    var navBarRight = document.querySelector(".navbar-right");
-    navBarRight.classList.toggle("active");
-
-    if (navBarRight.style.display === 'none' || navBarRight.style.display === '') {
-        navBarRight.style.display = 'inline-block';
-    }
-    else {
-        navBarRight.style.display = 'none';
-    }
+    document.querySelector(".navbar-menu").classList.toggle("active");
 }
 
 // Collapses the mobile menu if the language or dark mode is changed through the menu
@@ -160,75 +145,17 @@ function collapseMenu(){
     }
 }
 
-// Configure the Banner anchors to account for the banners offset
-function bannerOffset(){
-    document.querySelectorAll('.lang-navbar a').forEach(link=>{
-        link.addEventListener('click', function(e){
-            // Get the current page
-            currentPage = window.location.pathname.split("/").pop();
-
-            // Only change default behaviour if the current page is the home page
-            if(!currentPage){
-                // Prevent the default anchor action
-                e.preventDefault();
-
-                const TARGETID = this.getAttribute('href').substring(1);
-                const TARGETELEMENT = document.getElementById(TARGETID);
-
-                if(TARGETELEMENT){
-                    scrollToAdjustedTarget(TARGETELEMENT);
-                }
-            }
-        });
-    });
-}
-
-// Get the hash part of URL and pass it to the scroll to function
-function handleHashChange(){
-    window.addEventListener('hashchange', function() {
-        const TARGETELEMENT = this.document.getElementById(window.location.hash.substring(1));
-        if (TARGETELEMENT){
-            scrollToAdjustedTarget(TARGETELEMENT);
-        }
-    });
-}
-
-function scrollToAdjustedTarget(element){
-    // get the current height of the banner
-    const HEADEROFFSET = getDynamicHeaderHeight();
-    const ELEMENTPOSITION = element.getBoundingClientRect().top;
-    const OFFSETPOSITION = ELEMENTPOSITION + window.scrollY - HEADEROFFSET;
-
-    window.scrollTo({
-        top: OFFSETPOSITION,
-        behavior: "smooth"
-    });
-}
-
-function getDynamicHeaderHeight(){
-    const HEADER = document.querySelector('.navbar.banner');
-    return HEADER.offsetHeight;
-}
-
-function adjustScrollPositionForAnchors(){
-    if(window.location.hash){
-        const TARGETELEMENT = document.getElementById(window.location.hash.substring(1));
-        if (TARGETELEMENT){
-            setTimeout(() => scrollToAdjustedTarget(TARGETELEMENT), 0);
-        }
-    }
-}
-
 function monthCalculator(){
     document.querySelectorAll('.experience-dates').forEach(function(span){
         // remove the pipe and space
-        var dateString = span.textContent.trim().split("|")[1];
+        var dateString = span.textContent.split("|")[1].trim();
 
         // get dates
-        var dates = dateString.split(" - ");
+        var dates = dateString.split(" - ").map(d => d.trim());
+
         // If "Present" is not used, convert the month name to English
         var startMonthName = dates[0].split(" ")[0];
-        var endMonthName = (dates[1] === "Present" || dates[1] === "Presente") ? "Present" : dates[1].split(" ")[0];
+        var endMonthName = (dates[1].includes("Present") || dates[1].includes("Actualidad")) ? "Present" : dates[1].split(" ")[0];
 
         var startDate = new Date(getMonthsInEnglish(startMonthName) + dates[0].slice(dates[0].indexOf(" ")) + " 1");
         var endDate = (endMonthName === "Present") ? new Date() : new Date(getMonthsInEnglish(endMonthName) + dates[1].slice(dates[1].indexOf(" ")) + " 1");
@@ -242,13 +169,14 @@ function monthCalculator(){
         var years = Math.floor(months / 12);
         months = months % 12;
 
-        // Depending on the span class, add the years and months in English or Spanish
-        var timeString = span.classList.contains('en') ?
-            (years > 0 ? years + " years " : "") + (months > 0 ? months + " months" : "") :
-            (years > 0 ? years + " años " : "") + (months > 0 ? months + " meses" : "");
+        // Singular or plural, in English or Spanish depending on the span class
+        var en = span.classList.contains('en');
+        var y = years > 0 ? years + (en ? (years === 1 ? ' year' : ' years') : (years === 1 ? ' año' : ' años')) : '';
+        var m = months > 0 ? months + (en ? (months === 1 ? ' month' : ' months') : (months === 1 ? ' mes' : ' meses')) : '';
+        var timeString = (y + ' ' + m).trim();
 
         // Add the computed duration to the existing text
-        span.textContent += " (" + timeString.trim() + ")";
+        span.textContent += " (" + timeString + ")";
     });
 }
 
@@ -270,163 +198,9 @@ function getMonthsInEnglish (month){
     return monthMap[month] || month;
 }
 
-function technologyConveyorBelt(){
-    // Set some initial variables
-    // Get the icon dimensions based on the screen size
-    let { height: iconHeight, width: iconWidth, padding: iconPadding } = setIconSizes ();
-    let moveSpeed = 1;
-    let iconYPosition = 0;
-    let darkMode = localStorage.getItem('darkMode');
-    let loadedIcons = [];
-    let offset = 0;
-
-    // Listen for window resize events to adjust icon sizes dynamically
-    window.addEventListener('resize', () => {
-        let { height, width, padding } = setIconSizes();
-        iconHeight = height;
-        iconWidth = width;
-        iconPadding = padding;
-
-        // Update canvas size if needed
-        canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
-        canvas.height = iconHeight;
-
-        // Update globalDrawingState for resize
-        globalDrawingState.iconHeight = iconHeight;
-        globalDrawingState.iconWidth = iconWidth;
-        globalDrawingState.iconPadding = iconPadding;
-        globalDrawingState.canvas.width = canvas.width;
-        globalDrawingState.canvas.height = canvas.height;
-    });
-
-    const canvas = document.getElementById('conveyorCanvas');
-    if (!canvas) {
-        console.error('Canvas element not found');
-        return;
-    }
-
-    // set canvas dimensions
-    canvas.width = document.getElementById('icon-conveyor-belt').clientWidth;
-    canvas.height = iconHeight;
-
-    const ctx = canvas.getContext('2d');
-    const icons = [
-        '/assets/kubernetes.png',
-        '/assets/argo.png',
-        '/assets/terraform.webp',
-        '/assets/prometheus.webp',
-        '/assets/grafana.webp',
-        '/assets/python.webp',
-        '/assets/elastic_stack.webp',
-        '/assets/debian.webp'
-    ];
-
-    icons.forEach(src=> {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-            loadedIcons.push(img);
-            if(loadedIcons.length === icons.length){
-                globalDrawingState = {
-                    ctx,
-                    canvas,
-                    loadedIcons,
-                    iconHeight,
-                    iconWidth,
-                    iconPadding,
-                    offset,
-                    moveSpeed,
-                    iconYPosition,
-                    darkMode
-                };
-                requestAnimationFrame(() => draw(globalDrawingState));
-            }
-        }
-    });
-}
-
-function draw(state) {
-    const { ctx, canvas, loadedIcons, iconHeight, iconWidth, iconPadding, offset, moveSpeed, iconYPosition, darkMode } = state;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw the icons with offset
-    for (let i = 0; i < loadedIcons.length; i++) {
-        let x = i * (iconWidth + iconPadding * 2) - offset;
-
-        setIconShadow(ctx, darkMode);
-    
-        // If the icon goes off-screen to the left, draw it coming in from the right
-        if (x < -iconWidth) {
-            ctx.drawImage(loadedIcons[i], x + (iconWidth + iconPadding * 2) * loadedIcons.length, iconYPosition, iconWidth, iconHeight);
-        }
-
-        // Regular draw
-        ctx.drawImage(loadedIcons[i], x, iconYPosition, iconWidth, iconHeight);
-    }
-
-    // Update the offset for the next frame
-    state.offset = (state.offset + state.moveSpeed) % ((iconWidth + iconPadding * 2) * loadedIcons.length);
-
-    // Cancel the previous animation frame before starting a new one
-    if (state.animationFrameId) {
-        cancelAnimationFrame(state.animationFrameId);
-    }
-
-    state.animationFrameId = requestAnimationFrame(() => draw(state));
-}
-
-function setIconSizes(){
-    // set different sizes of the technology icons based on screen size
-    if (window.innerWidth <= 768){
-        return{
-            height: 120,
-            width: 200,
-            padding: 10
-        };
-    }
-    else{
-        return{
-            height: 180,
-            width: 350,
-            padding: 20
-        };
-    }
-}
-
-// Redraw icons with or without shadow based on dark mode
-function applyShadowToCanvasIcons(darkModeEnabled) {
-    // Update the 'darkMode' property of the global state
-    globalDrawingState.darkMode = darkModeEnabled;
-
-    // Trigger a redraw of the canvas with the appropriate shadow
-    requestAnimationFrame(() => draw(globalDrawingState));
-}
-
-// Function to set shadow on context for icons
-function setIconShadow(ctx, enabled) {
-    if (enabled) {
-        // set the shadow for dark mode
-        ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-        ctx.shadowBlur = 5;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-    } else {
-        // clear the shadow for light mode
-        ctx.shadowColor = 'transparent';
-        ctx.shadowBlur = 0;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-    }
-}
-
 // On page load, do some preflight checks
 document.addEventListener('DOMContentLoaded', () => {
     setupLanguage();
-
-    // Set up self links to account for the sticky banner
-    bannerOffset();
-    handleHashChange();
-    adjustScrollPositionForAnchors();
 
     // Check local storage for language and dark mode preferences, apply changes where necessary
     setLanguage();
@@ -437,5 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkCookieConsent();
 
     monthCalculator();
-    technologyConveyorBelt();
+
+    // Set the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 });
