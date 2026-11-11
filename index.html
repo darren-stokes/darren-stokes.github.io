@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Darren Stokes | DevOps Engineer</title>
+        <title>Darren Stokes | Platform Team Lead</title>
         <meta charset="UTF-8">
+        <meta name="description" content="Darren Stokes is a Platform Team Lead with 14+ years of experience in infrastructure, DevOps and platform engineering. He leads teams that make engineering faster, safer and calmer.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Tell Dark Reader that it doesn't need to apply as we have a dark mode defined -->
         <meta name="darkreader-lock">
 
         <!-- CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/stylesheets/default.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
             <!-- Hamburger Icon with transform for mobile devices. Credit: https://codepen.io/ainalem/pen/PoYvggj -->
             <div class="mobile-nav-icon" onclick="toggleMobileMenu()">
-              <svg xmlns="http://www.w3.org/2000/svg" width="53.33" height="53.33" viewBox="0 0 200 200">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
                 <g stroke-width="6.5" stroke-linecap="round">
                   <path
                     d="M72 82.286h28.75"
@@ -67,17 +67,23 @@
               </svg>
             </div>
 
-            <div class="navbar-right">
+            <div class="navbar-menu navbar">
               <div class="lang lang-en lang-navbar">
                 <a href="#about" onclick="collapseMenu()">About</a>
+                <a href="#leadership" onclick="collapseMenu()">Leadership</a>
+                <a href="#skills" onclick="collapseMenu()">Skills</a>
                 <a href="#education" onclick="collapseMenu()">Education</a>
                 <a href="#experience" onclick="collapseMenu()">Experience</a>
+                <a href="#hobbies" onclick="collapseMenu()">Hobbies</a>
                 <a href="#contact" onclick="collapseMenu()">Contact</a>
               </div>
               <div class="lang lang-es lang-navbar">
-                <a href="#about" onclick="collapseMenu()">Sobre Mi</a>
+                <a href="#about" onclick="collapseMenu()">Sobre mí</a>
+                <a href="#leadership" onclick="collapseMenu()">Liderazgo</a>
+                <a href="#skills" onclick="collapseMenu()">Habilidades</a>
                 <a href="#education" onclick="collapseMenu()">Educación</a>
                 <a href="#experience" onclick="collapseMenu()">Experiencia</a>
+                <a href="#hobbies" onclick="collapseMenu()">Hobbies</a>
                 <a href="#contact" onclick="collapseMenu()">Contacto</a>
               </div>
               <select id="language-select" onfocus='this.size=2;' onblur='this.size=0;' onchange='this.size=1; this.blur();'>
@@ -90,6 +96,7 @@
               </label>
             </div>
         </div>
+
         <!-- Content -->
         <div class="content">
             <div class="profile-overview content-box">
@@ -98,7 +105,7 @@
                     <video class="video-background" autoplay loop muted="muted" playsinline>
                         <source src="assets/stock_coding_video_540.mp4" type="video/mp4">
                     </video>
-                    <!-- Responsible for darking the video -->
+                    <!-- Responsible for darkening the video -->
                     <div class="overlay dark-background"></div>
                     <!-- Banner text -->
                     <div class="profile-banner">
@@ -111,10 +118,12 @@
                         <h1 class="name">Darren Stokes</h1>
                         <hr class="divider">
                         <div class="lang lang-en">
-                            <p class="job-title">DevOps Engineer</p>
+                            <p class="job-title">Platform Team Lead</p>
+                            <p class="job-title">Engineering Leadership · Kubernetes · DevSecOps</p>
                         </div>
                         <div class="lang lang-es">
-                            <p class="job-title">Ingeniero DevOps</p>
+                            <p class="job-title">Platform Team Lead</p>
+                            <p class="job-title">Liderazgo de ingeniería · Kubernetes · DevSecOps</p>
                         </div>
                     </div>
                     <!-- Down arrow -->
@@ -131,18 +140,18 @@
                     <div class="content-box">
                         <div class="content-inner">
                             <div class="lang lang-en">
-                                <h3 class="section-heading">About Me</h3>
-                                <p class="section-text">I'm an experienced IT professional with a solid background in Linux engineering, supported by a BSc in Applied Computing from the University of Limerick and an MSc in Management of Information Systems from Trinity College Dublin. My career trajectory showcases a commitment to technological excellence and strategic insight across various domains.</p>
-                                <p class="section-text">Skilled in a broad spectrum of technologies, I have developed proficiency in AWS, Kubernetes, ArgoCD, Helm, Elastic Stack, Python, Docker, Jenkins, Git, Grafana, Prometheus, Terraform, and GCP. This technical journey is augmented by my experiences in the financial sector and customer-facing roles, demonstrating my capability to excel in demanding situations and surpass expectations.</p>
-                                <p class="section-text">Currently, I am focusing on deepening my understanding of Python, drawn to its adaptability and innovative applications. My expertise also covers advanced data analysis and visualization through the Elastic Stack, aiming to enhance organizational insights.</p>
-                                <p class="section-text">I am eager to leverage my specialized skill set in an innovative organization, driving transformative projects forward and contributing to sustained business growth. With a proven track record in navigating complex IT challenges and a deep passion for technology, I am well-prepared to deliver significant contributions and results.</p>
+                                <h2 class="section-heading">About Me</h2>
+                                <p class="section-text">I lead platform teams that make engineering faster, safer and calmer.</p>
+                                <p class="section-text">I'm the Platform Team Lead at Ilkari in Málaga, where my team owns Kubernetes, CI/CD and DevSecOps for the company's domains product. I stepped into the role in September 2025 and was formally appointed in June 2026.</p>
+                                <p class="section-text">Behind that sit 14+ years in infrastructure, DevOps and platform engineering, from a global trading firm's datacentres in Dublin to cloud-native platforms in Spain. I still know the stack well enough to make good technical calls and to earn the trust of the engineers I lead.</p>
+                                <p class="section-text">I care about building teams where engineers have clear ownership, room to grow, and the platform support to ship with confidence. I hold an MSc in Management of Information Systems from Trinity College Dublin, and I work in English and Spanish.</p>
                             </div>
                             <div class="lang lang-es">
-                                <h3 class="section-heading">Sobre Mi</h3>
-                                <p class="section-text">Soy un profesional de TI con experiencia y una sólida formación en ingeniería Linux, respaldado por un grado en Informatica Aplicada de la Universidad de Limerick y un master en Gestión de Sistemas de Información en Trinity College Dublin. Mi trayectoria profesional demuestra un compromiso con la excelencia tecnológica y la perspicacia estratégica en diversos ámbitos.</p>
-                                <p class="section-text">Experto en un amplio espectro de tecnologías, he desarrollado competencias en AWS, Kubernetes, ArgoCD, Helm, Elastic Stack, Python, Docker, Jenkins, Git, Grafana, Prometheus, Terraform y GCP. Este viaje técnico se complementa con mi experiencia en el sector financiero y roles orientados al cliente, demostrando mi capacidad para sobresalir en situaciones exigentes y superar expectativas.</p>
-                                <p class="section-text">Actualmente, estoy concentrándome en profundizar mi conocemiento de Python, atraído por su adaptabilidad y aplicaciones innovadoras. Mi experiencia también abarca el análisis y la visualización avanzada de datos a través de Elastic Stack, con el objetivo de mejorar las percepciones organizativas.</p>
-                                <p class="section-text">Estoy entusiasmado por aprovechar mi conjunto de habilidades completo en una empresa progresiva, contribuyendo a proyectos transformadores y promoviendo el crecimiento empresarial. Con una rica experiencia y pasión por la tecnología, estoy preparado para enfrentar desafíos complejos y entregar resultados significativos.</p>
+                                <h2 class="section-heading">Sobre mí</h2>
+                                <p class="section-text">Lidero equipos de plataforma que hacen la ingeniería más rápida, más segura y más tranquila.</p>
+                                <p class="section-text">Soy el Platform Team Lead en Ilkari, en Málaga, donde mi equipo es responsable de Kubernetes, CI/CD y DevSecOps para el producto de dominios de la empresa. Asumí el puesto en funciones en septiembre de 2025 y fui nombrado oficialmente en junio de 2026.</p>
+                                <p class="section-text">Detrás hay más de 14 años en infraestructura, DevOps e ingeniería de plataforma, desde los centros de datos de una firma global de trading en Dublín hasta plataformas cloud-native en España. Sigo conociendo el stack lo bastante bien como para tomar buenas decisiones técnicas y ganarme la confianza de los ingenieros que lidero.</p>
+                                <p class="section-text">Me importa crear equipos en los que los ingenieros tengan responsabilidades claras, espacio para crecer y el apoyo de plataforma necesario para desplegar con confianza. Tengo un MSc en Management of Information Systems por el Trinity College Dublin y trabajo en inglés y en español.</p>
                             </div>
                         </div>
                     </div>
@@ -150,32 +159,89 @@
             </section>
             <div class="wrapper divider-wrapper odds">
             </div>
-            <section id="technical_skills" class="evens">
-                <div class="wrapper">
-                    <div class="content-box">
-                        <div class="content-inner" id="icon-conveyor-belt">
-                            <div class="lang lang-en">
-                                <h3 class="section-heading">Tech Skills</h3>
-                            </div>
-                            <div class="lang lang-es">
-                                <h3 class="section-heading">Habilidades Tecnológicas</h3>
-                            </div>
-                            <canvas id="conveyorCanvas"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="wrapper divider-wrapper evens">
-            </div>
-            <section id="education" class="odds">
+            <section id="leadership" class="evens">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
                             <div class="lang lang-en">
-                                <h3 class="section-heading">Education</h3>
+                                <h2 class="section-heading">Leadership Highlights</h2>
+                                <h3>Organisation design</h3>
+                                <p class="section-text">&#8226; Drove the split of a combined engineering team into separate Platform and Infrastructure teams, defining ownership boundaries, technology allocation and operating models.</p>
+                                <h3>Leading through change</h3>
+                                <p class="section-text">&#8226; Kept the team aligned and delivering after the department head's unexpected departure, while building relationships with previously siloed teams.</p>
+                                <h3>Hiring and performance</h3>
+                                <p class="section-text">&#8226; Own the full hiring cycle, from job descriptions and interviews to onboarding, probation goals and performance outcomes.</p>
+                                <h3>Developing people</h3>
+                                <p class="section-text">&#8226; Mentored graduates at SIG, trained DevOps joiners at RentalMatics, and trained Ilkari's NOC team to handle alerts independently.</p>
                             </div>
                             <div class="lang lang-es">
-                                <h3 class="section-heading">Educación</h3>
+                                <h2 class="section-heading">Aspectos destacados de liderazgo</h2>
+                                <h3>Diseño organizativo</h3>
+                                <p class="section-text">&#8226; Impulsé la división de un equipo de ingeniería conjunto en dos equipos, Plataforma e Infraestructura, definiendo responsabilidades, el reparto de tecnologías y el modelo de trabajo de cada uno.</p>
+                                <h3>Liderar en tiempos de cambio</h3>
+                                <p class="section-text">&#8226; Mantuve al equipo alineado y entregando tras la salida inesperada del jefe de departamento, mientras construía relaciones con equipos que hasta entonces trabajaban aislados.</p>
+                                <h3>Contratación y rendimiento</h3>
+                                <p class="section-text">&#8226; Me encargo de todo el ciclo de contratación: descripciones de puesto, entrevistas, onboarding, objetivos del periodo de prueba y evaluación del rendimiento.</p>
+                                <h3>Desarrollo de personas</h3>
+                                <p class="section-text">&#8226; Mentoricé a recién graduados en SIG, formé a nuevos ingenieros DevOps en RentalMatics y preparé al equipo NOC de Ilkari para gestionar alertas de forma autónoma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="wrapper divider-wrapper evens"></div>
+            <section id="skills" class="odds">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h2 class="section-heading">Skills</h2>
+                                <ul class="section-list section-text">
+                                    <li class="list-heading">Leadership</li>
+                                    <li>Team building, technical hiring, performance management, mentoring, organisational design, stakeholder management</li>
+                                    <li class="list-heading">Platform and cloud</li>
+                                    <li>Kubernetes (RKE2, Istio, Helm, ArgoCD), Terraform, AWS, GCP, OpenStack, Docker, Linux</li>
+                                    <li class="list-heading">Delivery and security</li>
+                                    <li>Jenkins, Groovy, Git, SonarQube, Trivy, Nexus, Harbor</li>
+                                    <li class="list-heading">Observability</li>
+                                    <li>Datadog, Prometheus, Grafana, Elastic Stack</li>
+                                    <li class="list-heading">Programming</li>
+                                    <li>Python, Bash, Go</li>
+                                    <li class="list-heading">Languages</li>
+                                    <li>English (native), Spanish (bilingual)</li>
+                                </ul>
+                            </div>
+                            <div class="lang lang-es">
+                                <h2 class="section-heading">Habilidades</h2>
+                                <ul class="section-list section-text">
+                                    <li class="list-heading">Liderazgo</li>
+                                    <li>Construcción de equipos, contratación técnica, gestión del rendimiento, mentoría, diseño organizativo, gestión de interesados</li>
+                                    <li class="list-heading">Plataforma y cloud</li>
+                                    <li>Kubernetes (RKE2, Istio, Helm, ArgoCD), Terraform, AWS, GCP, OpenStack, Docker, Linux</li>
+                                    <li class="list-heading">Entrega y seguridad</li>
+                                    <li>Jenkins, Groovy, Git, SonarQube, Trivy, Nexus, Harbor</li>
+                                    <li class="list-heading">Observabilidad</li>
+                                    <li>Datadog, Prometheus, Grafana, Elastic Stack</li>
+                                    <li class="list-heading">Programación</li>
+                                    <li>Python, Bash, Go</li>
+                                    <li class="list-heading">Idiomas</li>
+                                    <li>Inglés (nativo), español (bilingüe)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="wrapper divider-wrapper odds"></div>
+            <section id="education" class="evens">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h2 class="section-heading">Education</h2>
+                            </div>
+                            <div class="lang lang-es">
+                                <h2 class="section-heading">Educación</h2>
                             </div>
                             <div class="education-titles">
                                 <div class="content-left">
@@ -184,7 +250,7 @@
                                         <p class="section-text italic"> - University of Limerick, Ireland</p>
                                     </div>
                                     <div class="lang lang-es">
-                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Grado en Ciencia (B.Sc.) Informática Aplicada y Tecnologías de Redes</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Grado (B.Sc.) en Informática Aplicada y Tecnologías de Redes</p>
                                         <p class="section-text italic"> - University of Limerick, Irlanda</p>
                                     </div>
                                 </div>
@@ -195,8 +261,8 @@
                                         <p class="section-text italic"> - Trinity College Dublin, Ireland</p>
                                     </div>
                                     <div class="lang lang-es">
-                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Master en Ciencia (M.Sc.) de Gestión de Sistemas de Información</p>
-                                        <p class="section-text italic"> - Trinity College Dublín, Irlanda</p>
+                                        <p class="section-text strong"><i class="fa fa-graduation-cap"></i> Máster (M.Sc.) en Gestión de Sistemas de Información</p>
+                                        <p class="section-text italic"> - Trinity College Dublin, Irlanda</p>
                                     </div>
                                 </div>
                             </div>
@@ -204,65 +270,247 @@
                     </div>
                 </div>
             </section>
-            <div class="wrapper divider-wrapper odds">
-            </div>
-            <section id="experience" class="evens">
+            <div class="wrapper divider-wrapper evens"></div>
+            <section id="experience" class="odds">
                 <div class="wrapper">
                     <div class="content-box">
                         <div class="content-inner">
                             <div class="lang lang-en">
-                                <h3 class="section-heading">Experience</h3>
-                                    <!-- Ilkari -->
-                                    <p class="section-text strong">DevOps Engineer - Ilkari<span class="experience-dates en"> | July 2024 - Present</span></p>
-                                    <p class="section-text italic">Málaga, Spain</p>
-                                    <p class="section-text">&#8226; I have quickly integrated into the team and company as a whole; taking ownership of a key product and being responsible for it's continued success and improvement. I was recognised for my efforts and I am currently migrating to a Tech Team Lead role, where I am responsible for the day to day running of the DevOps/Platform team. Additionly to the onboarding of new employees, setting their probation goals, and helping them to achieve these goals. I am also involved in interviewing for other teams both on technical and cultural fit interviews and providing comprehensive feedback and recommendations.</p>
+                                <h2 class="section-heading">Experience</h2>
+                                    <div class="company-group">
+                                        <!-- Ilkari -->
+                                        <div class="company-heading">
+                                            <div class="company-logo-container">
+                                                <a href="https://www.linkedin.com/company/ilkari/" target="_blank">
+                                                    <img src="assets/ilkari_logo.jpeg" alt="Ilkari Logo" class="company-logo">
+                                                </a>
+                                            </div>
+                                            <div class="company-logo-text">
+                                                <p class="section-text strong">Ilkari</p>
+                                                <p class="section-text italic">Málaga, Spain · Hybrid · Full-Time</p>
+                                            </div>
+                                        </div>
+                                        <div class="role">
+                                            <p class="section-text strong">Platform Team Lead<span class="experience-dates en"> | June 2026 - Present</span></p>
+                                            <p class="section-text italic">Acting from September 2025</p>
+                                                <ul class="section-list section-text">
+                                                    <li>Lead the Platform team owning Kubernetes infrastructure, CI/CD and DevSecOps; set direction, priorities and ways of working.</li>
+                                                    <li>Drove the separation of engineering into Platform and Infrastructure teams and defined the operating model for both.</li>
+                                                    <li>Own hiring, onboarding, probation goals and performance outcomes; represent the team's roadmap to senior stakeholders.</li>
+                                                    <li>Lead the Kubernetes estate (RKE2, Istio, Helm, ArgoCD) and the migration of legacy systems onto it with blue/green deployments.</li>
+                                                    <li>Set secure-delivery standards across engineering with SonarQube, Trivy, Nexus and Harbor in the pipelines.</li>
+                                                    <li>Established observability with Datadog and the Elastic Stack, and trained the NOC team to respond to alerts independently.</li>
+                                                </ul>
+                                        </div>
+                                        <div class="role">
+                                            <!-- Ilkari -->
+                                            <p class="section-text strong">DevOps Engineer<span class="experience-dates en"> | July 2024 - June 2026</span></p>
+                                                <ul class="section-list section-text">
+                                                    <li>Stepped up as acting Platform Team Lead after 14 months, and was formally appointed in June 2026.</li>
+                                                    <li>Architected and deployed the company's Kubernetes platform (RKE2, Istio, Helm, ArgoCD).</li>
+                                                    <li>Owned the core DNS registration product; rewrote key components in Python on autoscaling Kubernetes pods.</li>
+                                                    <li>Restructured Terraform to industry best practice; managed OpenStack projects across multiple datacentres.</li>
+                                                </ul>
+                                        </div>
+                                    </div>
                                     <hr class="divider divider-exp">
                                     <!-- Cyferd -->
-                                    <p class="section-text strong">DevOps Engineer - Cyferd<span class="experience-dates en"> | May 2023 - February 2024</span></p>
-                                    <p class="section-text italic">Málaga, Spain</p>
-                                    <p class="section-text">&#8226; I leveraged my DevOps expertise to develop Python-based custom metric exporters, deploy secure AWS environments, and overhaul Terraform code for improved reusability. My efforts to streamline CI/CD pipelines, enhance monitoring through Prometheus, and establish a centralized Jenkins shared library markedly boosted software delivery efficiency and operational performance. </p>
+                                     <div class="company-heading">
+                                        <div class="company-logo-container">
+                                            <a href="https://www.linkedin.com/company/cyferdofficial/" target="_blank">
+                                                <img src="assets/cyferdofficial_logo.jpeg" alt="Cyferd Logo" class="company-logo">
+                                            </a>
+                                        </div>
+                                        <div class="company-logo-text">
+                                            <p class="section-text strong">DevOps Engineer - Cyferd<span class="experience-dates en"> | May 2023 - February 2024</span></p>
+                                            <p class="section-text italic">Málaga, Spain · Remote · Full-Time</p>
+                                        </div>
+                                    </div>
+                                        <ul class="section-list section-text">
+                                            <li>Built Jenkins and Terraform shared libraries that standardised pipelines and infrastructure code across teams.</li>
+                                            <li>Set up a dedicated AWS account for SRE tooling and centralised monitoring with Prometheus remote write and a custom Python exporter.</li>
+                                        </ul>
                                     <hr class="divider divider-exp">
                                     <!-- Rentalmatics -->
-                                    <p class="section-text strong">DevOps Engineer - Rentalmatics<span class="experience-dates en"> | February 2020 - May 2023</span></p>
-                                    <p class="section-text italic">Dublin, Ireland</p>
-                                    <p class="section-text">&#8226; My position as Senior DevOps Engineer saw me enhancing deployment efficiency through CI/CD pipelines and automation tools like Jenkins and Terraform. I played a key role in optimizing GCP costs, implementing dynamic monitoring solutions, and spearheading the integration of Prometheus with Grafana, significantly improving system reliability and operational agility.</p>
-                                    <hr class="divider divider-exp">
+                                     <div class="company-heading">
+                                        <div class="company-logo-container">
+                                            <a href="https://www.linkedin.com/company/rentalmatics/" target="_blank">
+                                                <img src="assets/rentalmatics_logo.jpeg" alt="RentalMatics Logo" class="company-logo">
+                                            </a>
+                                        </div>
+                                        <div class="company-logo-text">
+                                            <p class="section-text strong">Senior DevOps Engineer - RentalMatics<span class="experience-dates en"> | February 2020 - May 2023</span></p>
+                                            <p class="section-text italic">Dublin, Ireland · Remote · Full-Time</p>
+                                        </div>
+                                    </div>
+                                        <ul class="section-list section-text">
+                                            <li>Founding member of a new DevOps team; chose the tools, practices and pipelines that set how developers shipped.</li>
+                                            <li>Ran regular training sessions and onboarded new DevOps joiners.</li>
+                                            <li>Cut GCP costs by about €6,500 a month by moving logging from Stackdriver to a self-managed Elastic Stack.</li>
+                                            <li>Built company-wide monitoring and alerting with Prometheus, Grafana and Slack; rolled out a VPN at short notice for the move to remote work.</li>
+                                        </ul>
+                                        <hr class="divider divider-exp">
                                     <!-- Securelinx-->
-                                    <p class="section-text strong">Linux Engineer - SecureLinx<span class="experience-dates en"> | October 2017 - January 2020</span></p>
-                                    <p class="section-text italic">Dublin, Ireland</p>
-                                    <p class="section-text">&#8226; I was instrumental in providing top-tier client support, overseeing monthly patching activities, and leading significant projects, including a web CMS upgrade for an insurer. My role emphasized proactive monitoring, system performance enhancements, and managing high-availability clusters, showcasing my deep understanding of Apache, Tomcat, and Linux environments.</p>
+                                     <div class="company-heading">
+                                        <div class="company-logo-container">
+                                            <a href="https://www.linkedin.com/company/securelinx/" target="_blank">
+                                                <img src="assets/securelinx_logo.jpeg" alt="SecureLinx Logo" class="company-logo">
+                                            </a>
+                                        </div>
+                                        <div class="company-logo-text">
+                                            <p class="section-text strong">Linux Engineer - SecureLinx<span class="experience-dates en"> | October 2017 - January 2020</span></p>
+                                            <p class="section-text italic">Dublin, Ireland · On-site · Full-Time</p>
+                                        </div>
+                                    </div>
+                                        <ul class="section-list section-text">
+                                            <li>Customer-facing engineer supporting enterprise Red Hat estates; earned RHCE.</li>
+                                        </ul>
                                     <hr class="divider divider-exp">
                                     <!-- Susquehanna -->
-                                    <p class="section-text strong">Systems Engineer - Susquehanna<span class="experience-dates en"> | June 2012 - October 2017</span></p>
-                                    <p class="section-text italic">Dublin, Ireland</p>
-                                    <p class="section-text">&#8226; Starting my career at Susquehanna International Group in Dublin, I initially served as an Infrastructure Engineer Intern, designing and implementing an internal website for server deployment management. Progressing to a Systems Engineer, I specialized in server deployments, streamlined processes with SCCM, and mastered Ansible for efficient server configuration, playing a crucial mentoring role for new team members.</p>
+                                    <div class="company-heading">
+                                        <div class="company-logo-container">
+                                            <a href="https://www.linkedin.com/company/susquehanna-international-group/" target="_blank">
+                                                <img src="assets/susquehanna_international_group_llp_sig_logo.jpeg" alt="Susquehanna Logo" class="company-logo">
+                                            </a>
+                                        </div>
+                                        <div class="company-logo-text">
+                                            <p class="section-text strong">Systems Engineer - Susquehanna International Group (SIG)<span class="experience-dates en"> | June 2012 - October 2017</span></p>
+                                            <p class="section-text italic">Dublin, Ireland · On-site · Full-Time</p>
+                                        </div>
+                                    </div>
+                                        <ul class="section-list section-text">
+                                            <li>Mentored new graduates: regular 1:1s, performance goals and onboarding training.</li>
+                                            <li>Built and managed servers across multiple colocation datacentres for a global trading firm.</li>
+                                        </ul>
                             </div>
                             <div class="lang lang-es">
-                                <h3 class="section-heading">Experiencia</h3>
+                                <h2 class="section-heading">Experiencia</h2>
+                                    <div class="company-group">
+                                        <!-- Ilkari -->
+                                        <div class="company-heading">
+                                            <div class="company-logo-container">
+                                                <a href="https://www.linkedin.com/company/ilkari/" target="_blank">
+                                                    <img src="assets/ilkari_logo.jpeg" alt="Logotipo de Ilkari" class="company-logo">
+                                                </a>
+                                            </div>
+                                            <div class="company-logo-text">
+                                                <p class="section-text strong">Ilkari</p>
+                                                <p class="section-text italic">Málaga, España · Híbrido · Jornada completa</p>
+                                            </div>
+                                        </div>
+                                    <div class="role">
                                     <!-- Ilkari -->
-                                    <p class="section-text strong">Ingeniero DevOps - Ilkari<span class="experience-dates es"> | July 2024 - Presente</span></p>
-                                    <p class="section-text italic">Málaga, España</p>
-                                    <p class="section-text">&#8226; Me he integrado rápidamente en el equipo y en la empresa en su conjunto; asumiendo la responsabilidad de un producto clave y siendo responsable de su éxito y mejora continuos. Fui reconocido por mis esfuerzos y actualmente estoy migrando a un rol de Tech Team Lead, donde soy responsable del funcionamiento diario del equipo de DevOps/Platform. Además de la incorporación de nuevos empleados, establecer sus objetivos durante el período de prueba y ayudarlos a alcanzarlos estos objetivos. También participo en entrevistas para otros equipos así como en entrevistas técnicas y de ajuste cultural, proporcionando comentarios y recomendaciones completas.</p>
-                                    <hr class="divider divider-exp">
-                                    <!-- Cyferd -->
-                                    <p class="section-text strong">Ingeniero DevOps - Cyferd<span class="experience-dates es"> | Mayo 2023 - Febrero 2024</span></p>
-                                    <p class="section-text italic">Málaga, España</p>
-                                    <p class="section-text">&#8226; Utilicé mi experiencia en DevOps para desarrollar exportadores de métricas personalizados basados en Python, desplegar entornos seguros de AWS y revisar el código de Terraform para mejorar su reutilización. Mis esfuerzos por optimizar pipelines de CI/CD, mejorar el monitoreo a través de Prometheus y establecer una biblioteca compartida centralizada de Jenkins, incrementaron notablemente la eficiencia en la entrega de software y el rendimiento operativo.</p>
-                                    <hr class="divider divider-exp">
-                                    <!-- Rentalmatics -->
-                                    <p class="section-text strong">Ingeniero DevOps - Rentalmatics<span class="experience-dates es"> | Febrero 2020 - Mayo 2023</span></p>
-                                    <p class="section-text italic">Dublín, Irlanda</p>
-                                    <p class="section-text">&#8226; Mi posición como Ingeniero Senior de DevOps me llevó a mejorar la eficiencia de despliegue a través de pipelines de CI/CD y herramientas de automatización como Jenkins y Terraform. Desempeñé un papel clave en la optimización de costes en GCP, implementando soluciones de monitoreo dinámico y liderando la integración de Prometheus con Grafana, mejorando significativamente la fiabilidad del sistema y la agilidad operacional.</p>
-                                    <hr class="divider divider-exp">
-                                    <!-- Securelinx-->
-                                    <p class="section-text strong">Ingeniero Linux - SecureLinx<span class="experience-dates es"> | Octubre 2017 - Enero 2020</span></p>
-                                    <p class="section-text italic">Dublín, Irlanda</p>
-                                    <p class="section-text">&#8226; Tuve un rol fundamental a la hora de proporcionar soporte de primer nivel a los clientes, supervisar las actividades de parcheo mensuales y liderar proyectos significativos, incluida una actualización del CMS web para una aseguradora. Mi labor enfatizó el monitoreo proactivo, las mejoras en el rendimiento del sistema y la gestión de grupos de alta disponibilidad, demostrando mi profundo entendimiento de los entornos Apache, Tomcat y Linux.</p>
-                                    <hr class="divider divider-exp">
-                                    <!-- Susquehanna -->
-                                    <p class="section-text strong">Ingeniero de Sistemas - Susquehanna<span class="experience-dates es"> | Junio 2012 - Octobre 2017</span></p>
-                                    <p class="section-text italic">Dublín, Irlanda</p>
-                                    <p class="section-text">&#8226; Iniciando mi carrera en Susquehanna International Group en Dublín, comencé como Ingeniero becario de Infraestructura, diseñando e implementando un sitio web interno para la gestión del despliegue de servidores. Ascendí a Ingeniero de Sistemas, me especialicé en despliegues de servidores, optimicé procesos con SCCM y dominé Ansible para una configuración eficiente de servidores, desempeñando un papel de mentoría crucial para los nuevos miembros del equipo.</p>
+                                    <p class="section-text strong">Platform Team Lead<span class="experience-dates es"> | Junio 2026 - Actualidad</span></p>
+                                    <p class="section-text italic">En funciones desde septiembre de 2025</p>
+                                    <ul class="section-list section-text">
+                                        <li>Lidero el equipo de Plataforma, responsable de la infraestructura Kubernetes, CI/CD y DevSecOps; marco la dirección, las prioridades y la forma de trabajar.</li>
+                                        <li>Impulsé la separación de ingeniería en los equipos de Plataforma e Infraestructura y definí el modelo de trabajo de ambos.</li>
+                                        <li>Me encargo de la contratación, el onboarding, los objetivos del periodo de prueba y el rendimiento; presento la hoja de ruta del equipo a la dirección.</li>
+                                        <li>Dirijo la plataforma Kubernetes (RKE2, Istio, Helm, ArgoCD) y la migración de los sistemas heredados a ella con despliegues blue/green.</li>
+                                        <li>Definí los estándares de entrega segura para toda ingeniería, con SonarQube, Trivy, Nexus y Harbor integrados en los pipelines.</li>
+                                        <li>Implanté la observabilidad con Datadog y Elastic Stack, y formé al equipo NOC para responder a las alertas de forma autónoma.</li>
+                                    </ul>
+                                    </div>
+                                    <div class="role">
+                                        <p class="section-text strong">DevOps Engineer<span class="experience-dates es"> | Julio 2024 - Junio 2026</span></p>
+                                        <ul class="section-list section-text">
+                                            <li>Asumí el puesto de Platform Team Lead en funciones a los 14 meses; nombrado oficialmente en junio de 2026.</li>
+                                            <li>Diseñé y desplegué la plataforma Kubernetes de la empresa, con despliegues blue/green mediante ArgoCD.</li>
+                                            <li>Fui responsable del producto principal de registro DNS; reescribí componentes clave en Python sobre pods de Kubernetes con autoescalado.</li>
+                                            <li>Reestructuré Terraform según las mejores prácticas del sector; gestioné proyectos de OpenStack en varios centros de datos.</li>
+                                       </ul>
+                                    </div>
+                                </div>
+                                <hr class="divider divider-exp">
+                                <!-- Cyferd -->
+                                <div class="company-heading">
+                                    <div class="company-logo-container">
+                                        <a href="https://www.linkedin.com/company/cyferdofficial/" target="_blank">
+                                            <img src="assets/cyferdofficial_logo.jpeg" alt="Logotipo de Cyferd" class="company-logo">
+                                        </a>
+                                    </div>
+                                    <div class="company-logo-text">
+                                        <p class="section-text strong">DevOps Engineer - Cyferd<span class="experience-dates es"> | Mayo 2023 - Febrero 2024</span></p>
+                                        <p class="section-text italic">Málaga, España · En remoto · Jornada completa</p>
+                                    </div>
+                                </div>
+                                <ul class="section-list section-text">
+                                    <li>Creé librerías compartidas de Jenkins y Terraform que estandarizaron los pipelines y el código de infraestructura entre equipos.</li>
+                                    <li>Configuré una cuenta de AWS dedicada a herramientas SRE y centralicé la monitorización con Prometheus remote write y un exporter propio en Python.</li>
+                                </ul>
+                                <hr class="divider divider-exp">
+                                <!-- Rentalmatics -->
+                                <div class="company-heading">
+                                    <div class="company-logo-container">
+                                        <a href="https://www.linkedin.com/company/rentalmatics/" target="_blank">
+                                            <img src="assets/rentalmatics_logo.jpeg" alt="Logotipo de RentalMatics" class="company-logo">
+                                        </a>
+                                    </div>
+                                    <div class="company-logo-text">
+                                        <p class="section-text strong">Senior DevOps Engineer - RentalMatics<span class="experience-dates es"> | Febrero 2020 - Mayo 2023</span></p>
+                                        <p class="section-text italic">Dublín, Irlanda · En remoto · Jornada completa</p>
+                                    </div>
+                                </div>
+                                <ul class="section-list section-text">
+                                    <li>Miembro fundador de un nuevo equipo DevOps; elegí las herramientas, prácticas y pipelines que marcaron cómo los desarrolladores entregaban software.</li>
+                                    <li>Impartí formaciones periódicas y me encargué del onboarding de los nuevos ingenieros DevOps.</li>
+                                    <li>Reduje los costes de GCP en unos 6.500 € al mes al migrar los logs de Stackdriver a un Elastic Stack autogestionado.</li>
+                                    <li>Creé la monitorización y las alertas de toda la empresa con Prometheus, Grafana y Slack; desplegué una VPN con muy poca antelación para el paso al teletrabajo.</li>
+                                </ul>
+                                <hr class="divider divider-exp">
+                                <!-- Securelinx-->
+                                <div class="company-heading">
+                                    <div class="company-logo-container">
+                                        <a href="https://www.linkedin.com/company/securelinx/" target="_blank">
+                                            <img src="assets/securelinx_logo.jpeg" alt="Logotipo de SecureLinx" class="company-logo">
+                                        </a>
+                                    </div>
+                                    <div class="company-logo-text">
+                                        <p class="section-text strong">Linux Engineer - SecureLinx<span class="experience-dates es"> | Octubre 2017 - Enero 2020</span></p>
+                                        <p class="section-text italic">Dublín, Irlanda · Presencial · Jornada completa</p>
+                                    </div>
+                                </div>
+                                <ul class="section-list section-text">
+                                    <li>Ingeniero de cara al cliente, dando soporte a entornos Red Hat empresariales; obtuve la certificación RHCE.</li>
+                                </ul>
+                                <hr class="divider divider-exp">
+                                <!-- Susquehanna -->
+                                <div class="company-heading">
+                                    <div class="company-logo-container">
+                                        <a href="https://www.linkedin.com/company/susquehanna-international-group/" target="_blank">
+                                            <img src="assets/susquehanna_international_group_llp_sig_logo.jpeg" alt="Logotipo de Susquehanna" class="company-logo">
+                                        </a>
+                                    </div>
+                                    <div class="company-logo-text">
+                                        <p class="section-text strong">Systems Engineer - Susquehanna International Group (SIG)<span class="experience-dates es"> | Junio 2012 - Octubre 2017</span></p>
+                                        <p class="section-text italic">Dublín, Irlanda · Presencial · Jornada completa</p>
+                                    </div>
+                                </div>
+                                <ul class="section-list section-text">
+                                    <li>Mentoricé a recién graduados: reuniones 1:1 periódicas, objetivos de rendimiento y formación de onboarding.</li>
+                                    <li>Monté y gestioné servidores en varios centros de datos de colocation para una firma global de trading.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="wrapper divider-wrapper odds"></div>
+            <section id="hobbies" class="evens">
+                <div class="wrapper">
+                    <div class="content-box">
+                        <div class="content-inner">
+                            <div class="lang lang-en">
+                                <h2 class="section-heading">Hobbies</h2>
+                                <p class="section-text">
+                                    Running (marathons, trails) · <a href="https://app.playtomic.com/profile/user/8675858" target="_blank" class="hobbies">Padel</a> · Hiking · Reading (leadership books and fiction) · Game development (Unity/C#) · Motorbikes
+                                </p>
+                            </div>
+                            <div class="lang lang-es">
+                                <h2 class="section-heading">Hobbies</h2>
+                                <p class="section-text">
+                                    Running (maratones, trail) · <a href="https://app.playtomic.com/profile/user/8675858" target="_blank" class="hobbies">Pádel</a> · Senderismo · Lectura (libros de liderazgo y ficción) · Desarrollo de videojuegos (Unity/C#) · Motos
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -275,26 +523,22 @@
                     <div class="content-box">
                         <div class="content-inner">
                             <div class="lang lang-en">
-                                <h3 class="section-heading">Contact Me</h3>
-                                <p class="content-text">
+                                <h2 class="section-heading">Contact Me</h2>
                                     <ul class="contact-list">
                                         <li class="section-text"><i class="material-icons">place</i> Málaga, Spain</li>
-                                        <li class="section-text"><a href="mailto: careers@darren.stokes.technology"><i class="material-icons">local_post_office</i> careers@darren.stokes.technology</a></li>
-                                        <li class="section-text"><a href="https://www.linkedin.com/in/darren-stokes-12a53a5a/"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a></li>
-                                        <li class="section-text"><a href="https://github.com/darren-stokes"><i class="fa fa-github"></i> Github</a></li>
+                                        <li class="section-text"><a href="mailto:careers@darren.stokes.technology"><i class="material-icons">local_post_office</i> careers@darren.stokes.technology</a></li>
+                                        <li class="section-text"><a href="https://www.linkedin.com/in/darren-peter-stokes/" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a></li>
+                                        <li class="section-text"><a href="https://github.com/darren-stokes" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
                                     </ul>
-                                </p>
                             </div>
                             <div class="lang lang-es">
-                                <h3 class="section-heading">Contacta Conmigo</h3>
-                                <p class="content-text">
-                                    <ul class="contact-list">
-                                        <li class="section-text"><i class="material-icons">place</i> Málaga, España</li>
-                                        <li class="section-text"><a href="mailto: careers@darren.stokes.technology"><i class="material-icons">local_post_office</i> careers@darren.stokes.technology</a></li>
-                                        <li class="section-text"><a href="https://www.linkedin.com/in/darren-stokes-12a53a5a/"><i class="fa fa-linkedin-square"></i> LinkedIn Profile</a></li>
-                                        <li class="section-text"><a href="https://github.com/darren-stokes"><i class="fa fa-github"></i> Github</a></li>
-                                    </ul>
-                                </p>
+                                <h2 class="section-heading">Contacta conmigo</h2>
+                                <ul class="contact-list">
+                                    <li class="section-text"><i class="material-icons">place</i> Málaga, España</li>
+                                    <li class="section-text"><a href="mailto:careers@darren.stokes.technology"><i class="material-icons">local_post_office</i> careers@darren.stokes.technology</a></li>
+                                    <li class="section-text"><a href="https://www.linkedin.com/in/darren-peter-stokes/" target="_blank"><i class="fa fa-linkedin-square"></i> Perfil de LinkedIn</a></li>
+                                    <li class="section-text"><a href="https://github.com/darren-stokes" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -303,14 +547,15 @@
         </div>
         <!-- Cookie Notice -->
         <div id="cookie-notice" class="cookie-notice">
-            <p class="lang lang-en">This website uses cookies to enhance your browsing experience. We use functional cookies for language detection, remembering your language preference, and your dark mode selection. No personal data is collected or shared. By continuing to browse the site, you agree to our use of these necessary cookies. For more information, read our <a href="/privacy-policy">Privacy Policy</a>.</p>
-            <p class="lang lang-es">Este sitio web utiliza cookies para mejorar su experiencia de navegación. Utilizamos cookies funcionales para la detección de idioma, recordar su preferencia de idioma y su selección de modo oscuro. No se recopilan ni comparten datos personales. Al continuar navegando por el sitio, usted acepta nuestro uso de estas cookies necesarias. Para obtener más información, lea nuestra <a href="/privacy-policy">Política de Privacidad</a>.</p>
-            <button onclick="hideCookieNotice()" class="cookie-button">Got it!</button>
+            <p class="lang lang-en">This website stores your language and dark-mode preferences in your browser. No personal data is collected or shared. For more information, read our <a href="/privacy-policy">Privacy Policy</a>.</p>
+            <p class="lang lang-es">Este sitio web guarda tus preferencias de idioma y modo oscuro en tu navegador. No se recopilan ni comparten datos personales. Para obtener más información, lee nuestra <a href="/privacy-policy">Política de privacidad</a>.</p>
+            <button onclick="hideCookieNotice()" class="cookie-button lang lang-en">Got it!</button>
+            <button onclick="hideCookieNotice()" class="cookie-button lang lang-es">¡Entendido!</button>
         </div>
         <!-- Footer -->
         <div class="footer banner">
             <footer>
-                Copyright  &copy; 2025 Darren Stokes
+                Copyright  &copy; <span id="year"></span> Darren Stokes
             </footer>
         </div>
     </body>
